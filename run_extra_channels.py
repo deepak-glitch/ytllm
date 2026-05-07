@@ -42,18 +42,24 @@ def scrape_channel(handle, category):
     return len(saved)
 
 
-def parse_json3(fpath):
+def parse_json3_timed(fpath):
+    """Return one line per caption event prefixed with [seconds] timestamp."""
     try:
         data = json.load(open(fpath, encoding="utf-8"))
     except Exception:
         return ""
-    words = []
+    lines = []
     for ev in data.get("events", []):
+        t = ev.get("tStartMs", 0) / 1000.0
+        words = []
         for seg in ev.get("segs", []):
             w = seg.get("utf8", "").strip()
             if w and w != "\n":
                 words.append(w)
-    return re.sub(r"\s+", " ", " ".join(words)).strip()
+        text = re.sub(r"\s+", " ", " ".join(words)).strip()
+        if text:
+            lines.append(f"[{t:.1f}] {text}")
+    return "\n".join(lines)
 
 
 if __name__ == "__main__":
@@ -62,7 +68,7 @@ if __name__ == "__main__":
 
     examples = []
     for f in TRANSCRIPTS.rglob("*.json3"):
-        text = parse_json3(f)
+        text = parse_json3_timed(f)
         if len(text) < 100:
             continue
         category = f.parent.parent.name
@@ -70,12 +76,14 @@ if __name__ == "__main__":
         examples.append({
             "messages": [
                 {"role": "system", "content": SYSTEM},
-                {"role": "user", "content": f"Write a short-form video script in the style of @{channel}."},
+                {"role": "user", "content":
+                    f"Write a paced short-form video script in the style of @{channel} with timing markers."},
                 {"role": "assistant", "content": text},
             ],
             "source": f"yt_transcript_{category}",
             "channel": channel,
             "weight": 4,
+            "format": "timed",
         })
 
     out_jsonl = Path("extra_channels_examples.jsonl")
