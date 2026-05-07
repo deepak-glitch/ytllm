@@ -12,8 +12,32 @@ from pathlib import Path
 subprocess.run([sys.executable, "-m", "pip", "install", "yt-dlp", "-q"])
 
 CHANNELS = [
-    ("@Superficial2",    "story_reference"),
-    ("@ithinkitsgeorge", "story_reference"),
+    ("@Superficial2",      "story_reference"),
+    ("@ithinkitsgeorge",   "story_reference"),
+    ("@HeyJohnScott",      "story_reference"),
+    ("@JennyHoyos",        "story_reference"),
+    ("@pixelbeefshorts",   "story_reference"),
+    ("@NotableNet",        "story_reference"),
+    ("@Ripped-x",          "story_reference"),
+    ("@Chupes-p34",        "story_reference"),
+    ("@HisYTStory",        "story_reference"),
+    ("@rennrat78",         "story_reference"),
+    ("@Zynerroid00123",    "story_reference"),
+    ("@DailyPretzel",      "story_reference"),
+    ("@polemod",           "story_reference"),
+    ("@Bobbie-26",         "story_reference"),
+    ("@Minutemadness5",    "story_reference"),
+    ("@ProfessorMrAlex",   "story_reference"),
+    ("@DevRamo",           "story_reference"),
+    ("@Cutiepaw-3D",       "story_reference"),
+    ("@eng_universelabz",  "story_reference"),
+    ("@lifeinpoly",        "story_reference"),
+    ("@LowPolyShorts",     "story_reference"),
+    ("@RoStoriezYT",       "story_reference"),
+    ("@Christs_Echo",      "story_reference"),
+    ("@Zupaya",            "story_reference"),
+    ("@RealOneLovey",      "story_reference"),
+    ("@Christify777",      "story_reference"),
 ]
 
 OUT = Path("extra_channels_output")
