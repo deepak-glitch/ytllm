@@ -56,6 +56,8 @@ def scrape_channel(handle, category):
         "yt-dlp",
         "--write-auto-sub", "--sub-lang", "en", "--sub-format", "json3",
         "--skip-download", "--ignore-errors", "--no-warnings",
+        "--sleep-requests", "1",
+        "--sleep-subtitles", "2",
         "-o", str(out_dir / "%(id)s.%(ext)s"),
         f"https://www.youtube.com/{handle}/shorts",
     ]
