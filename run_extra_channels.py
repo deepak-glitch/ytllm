@@ -42,21 +42,47 @@ CHANNELS = [
 
 OUT = Path("extra_channels_output")
 TRANSCRIPTS = OUT / "transcripts"
+ARCHIVES = OUT / "archives"
 OUT.mkdir(exist_ok=True)
 TRANSCRIPTS.mkdir(exist_ok=True)
+ARCHIVES.mkdir(exist_ok=True)
 
 SYSTEM = ("You are a viral short-form video creator coach specializing in pixel art animated "
           "Shorts. Expert in hooks, story structure, retention, and visual storytelling.")
 
 
+def seed_archive(handle, out_dir, archive_path):
+    """Pre-populate yt-dlp's --download-archive from already-downloaded json3 files
+    so resumed runs skip the metadata page fetch entirely (those fetches are what
+    trigger YouTube rate limits on big channels)."""
+    existing = {p.name.removesuffix(".en.json3") for p in out_dir.glob("*.en.json3")}
+    archived = set()
+    if archive_path.exists():
+        for line in open(archive_path, encoding="utf-8"):
+            line = line.strip()
+            if line.startswith("youtube "):
+                archived.add(line.split(" ", 1)[1])
+    new_ids = existing - archived
+    if new_ids:
+        with open(archive_path, "a", encoding="utf-8") as f:
+            for vid in sorted(new_ids):
+                f.write(f"youtube {vid}\n")
+    print(f"  archive: {len(archived | new_ids)} videos already done (will skip)")
+
+
 def scrape_channel(handle, category):
     out_dir = TRANSCRIPTS / category / handle.lstrip("@")
     out_dir.mkdir(parents=True, exist_ok=True)
+    archive_path = ARCHIVES / f"{handle.lstrip('@')}.txt"
+    seed_archive(handle, out_dir, archive_path)
     cmd = [
         "yt-dlp",
         "--write-auto-sub", "--sub-lang", "en", "--sub-format", "json3",
         "--skip-download", "--ignore-errors", "--no-warnings",
-        "--sleep-requests", "1",
+        "--download-archive", str(archive_path),
+        "--sleep-requests", "3",
+        "--sleep-interval", "3",
+        "--max-sleep-interval", "8",
         "--sleep-subtitles", "2",
         "-o", str(out_dir / "%(id)s.%(ext)s"),
         f"https://www.youtube.com/{handle}/shorts",
