@@ -1,0 +1,7 @@
+# Large merged dataset outputs — regenerable locally via merge_dataset.py
+*.jsonl.gz
+
+# Local scrape working dirs
+pipeline_output/
+extra_channels_output/
+masterclass_local/
