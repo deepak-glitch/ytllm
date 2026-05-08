@@ -12,7 +12,7 @@ prefix and trailing 'mp4' from masterclass lesson stems.
 
 Run: python3 merge_dataset.py <out.jsonl> <input1.jsonl> [input2.jsonl ...]
 """
-import json, re, sys
+import gzip, json, re, sys
 from collections import Counter
 from pathlib import Path
 
@@ -66,7 +66,8 @@ def main():
     raw_per_input = Counter()
     dropped_dupes = 0
     for p in in_paths:
-        for line in open(p, encoding="utf-8"):
+        opener = gzip.open if p.suffix == ".gz" else open
+        for line in opener(p, "rt", encoding="utf-8"):
             line = line.strip()
             if not line:
                 continue
