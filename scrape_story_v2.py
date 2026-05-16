@@ -1,18 +1,13 @@
 """
-Story-Focused Channel Scraper v2
-─────────────────────────────────────────────────────────────────────────────
-Same scraping code as scrape_channels.py — new curated channel list focused
-on ZackDFilms-quality storytelling and Superficial2-style 3D/animated shorts.
+Story Director LLM — YouTube Channel Transcript Scraper (v2 channel list)
+Run on YOUR machine: python3 scrape_story_v2.py
+Then upload story-v2-dataset.zip back to Claude.
 
-Channels already in dataset / run_extra_channels.py are excluded to avoid
-duplicates in training_data_v7+.
+Requirements: pip install yt-dlp
 
-Run on YOUR machine:
-  pip install yt-dlp
-  python3 scrape_story_v2.py
-
-Output: story-v2-dataset.zip — upload to Claude for merging into training_data_v7.
-─────────────────────────────────────────────────────────────────────────────
+Same scraping engine as scrape_channels.py — only the CHANNELS list differs.
+This list focuses on ZackDFilms-style narrative shorts and Superficial2-style
+3D/animated story shorts. Channels already in scrape_channels.py are excluded.
 """
 
 import os, json, re, glob, subprocess, sys, shutil, zipfile
@@ -20,16 +15,12 @@ from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # ─────────────────────────────────────────────
-# CHANNEL LIST
+# CHANNEL LIST — story-focused additions
 # Format: ("@handle", "category", priority 1-5)
-# Priority 5 = must-have, 1 = nice-to-have
 # ─────────────────────────────────────────────
 CHANNELS = [
 
-    # ══════════════════════════════════════════════════════════════════
-    # ZACKDFILMS-STYLE — live-action, cinematic, tight narrative arc
-    # Same story DNA: quick setup → obstacle → twist → payoff in <60s
-    # ══════════════════════════════════════════════════════════════════
+    # ── ZACKDFILMS-STYLE — live-action narrative shorts ──
     ("@RyanTrahan",          "zackd_style",      5),
     ("@NasDailyVideos",      "zackd_style",      5),
     ("@JakeShorts",          "zackd_style",      5),
@@ -49,17 +40,8 @@ CHANNELS = [
     ("@JoeHattab",           "zackd_style",      4),
     ("@KallmePat",           "zackd_style",      4),
     ("@PrestonPlayz",        "zackd_style",      4),
-    ("@IShowSpeed",          "zackd_style",      3),
-    ("@Jynxzi",              "zackd_style",      3),
-    ("@LazarBeam",           "zackd_style",      3),
-    ("@TommyInnit",          "zackd_style",      3),
-    ("@GeorgeNotFound",      "zackd_style",      3),
-    ("@WilburSoot",          "zackd_style",      3),
 
-    # ══════════════════════════════════════════════════════════════════
-    # SUPERFICIAL2-STYLE — 3D / animated / pixel art story shorts
-    # Tell stories through animation with the same tight structure
-    # ══════════════════════════════════════════════════════════════════
+    # ── SUPERFICIAL2-STYLE — animated/3D story shorts ──
     ("@CasVanDePol",         "animated_story",   5),
     ("@AlexClark",           "animated_story",   5),
     ("@Haminations",         "animated_story",   5),
@@ -91,15 +73,12 @@ CHANNELS = [
     ("@AdamCYounis",         "pixel_3d_story",   4),
     ("@MortMort",            "pixel_3d_story",   4),
     ("@simondev.",           "pixel_3d_story",   4),
-    ("@GodotEngine",         "pixel_3d_story",   3),
     ("@DaFluffyPotato",      "pixel_3d_story",   4),
     ("@BisonCourt",          "pixel_3d_story",   4),
     ("@PilotRedSun",         "pixel_3d_story",   4),
     ("@HappyToast",          "pixel_3d_story",   4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # HOOK-FIRST COMMENTARY — story-driven opinion, strong hook structure
-    # ══════════════════════════════════════════════════════════════════
+    # ── HOOK-FIRST COMMENTARY — story-driven opinion ──
     ("@DrewGooden",          "commentary_story", 5),
     ("@DannyGonzalez",       "commentary_story", 5),
     ("@EddyBurback",         "commentary_story", 5),
@@ -111,11 +90,8 @@ CHANNELS = [
     ("@SunnyV2",             "commentary_story", 4),
     ("@EmpLemon",            "commentary_story", 5),
     ("@Slimecicle",          "commentary_story", 4),
-    ("@Optimus",             "commentary_story", 4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # EMOTIONAL / DRAMATIC ARC — character-driven, tearjerker or triumph
-    # ══════════════════════════════════════════════════════════════════
+    # ── EMOTIONAL / DRAMATIC ARC ──
     ("@Struthless",          "emotional_story",  5),
     ("@AnthonyPadilla",      "emotional_story",  5),
     ("@Yes_Theory",          "emotional_story",  5),
@@ -129,9 +105,7 @@ CHANNELS = [
     ("@JonahFilms",          "emotional_story",  4),
     ("@StoriesWithFlair",    "emotional_story",  4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # TRUE CRIME / SUSPENSE — hook → investigation → twist → reveal
-    # ══════════════════════════════════════════════════════════════════
+    # ── TRUE CRIME / SUSPENSE ──
     ("@NightmindOfficial",   "true_crime_story", 4),
     ("@CreepsMcPasta",       "true_crime_story", 4),
     ("@WolvenhollowStudios", "true_crime_story", 4),
@@ -140,9 +114,7 @@ CHANNELS = [
     ("@ColdCaseDetective",   "true_crime_story", 4),
     ("@Charismaoncommand",   "true_crime_story", 4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # REDDIT / KARMA FORMAT — relatable setup + judgment + twist ending
-    # ══════════════════════════════════════════════════════════════════
+    # ── REDDIT / KARMA — relatable + twist ──
     ("@ProRevenge",          "reddit_story",     5),
     ("@MaliciousCompliance", "reddit_story",     5),
     ("@NuclearRevenge",      "reddit_story",     5),
@@ -154,9 +126,7 @@ CHANNELS = [
     ("@TabletopTalesYT",     "reddit_story",     4),
     ("@GrandmasBoyYT",       "reddit_story",     4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # WORLD BUILDING / LORE — exposition delivered as story
-    # ══════════════════════════════════════════════════════════════════
+    # ── WORLD BUILDING / LORE ──
     ("@Oversimplified",      "worldbuild_story", 5),
     ("@SamONellaAcademy",   "worldbuild_story", 5),
     ("@TierZoo",             "worldbuild_story", 5),
@@ -171,9 +141,7 @@ CHANNELS = [
     ("@RealLifeLore",        "worldbuild_story", 4),
     ("@HelloFutureMeFiction","worldbuild_story", 5),
 
-    # ══════════════════════════════════════════════════════════════════
-    # SCREENWRITING / STORY CRAFT — direct narrative structure education
-    # ══════════════════════════════════════════════════════════════════
+    # ── SCREENWRITING / STORY CRAFT ──
     ("@StudioBinder",        "story_craft",      5),
     ("@D4Dario",             "story_craft",      5),
     ("@JimHull",             "story_craft",      5),
@@ -188,9 +156,7 @@ CHANNELS = [
     ("@CreatorScience",      "story_craft",      5),
     ("@Veritasium",          "story_craft",      5),
 
-    # ══════════════════════════════════════════════════════════════════
-    # DOCUMENTARY SHORTS — real-world story, strong hook pacing
-    # ══════════════════════════════════════════════════════════════════
+    # ── DOCUMENTARY SHORTS ──
     ("@MarkRober",           "doc_short",        5),
     ("@ColdfusionTV",        "doc_short",        4),
     ("@RealEngineering",     "doc_short",        4),
@@ -204,82 +170,78 @@ CHANNELS = [
     ("@ContraPoints",        "doc_short",        4),
     ("@Philosophytube",      "doc_short",        4),
 
-    # ══════════════════════════════════════════════════════════════════
-    # COMEDY STORY — setup → escalation → punchline payoff
-    # ══════════════════════════════════════════════════════════════════
+    # ── COMEDY STORY ──
     ("@CasuallyExplained",   "comedy_story",     5),
     ("@JacksFilms",          "comedy_story",     4),
     ("@SMii7Y",              "comedy_story",     4),
     ("@KyrSP",               "comedy_story",     4),
     ("@TechLead",            "comedy_story",     4),
     ("@DidYouKnowGaming",    "comedy_story",     4),
-
 ]
 
 # ─────────────────────────────────────────────
-# SCRAPER CONFIG  (matches run_extra_channels.py which is proven to work)
+# SCRAPER CONFIG
 # ─────────────────────────────────────────────
-MIN_PRIORITY = 4                   # Skip priority < 4 (set to 3 for more data)
-MAX_WORKERS = 3                    # Parallel channel downloads
+MAX_VIDEOS_PER_CHANNEL = 150      # Cap per channel
+MIN_PRIORITY = 3                   # Skip priority < 3
+SHORTS_ONLY = True                 # Only scrape Shorts (< 65 sec)
+MAX_WORKERS = 4                    # Parallel channel downloads
 OUT_DIR = Path("story_v2_transcripts")
-ARCHIVES_DIR = Path("story_v2_archives")
 OUT_DIR.mkdir(exist_ok=True)
-ARCHIVES_DIR.mkdir(exist_ok=True)
 
-
-def seed_archive(handle, out_dir, archive_path):
-    """Pre-populate archive from already-downloaded files so resumed runs skip them."""
-    existing = {p.name.removesuffix(".en.json3") for p in out_dir.glob("*.en.json3")}
-    archived = set()
-    if archive_path.exists():
-        for line in open(archive_path, encoding="utf-8"):
-            line = line.strip()
-            if line.startswith("youtube "):
-                archived.add(line.split(" ", 1)[1])
-    new_ids = existing - archived
-    if new_ids:
-        with open(archive_path, "a", encoding="utf-8") as f:
-            for vid in sorted(new_ids):
-                f.write(f"youtube {vid}\n")
-    if archived or new_ids:
-        print(f"  [{handle}] {len(archived | new_ids)} already downloaded, skipping")
-
+def get_channel_url(handle):
+    if SHORTS_ONLY:
+        return f"https://www.youtube.com/{handle}/shorts"
+    return f"https://www.youtube.com/{handle}"
 
 def scrape_channel(handle, category, priority):
-    out_dir = OUT_DIR / category / handle.lstrip("@")
-    out_dir.mkdir(parents=True, exist_ok=True)
-    archive_path = ARCHIVES_DIR / f"{handle.lstrip('@')}.txt"
-    seed_archive(handle, out_dir, archive_path)
+    out = OUT_DIR / category / handle.lstrip("@")
+    out.mkdir(parents=True, exist_ok=True)
 
-    # Exact command from run_extra_channels.py — proven to work
     cmd = [
         "yt-dlp",
-        "--write-auto-sub", "--sub-lang", "en", "--sub-format", "json3",
-        "--skip-download", "--ignore-errors", "--no-warnings",
-        "--download-archive", str(archive_path),
-        "--sleep-requests", "3",
-        "--sleep-interval", "3",
-        "--max-sleep-interval", "8",
-        "--sleep-subtitles", "2",
-        "-o", str(out_dir / "%(id)s.%(ext)s"),
-        f"https://www.youtube.com/{handle}/shorts",
+        "--write-auto-sub",
+        "--sub-lang", "en",
+        "--sub-format", "json3",
+        "--skip-download",
+        "--ignore-errors",
+        "--no-warnings",
+        "--match-filter", "duration < 65" if SHORTS_ONLY else "duration < 600",
+        "--max-downloads", str(MAX_VIDEOS_PER_CHANNEL),
+        "--print", "%(id)s\t%(title)s\t%(duration)s\t%(view_count)s\t%(like_count)s",
+        "-o", str(out / "%(id)s.%(ext)s"),
+        get_channel_url(handle)
     ]
 
-    # No capture_output — print directly to terminal like run_extra_channels.py
-    subprocess.run(cmd, timeout=600)
+    result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
 
-    saved = list(out_dir.glob("*.json3"))
+    # Count transcripts saved
+    saved = list(out.glob("*.json3"))
+
+    # Parse metadata from stdout
+    videos = []
+    for line in result.stdout.strip().split("\n"):
+        parts = line.split("\t")
+        if len(parts) >= 3:
+            videos.append({
+                "id": parts[0],
+                "title": parts[1] if len(parts) > 1 else "",
+                "duration": parts[2] if len(parts) > 2 else "",
+                "views": parts[3] if len(parts) > 3 else "",
+                "likes": parts[4] if len(parts) > 4 else "",
+            })
+
     return {
         "handle": handle,
         "category": category,
         "priority": priority,
         "transcript_files": len(saved),
+        "video_metadata": videos[:10],  # sample
         "status": "ok" if saved else "no_transcripts"
     }
 
-
 def parse_json3_transcript(filepath):
-    """Convert yt-dlp json3 subtitle format to clean text."""
+    """Convert yt-dlp json3 subtitle format to clean text"""
     try:
         with open(filepath) as f:
             data = json.load(f)
@@ -296,29 +258,9 @@ def parse_json3_transcript(filepath):
     except:
         return ""
 
-
-def build_jsonl(out_dir: Path):
-    """Convert all transcripts to training JSONL with per-category weights."""
-    SYSTEM = (
-        "You are a viral short-form video creator. Write engaging short-form story scripts "
-        "with strong hooks, clear obstacles, satisfying twists, and tight payoffs. "
-        "Every word must earn its place."
-    )
-
-    # Weight by category — story-reference channels get higher weight
-    CATEGORY_WEIGHTS = {
-        "zackd_style":      5,
-        "animated_story":   5,
-        "pixel_3d_story":   5,
-        "emotional_story":  5,
-        "commentary_story": 4,
-        "true_crime_story": 4,
-        "reddit_story":     4,
-        "worldbuild_story": 4,
-        "story_craft":      4,
-        "doc_short":        4,
-        "comedy_story":     3,
-    }
+def build_jsonl(out_dir, metadata_log):
+    """Convert all transcripts to training JSONL"""
+    SYSTEM = "You are a viral short-form video creator. Write engaging short-form story scripts with strong hooks, clear obstacles, satisfying twists, and tight payoffs. Every word must earn its place."
 
     jsonl_path = Path("story_v2_examples.jsonl")
     stats = {"total": 0, "skipped_short": 0, "written": 0}
@@ -330,45 +272,36 @@ def build_jsonl(out_dir: Path):
                 stats["skipped_short"] += 1
                 continue
 
+            # Get video ID and look up metadata
             vid_id = json3_file.stem
             category = json3_file.parent.parent.name
             channel = json3_file.parent.name
-            weight = CATEGORY_WEIGHTS.get(category, 3)
 
+            # Build training example — transcript as completion
             record = {
                 "messages": [
                     {"role": "system", "content": SYSTEM},
-                    {"role": "user",   "content": f"Write a short-form video script in the style of @{channel} ({category} category)."},
+                    {"role": "user", "content": f"Write a short-form video script in the style of @{channel} ({category} category)."},
                     {"role": "assistant", "content": text}
                 ],
-                "source": f"yt_transcript_{category}",
+                "source": f"youtube_transcript_{category}",
                 "channel": channel,
                 "video_id": vid_id,
-                "weight": weight
+                "weight": 4
             }
             out_f.write(json.dumps(record) + "\n")
             stats["written"] += 1
+        stats["total"] = stats["written"] + stats["skipped_short"]
 
-    stats["total"] = stats["written"] + stats["skipped_short"]
     return jsonl_path, stats
-
 
 # ─────────────────────────────────────────────
 # MAIN
 # ─────────────────────────────────────────────
 if __name__ == "__main__":
-    # De-duplicate handles (same channel can appear in multiple categories)
-    seen = {}
-    deduped = []
-    for handle, cat, pri in CHANNELS:
-        key = handle.lower()
-        if key not in seen:
-            seen[key] = True
-            deduped.append((handle, cat, pri))
-
-    to_scrape = [(h, c, p) for h, c, p in deduped if p >= MIN_PRIORITY]
-    print(f"Story Scraper v2")
-    print(f"Channels to scrape: {len(to_scrape)} (priority >= {MIN_PRIORITY})")
+    # Filter by priority
+    to_scrape = [(h, c, p) for h, c, p in CHANNELS if p >= MIN_PRIORITY]
+    print(f"Scraping {len(to_scrape)} channels (priority >= {MIN_PRIORITY})")
     print(f"Shorts only: {SHORTS_ONLY} | Max videos/channel: {MAX_VIDEOS_PER_CHANNEL}")
     print()
 
@@ -382,46 +315,42 @@ if __name__ == "__main__":
             try:
                 result = future.result(timeout=360)
                 metadata_log.append(result)
-                status = f"✓ {result['transcript_files']:4d} transcripts"
-                print(f"[{i:3d}/{len(to_scrape)}] {h:35s} [{c:20s}] p={p}  {status}")
+                status = f"✓ {result['transcript_files']} transcripts"
+                print(f"[{i}/{len(to_scrape)}] {h:35s} {status}")
             except Exception as e:
                 failed.append(h)
-                print(f"[{i:3d}/{len(to_scrape)}] {h:35s} ✗ {str(e)[:60]}")
+                print(f"[{i}/{len(to_scrape)}] {h:35s} ✗ {str(e)[:60]}")
 
+    # Save metadata log
     with open("story_v2_scrape_log.json", "w") as f:
         json.dump(metadata_log, f, indent=2)
 
     total_transcripts = sum(r["transcript_files"] for r in metadata_log)
-    print(f"\n{'='*60}")
+    print(f"\n{'='*50}")
     print(f"Total transcripts downloaded: {total_transcripts}")
     print(f"Failed channels: {len(failed)}")
     print(f"\nBuilding training JSONL...")
 
-    jsonl_path, stats = build_jsonl(OUT_DIR)
+    jsonl_path, stats = build_jsonl(str(OUT_DIR), metadata_log)
     print(f"Training examples written: {stats['written']}")
-    print(f"Skipped (too short):       {stats['skipped_short']}")
+    print(f"Skipped (too short): {stats['skipped_short']}")
 
+    # Zip everything
     print("\nZipping...")
     with zipfile.ZipFile("story-v2-dataset.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(jsonl_path)
         zf.write("story_v2_scrape_log.json")
-        for f in OUT_DIR.rglob("*.json3"):
+        # Include raw json3 files too
+        for f in Path(OUT_DIR).rglob("*.json3"):
             zf.write(f)
 
     size_mb = Path("story-v2-dataset.zip").stat().st_size / 1024 / 1024
-    print(f"\n{'='*60}")
+    print(f"\n{'='*50}")
     print(f"Output: story-v2-dataset.zip ({size_mb:.1f} MB)")
     print(f"Upload this file to Claude for processing.")
-
     print(f"\nChannel summary by category:")
     from collections import Counter
     cats = Counter(r["category"] for r in metadata_log)
     for cat, count in cats.most_common():
         transcripts = sum(r["transcript_files"] for r in metadata_log if r["category"] == cat)
         print(f"  {cat:25s} {count:3d} channels | {transcripts:5d} transcripts")
-
-    if failed:
-        print(f"\nChannels with 0 transcripts (check handle spelling):")
-        zero = [r["handle"] for r in metadata_log if r["transcript_files"] == 0]
-        for h in zero:
-            print(f"  {h}")
