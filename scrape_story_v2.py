@@ -266,10 +266,17 @@ def _maybe_disable_cookies(stderr_text):
     if _COOKIES_DISABLED or not stderr_text:
         return False
     s = stderr_text.lower()
-    if ("could not copy" in s and "cookie database" in s) or "could not find a cookie" in s:
+    cookie_errors = [
+        ("could not copy" in s and "cookie database" in s),  # Chrome DB locked
+        "could not find a cookie" in s,                        # No browser cookie DB
+        "failed to decrypt with dpapi" in s,                   # Chrome v127+ app-bound encryption
+        "failed to decrypt cookie" in s,                       # generic decrypt failure
+        "no such browser" in s,
+    ]
+    if any(cookie_errors):
         _COOKIES_DISABLED = True
-        print(f"  ⚠ Browser cookie DB is locked (close {COOKIES_BROWSER} or it's "
-              f"already locked). Continuing WITHOUT cookies.")
+        print(f"  ⚠ Browser cookie access failed ({COOKIES_BROWSER}). "
+              f"Continuing WITHOUT cookies for the rest of the run.")
         return True
     return False
 
