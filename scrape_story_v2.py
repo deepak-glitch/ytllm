@@ -250,14 +250,31 @@ def get_whisper_model():
 # ═════════════════════════════════════════════════════════════════════════════
 # yt-dlp HELPERS
 # ═════════════════════════════════════════════════════════════════════════════
+# Auto-disabled if the browser is locking its cookie DB (e.g. Chrome is open).
+_COOKIES_DISABLED = False
+
 def _cookies_args():
-    if COOKIES_BROWSER:
+    if COOKIES_BROWSER and not _COOKIES_DISABLED:
         return ["--cookies-from-browser", COOKIES_BROWSER]
     return []
 
 
-def run_ytdlp_subs(handle, tab, out_dir, max_duration=None):
-    """Try to download auto-subs from a channel tab."""
+def _maybe_disable_cookies(stderr_text):
+    """If yt-dlp couldn't read the browser cookie DB, disable cookies for all
+    future calls so the run can keep going."""
+    global _COOKIES_DISABLED
+    if _COOKIES_DISABLED or not stderr_text:
+        return False
+    s = stderr_text.lower()
+    if ("could not copy" in s and "cookie database" in s) or "could not find a cookie" in s:
+        _COOKIES_DISABLED = True
+        print(f"  ⚠ Browser cookie DB is locked (close {COOKIES_BROWSER} or it's "
+              f"already locked). Continuing WITHOUT cookies.")
+        return True
+    return False
+
+
+def _build_subs_cmd(handle, tab, out_dir, max_duration):
     url = f"https://www.youtube.com/{handle}{tab}"
     cmd = [
         "yt-dlp",
@@ -272,31 +289,48 @@ def run_ytdlp_subs(handle, tab, out_dir, max_duration=None):
         "-o", str(out_dir / "%(id)s.%(ext)s"),
     ]
     if max_duration is not None:
-        # "| !duration" accepts videos where duration is unknown in playlist mode
         cmd.extend(["--match-filter", f"duration < {max_duration} | !duration"])
     cmd.append(url)
+    return cmd
+
+
+def run_ytdlp_subs(handle, tab, out_dir, max_duration=None):
+    """Try to download auto-subs. If cookie DB is locked, retry without cookies."""
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=500)
+        result = subprocess.run(
+            _build_subs_cmd(handle, tab, out_dir, max_duration),
+            capture_output=True, text=True, timeout=500,
+        )
+        if _maybe_disable_cookies(result.stderr):
+            result = subprocess.run(
+                _build_subs_cmd(handle, tab, out_dir, max_duration),
+                capture_output=True, text=True, timeout=500,
+            )
         return result.stdout, result.stderr
     except subprocess.TimeoutExpired:
         return "", "TIMEOUT after 500s"
 
 
 def list_channel_video_ids(handle, tab, max_count):
-    """Get video IDs from a channel tab without downloading anything."""
+    """Get video IDs from a channel tab. Retries without cookies on cookie lock."""
     url = f"https://www.youtube.com/{handle}{tab}"
-    cmd = [
-        "yt-dlp",
-        *_cookies_args(),
-        "--flat-playlist",
-        "--print", "%(id)s",
-        "--playlist-end", str(max_count),
-        "--ignore-errors",
-        "--no-warnings",
-        url,
-    ]
+
+    def _build():
+        return [
+            "yt-dlp",
+            *_cookies_args(),
+            "--flat-playlist",
+            "--print", "%(id)s",
+            "--playlist-end", str(max_count),
+            "--ignore-errors",
+            "--no-warnings",
+            url,
+        ]
+
     try:
-        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        result = subprocess.run(_build(), capture_output=True, text=True, timeout=120)
+        if _maybe_disable_cookies(result.stderr):
+            result = subprocess.run(_build(), capture_output=True, text=True, timeout=120)
         ids = [line.strip() for line in result.stdout.strip().split("\n") if line.strip()]
         return ids
     except subprocess.TimeoutExpired:
@@ -312,19 +346,24 @@ def whisper_transcribe_video(video_id, out_dir):
 
     with tempfile.TemporaryDirectory() as tmp:
         audio_template = str(Path(tmp) / "%(id)s.%(ext)s")
-        cmd = [
-            "yt-dlp",
-            *_cookies_args(),
-            "--extract-audio",
-            "--audio-format", "mp3",
-            "--audio-quality", "5",
-            "--no-warnings",
-            "--ignore-errors",
-            "-o", audio_template,
-            f"https://www.youtube.com/watch?v={video_id}",
-        ]
+
+        def _build():
+            return [
+                "yt-dlp",
+                *_cookies_args(),
+                "--extract-audio",
+                "--audio-format", "mp3",
+                "--audio-quality", "5",
+                "--no-warnings",
+                "--ignore-errors",
+                "-o", audio_template,
+                f"https://www.youtube.com/watch?v={video_id}",
+            ]
+
         try:
-            subprocess.run(cmd, capture_output=True, timeout=180)
+            r = subprocess.run(_build(), capture_output=True, text=True, timeout=180)
+            if _maybe_disable_cookies(r.stderr):
+                subprocess.run(_build(), capture_output=True, timeout=180)
         except subprocess.TimeoutExpired:
             return False
 
