@@ -48,6 +48,20 @@ except ImportError:
         print("WARNING: Whisper install failed. Whisper fallback will be skipped.")
         _WHISPER_AVAILABLE = False
 
+# torch — needed for CUDA GPU detection.
+# If your NVIDIA GPU is not detected, install the CUDA-enabled build:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu121
+try:
+    import torch as _torch
+    _TORCH_AVAILABLE = True
+except ImportError:
+    _pip_install("torch")
+    try:
+        import torch as _torch
+        _TORCH_AVAILABLE = True
+    except ImportError:
+        _TORCH_AVAILABLE = False
+
 # ffmpeg (Whisper needs this on PATH). On Windows install manually if missing.
 if shutil.which("ffmpeg") is None:
     print("WARNING: ffmpeg not found on PATH. Whisper transcription will fail.")
@@ -72,6 +86,14 @@ COOKIES_BROWSER = "chrome"
 USE_WHISPER_FALLBACK = True
 WHISPER_MODEL_SIZE = "base"        # tiny, base, small, medium, large
 WHISPER_MAX_VIDEOS_PER_CHANNEL = 30
+
+# GPU selection for Whisper.
+# "auto"   → prefer cuda:1 (NVIDIA dedicated) when 2+ GPUs detected,
+#             else cuda:0, else cpu.
+# "cuda:1" → force NVIDIA RTX (GPU 1 on most laptops with iGPU + dGPU)
+# "cuda:0" → force GPU 0
+# "cpu"    → force CPU
+WHISPER_DEVICE = "auto"
 
 MAX_VIDEOS_PER_CHANNEL = 150
 MIN_PRIORITY = 3
@@ -175,17 +197,53 @@ CHANNELS = [
 # WHISPER MODEL LOADING (lazy)
 # ═════════════════════════════════════════════════════════════════════════════
 _whisper_model = None
+_resolved_device = None   # cached result of _resolve_whisper_device()
+
+
+def _resolve_whisper_device():
+    """Pick the best available device for Whisper.
+
+    Priority (when WHISPER_DEVICE="auto"):
+      1. cuda:1  — NVIDIA RTX (dedicated GPU on dual-GPU laptops)
+      2. cuda:0  — any CUDA GPU if only one is present
+      3. cpu     — fallback when CUDA unavailable or torch not installed
+    """
+    global _resolved_device
+    if _resolved_device is not None:
+        return _resolved_device
+
+    if WHISPER_DEVICE != "auto":
+        _resolved_device = WHISPER_DEVICE
+        return _resolved_device
+
+    if _TORCH_AVAILABLE and _torch.cuda.is_available():
+        n = _torch.cuda.device_count()
+        if n >= 2:
+            # GPU 0 is typically the Intel iGPU on laptops; GPU 1 is the NVIDIA dGPU
+            _resolved_device = "cuda:1"
+            gpu_name = _torch.cuda.get_device_name(1)
+        else:
+            _resolved_device = "cuda:0"
+            gpu_name = _torch.cuda.get_device_name(0)
+        print(f"Whisper GPU: {_resolved_device} ({gpu_name})")
+    else:
+        _resolved_device = "cpu"
+        print("Whisper GPU: cpu (no CUDA detected — install torch+cu121 for GPU speed)")
+
+    return _resolved_device
+
 
 def get_whisper_model():
-    """Lazy-load Whisper. Returns None if unavailable (graceful skip)."""
+    """Lazy-load Whisper on the selected device. Returns None if unavailable."""
     global _whisper_model
     if _whisper_model is None:
         if not _WHISPER_AVAILABLE:
             return None
         import whisper
-        print(f"Loading Whisper model '{WHISPER_MODEL_SIZE}' (first time only)...")
-        _whisper_model = whisper.load_model(WHISPER_MODEL_SIZE)
-        print("Whisper model loaded.")
+        device = _resolve_whisper_device()
+        print(f"Loading Whisper model '{WHISPER_MODEL_SIZE}' on {device} (first time only)...")
+        _whisper_model = whisper.load_model(WHISPER_MODEL_SIZE, device=device)
+        print(f"Whisper model loaded.")
     return _whisper_model
 
 
@@ -278,7 +336,8 @@ def whisper_transcribe_video(video_id, out_dir):
             model = get_whisper_model()
             if model is None:
                 return False
-            result = model.transcribe(str(mp3_files[0]), fp16=False)
+            use_fp16 = _resolve_whisper_device().startswith("cuda")
+            result = model.transcribe(str(mp3_files[0]), fp16=use_fp16)
             text = result.get("text", "").strip()
             if len(text) < 80:
                 return False
@@ -434,7 +493,8 @@ if __name__ == "__main__":
     print(f"Story Scraper v2")
     print(f"Channels: {len(to_scrape)} (priority >= {MIN_PRIORITY})")
     print(f"Cookies from browser: {COOKIES_BROWSER or 'DISABLED'}")
-    print(f"Whisper fallback: {'ENABLED ('+WHISPER_MODEL_SIZE+')' if USE_WHISPER_FALLBACK else 'DISABLED'}")
+    whisper_label = f"ENABLED ({WHISPER_MODEL_SIZE}, device={WHISPER_DEVICE})" if USE_WHISPER_FALLBACK else "DISABLED"
+    print(f"Whisper fallback: {whisper_label}")
     print(f"Strategy per channel: /shorts → /videos (<300s) → whisper")
     print()
 
