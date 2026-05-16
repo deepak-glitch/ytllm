@@ -19,6 +19,42 @@ import os, json, re, glob, subprocess, sys, shutil, zipfile, tempfile
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
+# ─────────────────────────────────────────────
+# AUTO-INSTALL DEPENDENCIES
+# ─────────────────────────────────────────────
+def _pip_install(pkg):
+    subprocess.run([sys.executable, "-m", "pip", "install", pkg, "-q"],
+                   check=False)
+
+# yt-dlp (required)
+try:
+    import yt_dlp  # noqa
+except ImportError:
+    print("Installing yt-dlp...")
+    _pip_install("yt-dlp")
+
+# openai-whisper (for fallback transcription)
+_WHISPER_AVAILABLE = False
+try:
+    import whisper  # noqa
+    _WHISPER_AVAILABLE = True
+except ImportError:
+    print("Installing openai-whisper (one-time, ~1 GB download)...")
+    _pip_install("openai-whisper")
+    try:
+        import whisper  # noqa
+        _WHISPER_AVAILABLE = True
+    except ImportError:
+        print("WARNING: Whisper install failed. Whisper fallback will be skipped.")
+        _WHISPER_AVAILABLE = False
+
+# ffmpeg (Whisper needs this on PATH). On Windows install manually if missing.
+if shutil.which("ffmpeg") is None:
+    print("WARNING: ffmpeg not found on PATH. Whisper transcription will fail.")
+    print("         Windows: download from https://ffmpeg.org/download.html and add to PATH")
+    print("         Linux:   sudo apt install ffmpeg")
+    print("         macOS:   brew install ffmpeg")
+
 # ═════════════════════════════════════════════════════════════════════════════
 # CONFIG — edit these to taste
 # ═════════════════════════════════════════════════════════════════════════════
@@ -29,11 +65,11 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 COOKIES_BROWSER = "chrome"
 
 # Whisper transcription fallback for channels without auto-subs
-# - Set False to skip (faster, but ~30-50% of channels will give 0 results)
-# - Set True to download + transcribe audio when subs aren't available
-# - Requires: pip install openai-whisper  (and ffmpeg on system PATH)
-# - GPU recommended; on CPU, "base" model = ~1x realtime (slow)
-USE_WHISPER_FALLBACK = False
+# Auto-runs when a channel returns 0 transcripts from /shorts AND /videos.
+# - Requires ffmpeg on PATH (script will warn if missing)
+# - GPU recommended; "tiny" model = fastest, "base" = balanced, "small"+ = best
+# - WHISPER_MAX_VIDEOS_PER_CHANNEL caps audio downloads per failing channel
+USE_WHISPER_FALLBACK = True
 WHISPER_MODEL_SIZE = "base"        # tiny, base, small, medium, large
 WHISPER_MAX_VIDEOS_PER_CHANNEL = 30
 
@@ -141,16 +177,13 @@ CHANNELS = [
 _whisper_model = None
 
 def get_whisper_model():
+    """Lazy-load Whisper. Returns None if unavailable (graceful skip)."""
     global _whisper_model
     if _whisper_model is None:
-        try:
-            import whisper
-        except ImportError:
-            print("ERROR: openai-whisper not installed.")
-            print("       pip install openai-whisper")
-            print("       Also requires ffmpeg on system PATH.")
-            sys.exit(1)
-        print(f"Loading Whisper model '{WHISPER_MODEL_SIZE}'...")
+        if not _WHISPER_AVAILABLE:
+            return None
+        import whisper
+        print(f"Loading Whisper model '{WHISPER_MODEL_SIZE}' (first time only)...")
         _whisper_model = whisper.load_model(WHISPER_MODEL_SIZE)
         print("Whisper model loaded.")
     return _whisper_model
@@ -243,6 +276,8 @@ def whisper_transcribe_video(video_id, out_dir):
 
         try:
             model = get_whisper_model()
+            if model is None:
+                return False
             result = model.transcribe(str(mp3_files[0]), fp16=False)
             text = result.get("text", "").strip()
             if len(text) < 80:
@@ -273,9 +308,9 @@ def scrape_channel(handle, category, priority):
         sub_count = len(list(out.glob("*.json3")))
         used_videos = True
 
-    # Step 3: if still nothing AND Whisper enabled, transcribe top N videos
+    # Step 3: if still nothing AND Whisper enabled+installed, transcribe top N
     whisper_count = 0
-    if sub_count == 0 and USE_WHISPER_FALLBACK:
+    if sub_count == 0 and USE_WHISPER_FALLBACK and _WHISPER_AVAILABLE:
         # Try /shorts tab first for IDs, then /videos
         video_ids = list_channel_video_ids(handle, "/shorts", WHISPER_MAX_VIDEOS_PER_CHANNEL)
         if not video_ids:
