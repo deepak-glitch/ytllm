@@ -217,63 +217,63 @@ CHANNELS = [
 ]
 
 # ─────────────────────────────────────────────
-# SCRAPER CONFIG  (identical to scrape_channels.py)
+# SCRAPER CONFIG  (matches run_extra_channels.py which is proven to work)
 # ─────────────────────────────────────────────
-MAX_VIDEOS_PER_CHANNEL = 150
 MIN_PRIORITY = 4                   # Skip priority < 4 (set to 3 for more data)
-SHORTS_ONLY = True
-MAX_WORKERS = 4
+MAX_WORKERS = 3                    # Parallel channel downloads
 OUT_DIR = Path("story_v2_transcripts")
+ARCHIVES_DIR = Path("story_v2_archives")
 OUT_DIR.mkdir(exist_ok=True)
+ARCHIVES_DIR.mkdir(exist_ok=True)
 
 
-def get_channel_url(handle):
-    if SHORTS_ONLY:
-        return f"https://www.youtube.com/{handle}/shorts"
-    return f"https://www.youtube.com/{handle}"
+def seed_archive(handle, out_dir, archive_path):
+    """Pre-populate archive from already-downloaded files so resumed runs skip them."""
+    existing = {p.name.removesuffix(".en.json3") for p in out_dir.glob("*.en.json3")}
+    archived = set()
+    if archive_path.exists():
+        for line in open(archive_path, encoding="utf-8"):
+            line = line.strip()
+            if line.startswith("youtube "):
+                archived.add(line.split(" ", 1)[1])
+    new_ids = existing - archived
+    if new_ids:
+        with open(archive_path, "a", encoding="utf-8") as f:
+            for vid in sorted(new_ids):
+                f.write(f"youtube {vid}\n")
+    if archived or new_ids:
+        print(f"  [{handle}] {len(archived | new_ids)} already downloaded, skipping")
 
 
 def scrape_channel(handle, category, priority):
-    out = OUT_DIR / category / handle.lstrip("@")
-    out.mkdir(parents=True, exist_ok=True)
+    out_dir = OUT_DIR / category / handle.lstrip("@")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    archive_path = ARCHIVES_DIR / f"{handle.lstrip('@')}.txt"
+    seed_archive(handle, out_dir, archive_path)
 
+    # Exact command from run_extra_channels.py — proven to work
     cmd = [
         "yt-dlp",
-        "--write-auto-sub",
-        "--sub-lang", "en",
-        "--sub-format", "json3",
-        "--skip-download",
-        "--ignore-errors",
-        "--no-warnings",
-        "--match-filter", "duration < 65" if SHORTS_ONLY else "duration < 600",
-        "--max-downloads", str(MAX_VIDEOS_PER_CHANNEL),
-        "--print", "%(id)s\t%(title)s\t%(duration)s\t%(view_count)s\t%(like_count)s",
-        "-o", str(out / "%(id)s.%(ext)s"),
-        get_channel_url(handle)
+        "--write-auto-sub", "--sub-lang", "en", "--sub-format", "json3",
+        "--skip-download", "--ignore-errors", "--no-warnings",
+        "--download-archive", str(archive_path),
+        "--sleep-requests", "3",
+        "--sleep-interval", "3",
+        "--max-sleep-interval", "8",
+        "--sleep-subtitles", "2",
+        "-o", str(out_dir / "%(id)s.%(ext)s"),
+        f"https://www.youtube.com/{handle}/shorts",
     ]
 
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    # No capture_output — print directly to terminal like run_extra_channels.py
+    subprocess.run(cmd, timeout=600)
 
-    saved = list(out.glob("*.json3"))
-
-    videos = []
-    for line in result.stdout.strip().split("\n"):
-        parts = line.split("\t")
-        if len(parts) >= 3:
-            videos.append({
-                "id": parts[0],
-                "title": parts[1] if len(parts) > 1 else "",
-                "duration": parts[2] if len(parts) > 2 else "",
-                "views": parts[3] if len(parts) > 3 else "",
-                "likes": parts[4] if len(parts) > 4 else "",
-            })
-
+    saved = list(out_dir.glob("*.json3"))
     return {
         "handle": handle,
         "category": category,
         "priority": priority,
         "transcript_files": len(saved),
-        "video_metadata": videos[:10],
         "status": "ok" if saved else "no_transcripts"
     }
 
@@ -297,7 +297,7 @@ def parse_json3_transcript(filepath):
         return ""
 
 
-def build_jsonl(out_dir):
+def build_jsonl(out_dir: Path):
     """Convert all transcripts to training JSONL with per-category weights."""
     SYSTEM = (
         "You are a viral short-form video creator. Write engaging short-form story scripts "
@@ -397,7 +397,7 @@ if __name__ == "__main__":
     print(f"Failed channels: {len(failed)}")
     print(f"\nBuilding training JSONL...")
 
-    jsonl_path, stats = build_jsonl(str(OUT_DIR))
+    jsonl_path, stats = build_jsonl(OUT_DIR)
     print(f"Training examples written: {stats['written']}")
     print(f"Skipped (too short):       {stats['skipped_short']}")
 
@@ -405,7 +405,7 @@ if __name__ == "__main__":
     with zipfile.ZipFile("story-v2-dataset.zip", "w", zipfile.ZIP_DEFLATED) as zf:
         zf.write(jsonl_path)
         zf.write("story_v2_scrape_log.json")
-        for f in Path(OUT_DIR).rglob("*.json3"):
+        for f in OUT_DIR.rglob("*.json3"):
             zf.write(f)
 
     size_mb = Path("story-v2-dataset.zip").stat().st_size / 1024 / 1024
