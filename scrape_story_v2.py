@@ -145,22 +145,14 @@ CHANNELS = [
 # ─────────────────────────────────────────────
 MAX_VIDEOS_PER_CHANNEL = 150
 MIN_PRIORITY = 3
-SHORTS_ONLY = True
 MAX_WORKERS = 4
 OUT_DIR = Path("story_v2_transcripts")
 OUT_DIR.mkdir(exist_ok=True)
 
 
-def get_channel_url(handle):
-    if SHORTS_ONLY:
-        return f"https://www.youtube.com/{handle}/shorts"
-    return f"https://www.youtube.com/{handle}"
-
-
-def scrape_channel(handle, category, priority):
-    out = OUT_DIR / category / handle.lstrip("@")
-    out.mkdir(parents=True, exist_ok=True)
-
+def run_ytdlp(handle, tab, out_dir, max_duration):
+    """Run yt-dlp for one channel tab. Returns (stdout, stderr)."""
+    url = f"https://www.youtube.com/{handle}{tab}"
     cmd = [
         "yt-dlp",
         "--write-auto-sub",
@@ -169,41 +161,50 @@ def scrape_channel(handle, category, priority):
         "--skip-download",
         "--ignore-errors",
         "--no-warnings",
-        "--match-filter", "duration < 65" if SHORTS_ONLY else "duration < 600",
+        "--match-filter", f"duration < {max_duration}",
         "--max-downloads", str(MAX_VIDEOS_PER_CHANNEL),
-        "--print", "%(id)s\t%(title)s\t%(duration)s\t%(view_count)s\t%(like_count)s",
-        "-o", str(out / "%(id)s.%(ext)s"),
-        get_channel_url(handle)
+        "-o", str(out_dir / "%(id)s.%(ext)s"),
+        url,
     ]
-
     result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    return result.stdout, result.stderr
 
+
+def scrape_channel(handle, category, priority):
+    out = OUT_DIR / category / handle.lstrip("@")
+    out.mkdir(parents=True, exist_ok=True)
+
+    # Strategy: try /shorts first (fast, only short videos).
+    # If 0 results, fall back to /videos with duration<180s filter
+    # (catches both shorts and short narrative videos).
+    _, err1 = run_ytdlp(handle, "/shorts", out, max_duration=65)
     saved = list(out.glob("*.json3"))
 
-    videos = []
-    for line in result.stdout.strip().split("\n"):
-        parts = line.split("\t")
-        if len(parts) >= 3:
-            videos.append({
-                "id": parts[0],
-                "title": parts[1] if len(parts) > 1 else "",
-                "duration": parts[2] if len(parts) > 2 else "",
-                "views": parts[3] if len(parts) > 3 else "",
-                "likes": parts[4] if len(parts) > 4 else "",
-            })
+    used_fallback = False
+    err2 = ""
+    if not saved:
+        _, err2 = run_ytdlp(handle, "/videos", out, max_duration=180)
+        saved = list(out.glob("*.json3"))
+        used_fallback = True
 
-    # Also capture stderr so we can see WHY a channel failed
+    # Surface the most relevant error line if we got nothing
     err_snippet = ""
-    if not saved and result.stderr:
-        err_snippet = result.stderr.strip().split("\n")[-1][:120]
+    if not saved:
+        combined = (err2 or err1 or "").strip().split("\n")
+        for line in reversed(combined):
+            if "ERROR" in line or "WARNING" in line:
+                err_snippet = line[:130]
+                break
+        if not err_snippet and combined:
+            err_snippet = combined[-1][:130]
 
     return {
         "handle": handle,
         "category": category,
         "priority": priority,
         "transcript_files": len(saved),
-        "video_metadata": videos[:10],
         "status": "ok" if saved else "no_transcripts",
+        "used_fallback": used_fallback,
         "error": err_snippet,
     }
 
@@ -267,7 +268,8 @@ def build_jsonl(out_dir, metadata_log):
 if __name__ == "__main__":
     to_scrape = [(h, c, p) for h, c, p in CHANNELS if p >= MIN_PRIORITY]
     print(f"Scraping {len(to_scrape)} channels (priority >= {MIN_PRIORITY})")
-    print(f"Shorts only: {SHORTS_ONLY} | Max videos/channel: {MAX_VIDEOS_PER_CHANNEL}")
+    print(f"Strategy: try /shorts first, fall back to /videos with duration<180s")
+    print(f"Max videos per channel: {MAX_VIDEOS_PER_CHANNEL}")
     print()
 
     metadata_log = []
@@ -281,8 +283,9 @@ if __name__ == "__main__":
                 result = future.result(timeout=360)
                 metadata_log.append(result)
                 count = result['transcript_files']
+                fb = " [fallback]" if result.get('used_fallback') else ""
                 if count > 0:
-                    status = f"✓ {count:4d} transcripts"
+                    status = f"✓ {count:4d} transcripts{fb}"
                 else:
                     err = result.get('error', '')
                     status = f"✗ 0 transcripts  {err}"
