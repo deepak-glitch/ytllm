@@ -1,75 +1,104 @@
 """
-Story Director LLM — YouTube Channel Transcript Scraper (v2)
-Same scraping engine as scrape_channels.py — verified handles only.
+Story Director LLM — YouTube Channel Transcript Scraper v2
+─────────────────────────────────────────────────────────────────────────────
+Narration-focused curated channel list with full pipeline:
+  1. Try /shorts URL with browser cookies (bypasses age/bot blocks)
+  2. Fall back to /videos URL with duration filter
+  3. If no auto-subs available, use Whisper to transcribe (optional)
 
-Run on YOUR machine: python3 scrape_story_v2.py
+Run on YOUR machine:
+  pip install yt-dlp
+  pip install openai-whisper       # only if USE_WHISPER_FALLBACK = True
+  python3 scrape_story_v2.py
+
 Output: story-v2-dataset.zip → upload back to Claude.
-
-Requirements: pip install yt-dlp
+─────────────────────────────────────────────────────────────────────────────
 """
 
-import os, json, re, glob, subprocess, sys, shutil, zipfile
+import os, json, re, glob, subprocess, sys, shutil, zipfile, tempfile
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# ─────────────────────────────────────────────
-# VERIFIED CHANNEL HANDLES (web-searched)
-# Format: ("@handle", "category", priority 1-5)
-# ─────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
+# CONFIG — edit these to taste
+# ═════════════════════════════════════════════════════════════════════════════
+
+# Browser to pull cookies from (bypasses age-gates + YouTube bot detection)
+# Options: "firefox", "chrome", "edge", "safari", "brave", "opera"
+# Set to None to disable cookies (some channels will fail)
+COOKIES_BROWSER = "chrome"
+
+# Whisper transcription fallback for channels without auto-subs
+# - Set False to skip (faster, but ~30-50% of channels will give 0 results)
+# - Set True to download + transcribe audio when subs aren't available
+# - Requires: pip install openai-whisper  (and ffmpeg on system PATH)
+# - GPU recommended; on CPU, "base" model = ~1x realtime (slow)
+USE_WHISPER_FALLBACK = False
+WHISPER_MODEL_SIZE = "base"        # tiny, base, small, medium, large
+WHISPER_MAX_VIDEOS_PER_CHANNEL = 30
+
+MAX_VIDEOS_PER_CHANNEL = 150
+MIN_PRIORITY = 3
+MAX_WORKERS = 3                    # yt-dlp parallel channel downloads
+OUT_DIR = Path("story_v2_transcripts")
+OUT_DIR.mkdir(exist_ok=True)
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+# CURATED CHANNEL LIST — narration-heavy storytellers
+# These channels almost always have auto-generated subtitles because
+# they speak throughout (narration, voiceover, or talking head).
+# Verified handles via web search.
+# ═════════════════════════════════════════════════════════════════════════════
 CHANNELS = [
 
-    # ── ZACKDFILMS-STYLE — live-action narrative shorts ──
-    ("@ryan",                "zackd_style",      5),   # Ryan Trahan
-    ("@NasDaily",            "zackd_style",      5),   # Nas Daily
-    ("@CALEBWSIMPSON",       "zackd_style",      5),   # Caleb Simpson ("how much rent" shorts)
-    ("@clintcoley",          "zackd_style",      5),   # Comedian Clint Coley (viral shorts)
-    ("@jordanmatter",        "zackd_style",      5),   # Jordan Matter
-    ("@brentrivera",         "zackd_style",      4),   # Brent Rivera
-    ("@ZHC",                 "zackd_style",      4),   # ZHC art challenges
-    ("@michaelreeves",       "zackd_style",      4),   # Michael Reeves
-    ("@JoshuaWeissman",      "zackd_style",      4),   # Joshua Weissman
-    ("@WhistlinDiesel",      "zackd_style",      4),   # WhistlinDiesel
-    ("@IShowSpeed",          "zackd_style",      3),   # IShowSpeed
-    ("@LazarBeam",           "zackd_style",      3),   # LazarBeam
-    ("@TommyInnit",          "zackd_style",      3),   # TommyInnit
-    ("@WilburSoot",          "zackd_style",      3),   # WilburSoot
-    ("@GeorgeNotFound",      "zackd_style",      3),   # GeorgeNotFound
-
-    # ── SUPERFICIAL2-STYLE — animated story shorts ──
-    ("@casvandepol",         "animated_story",   5),   # Cas van de Pol
-    ("@itsalexclark",        "animated_story",   5),   # Alex Clark
-    ("@Haminations",         "animated_story",   5),   # Haminations
-    ("@CircleToonsHD",       "animated_story",   5),   # CircleToonsHD
-    ("@jaidenanimations",    "animated_story",   5),   # Jaiden Animations
-    ("@TheOdd1sOut",         "animated_story",   5),   # TheOdd1sOut
-    ("@AlanBecker",          "animated_story",   5),   # Alan Becker
-    ("@kevinparry",          "animated_story",   5),   # Kevin Parry
+    # ── ANIMATED NARRATION STORY (Superficial2-vibe, but with narration) ──
     ("@inanutshell",         "animated_story",   5),   # Kurzgesagt
-    ("@TED-Ed",              "animated_story",   5),   # TED-Ed
-    ("@danielthrasher",      "animated_story",   4),   # Daniel Thrasher
-    ("@SomethingElseYT",     "animated_story",   4),   # SomethingElseYT
-    ("@GingerPale",          "animated_story",   4),   # GingerPale
-    ("@Domics",              "animated_story",   4),   # Domics
-    ("@LetMeExplainStudios", "animated_story",   4),   # Let Me Explain Studios
-    ("@SwooZie",             "animated_story",   4),   # sWooZie
-    ("@illymation",          "animated_story",   4),   # illymation
-    ("@CasuallyExplained",   "animated_story",   4),   # Casually Explained
+    ("@TED-Ed",              "animated_story",   5),
+    ("@itsalexclark",        "animated_story",   5),   # Alex Clark
+    ("@Haminations",         "animated_story",   5),
+    ("@jaidenanimations",    "animated_story",   5),
+    ("@TheOdd1sOut",         "animated_story",   5),
+    ("@danielthrasher",      "animated_story",   4),
+    ("@SomethingElseYT",     "animated_story",   4),
+    ("@GingerPale",          "animated_story",   4),
+    ("@Domics",              "animated_story",   4),
+    ("@LetMeExplainStudios", "animated_story",   4),
+    ("@SwooZie",             "animated_story",   4),
+    ("@illymation",          "animated_story",   4),
 
-    # ── 3D / pixel / game-dev story ──
-    ("@TanTanDev",           "pixel_3d_story",   5),
-    ("@SebastianLague",      "pixel_3d_story",   5),
-    ("@PolyMars",            "pixel_3d_story",   5),
-    ("@t3ssel8r",            "pixel_3d_story",   5),
-    ("@HeartBeast",          "pixel_3d_story",   4),
-    ("@AdamCYounis",         "pixel_3d_story",   4),
-    ("@MortMort",            "pixel_3d_story",   4),
-    ("@DaFluffyPotato",      "pixel_3d_story",   4),
-    ("@GodotEngine",         "pixel_3d_story",   3),
+    # ── DOCUMENTARY NARRATION SHORTS ──
+    ("@MarkRober",           "doc_short",        5),
+    ("@Veritasium",          "doc_short",        5),
+    ("@CGPGrey",             "doc_short",        5),
+    ("@3blue1brown",         "doc_short",        5),
+    ("@TomScottGo",          "doc_short",        5),
+    ("@Wendoverproductions", "doc_short",        4),
+    ("@RealEngineering",     "doc_short",        4),
+    ("@PracticalEngineering","doc_short",        4),
+    ("@ColdFusion",          "doc_short",        4),
+    ("@ElectroBOOM",         "doc_short",        4),
+    ("@Vox",                 "doc_short",        4),
+    ("@ContraPoints",        "doc_short",        4),
+    ("@PhilosophyTube",      "doc_short",        4),
 
-    # ── HOOK-FIRST COMMENTARY ──
-    ("@drewisgooden",        "commentary_story", 5),   # Drew Gooden
-    ("@Danny-Gonzalez",      "commentary_story", 5),   # Danny Gonzalez
-    ("@EddyBurback",         "commentary_story", 5),   # Eddy Burback
+    # ── WORLDBUILDING / LORE NARRATION ──
+    ("@Oversimplified",      "worldbuild_story", 5),
+    ("@SamONellaAcademy",   "worldbuild_story", 5),
+    ("@TierZoo",             "worldbuild_story", 5),
+    ("@Nerdwriter1",         "worldbuild_story", 5),
+    ("@LEMMiNO",             "worldbuild_story", 5),
+    ("@HelloFutureMe",       "worldbuild_story", 5),
+    ("@halfasinteresting",   "worldbuild_story", 4),
+    ("@MapMen",              "worldbuild_story", 4),
+    ("@AlternateHistoryHub", "worldbuild_story", 4),
+    ("@HistoryMarche",       "worldbuild_story", 4),
+    ("@RealLifeLore",        "worldbuild_story", 4),
+
+    # ── STORY-DRIVEN COMMENTARY (talking head, always has subs) ──
+    ("@drewisgooden",        "commentary_story", 5),
+    ("@Danny-Gonzalez",      "commentary_story", 5),
+    ("@EddyBurback",         "commentary_story", 5),
     ("@KurtisConner",        "commentary_story", 4),
     ("@penguinz0",           "commentary_story", 4),   # MoistCr1TiKaL
     ("@JarvisJohnson",       "commentary_story", 4),
@@ -77,122 +106,191 @@ CHANNELS = [
     ("@SunnyV2",             "commentary_story", 4),
     ("@EmpLemon",            "commentary_story", 5),
 
-    # ── EMOTIONAL / DRAMATIC SHORT FILMS ──
-    ("@Struthless",          "emotional_story",  5),
-    ("@AnthonyPadilla",      "emotional_story",  5),
-    ("@yestheory",           "emotional_story",  5),   # Yes Theory
-    ("@Omeleto",             "emotional_story",  5),
-    ("@ShortoftheWeek",      "emotional_story",  5),
-    ("@dust",                "emotional_story",  5),   # Dust sci-fi
-    ("@Primer",              "emotional_story",  5),
-    ("@WongFuProductions",   "emotional_story",  5),
-    ("@MyStoryAnimated",     "emotional_story",  4),   # My Story Animated
-
-    # ── TRUE CRIME / SUSPENSE ──
-    ("@Nightmind",           "true_crime_story", 4),   # Nightmind
-    ("@CreepsMcPasta",       "true_crime_story", 4),
-    ("@ScaryInteresting",    "true_crime_story", 4),
-    ("@Charismaoncommand",   "true_crime_story", 4),
-
-    # ── REDDIT / KARMA ──
-    ("@rSlash",              "reddit_story",     5),   # r/Slash
-    ("@MrRedditStories",     "reddit_story",     4),
-    ("@DnDShorts",           "reddit_story",     4),
-
-    # ── WORLD BUILDING / LORE ──
-    ("@Oversimplified",      "worldbuild_story", 5),
-    ("@SamONellaAcademy",   "worldbuild_story", 5),   # Sam O'Nella Academy
-    ("@TierZoo",             "worldbuild_story", 5),
-    ("@Nerdwriter1",         "worldbuild_story", 5),   # Nerdwriter1
-    ("@LEMMiNO",             "worldbuild_story", 5),   # LEMMiNO
-    ("@halfasinteresting",   "worldbuild_story", 4),
-    ("@MapMen",              "worldbuild_story", 4),
-    ("@AlternateHistoryHub", "worldbuild_story", 4),
-    ("@WhatifAltHist",       "worldbuild_story", 4),
-    ("@HistoryMarche",       "worldbuild_story", 4),
-    ("@RealLifeLore",        "worldbuild_story", 4),
-    ("@HelloFutureMe",       "worldbuild_story", 5),
-
-    # ── STORY CRAFT / SCREENWRITING ──
+    # ── STORY CRAFT / SCREENWRITING (talking head, always has subs) ──
     ("@StudioBinder",        "story_craft",      5),
     ("@TaleFoundry",         "story_craft",      5),
     ("@BrandonSanderson",    "story_craft",      5),
     ("@FilmRiot",            "story_craft",      4),
-    ("@Veritasium",          "story_craft",      5),
 
-    # ── DOCUMENTARY SHORTS ──
-    ("@MarkRober",           "doc_short",        5),
-    ("@ColdFusion",          "doc_short",        4),
-    ("@RealEngineering",     "doc_short",        4),
-    ("@PracticalEngineering","doc_short",        4),   # Practical Engineering
-    ("@Wendoverproductions", "doc_short",        4),
-    ("@CGPGrey",             "doc_short",        5),
-    ("@3blue1brown",         "doc_short",        5),
-    ("@TomScottGo",          "doc_short",        5),   # Tom Scott
-    ("@Vox",                 "doc_short",        4),   # Vox
-    ("@ElectroBOOM",         "doc_short",        4),
-    ("@ContraPoints",        "doc_short",        4),
-    ("@PhilosophyTube",      "doc_short",        4),
+    # ── EMOTIONAL / STORY NARRATION ──
+    ("@MyStoryAnimated",     "emotional_story",  5),
+    ("@AnthonyPadilla",      "emotional_story",  5),
+    ("@yestheory",           "emotional_story",  5),
+    ("@Struthless",          "emotional_story",  5),
+    ("@WongFuProductions",   "emotional_story",  4),
 
-    # ── COMEDY STORY ──
-    ("@jacksfilms",          "comedy_story",     4),
-    ("@SMii7Y",              "comedy_story",     4),
-    ("@DidYouKnowGaming",    "comedy_story",     4),
+    # ── REDDIT / KARMA STORY NARRATION ──
+    ("@rSlash",              "reddit_story",     5),
+    ("@DnDShorts",           "reddit_story",     4),
+
+    # ── TRUE CRIME / SUSPENSE NARRATION ──
+    ("@Nightmind",           "true_crime_story", 4),
+    ("@CreepsMcPasta",       "true_crime_story", 4),
+    ("@ScaryInteresting",    "true_crime_story", 4),
+    ("@Charismaoncommand",   "true_crime_story", 4),
+
+    # ── NARRATION-HEAVY VIRAL SHORTS ──
+    ("@NasDaily",            "zackd_style",      5),
+    ("@CasuallyExplained",   "zackd_style",      4),
 ]
 
-# ─────────────────────────────────────────────
-# SCRAPER CONFIG
-# ─────────────────────────────────────────────
-MAX_VIDEOS_PER_CHANNEL = 150
-MIN_PRIORITY = 3
-MAX_WORKERS = 4
-OUT_DIR = Path("story_v2_transcripts")
-OUT_DIR.mkdir(exist_ok=True)
+
+# ═════════════════════════════════════════════════════════════════════════════
+# WHISPER MODEL LOADING (lazy)
+# ═════════════════════════════════════════════════════════════════════════════
+_whisper_model = None
+
+def get_whisper_model():
+    global _whisper_model
+    if _whisper_model is None:
+        try:
+            import whisper
+        except ImportError:
+            print("ERROR: openai-whisper not installed.")
+            print("       pip install openai-whisper")
+            print("       Also requires ffmpeg on system PATH.")
+            sys.exit(1)
+        print(f"Loading Whisper model '{WHISPER_MODEL_SIZE}'...")
+        _whisper_model = whisper.load_model(WHISPER_MODEL_SIZE)
+        print("Whisper model loaded.")
+    return _whisper_model
 
 
-def run_ytdlp(handle, tab, out_dir, max_duration):
-    """Run yt-dlp for one channel tab. Returns (stdout, stderr)."""
+# ═════════════════════════════════════════════════════════════════════════════
+# yt-dlp HELPERS
+# ═════════════════════════════════════════════════════════════════════════════
+def _cookies_args():
+    if COOKIES_BROWSER:
+        return ["--cookies-from-browser", COOKIES_BROWSER]
+    return []
+
+
+def run_ytdlp_subs(handle, tab, out_dir, max_duration=None):
+    """Try to download auto-subs from a channel tab."""
     url = f"https://www.youtube.com/{handle}{tab}"
     cmd = [
         "yt-dlp",
+        *_cookies_args(),
         "--write-auto-sub",
         "--sub-lang", "en",
         "--sub-format", "json3",
         "--skip-download",
         "--ignore-errors",
         "--no-warnings",
-        "--match-filter", f"duration < {max_duration}",
         "--max-downloads", str(MAX_VIDEOS_PER_CHANNEL),
         "-o", str(out_dir / "%(id)s.%(ext)s"),
+    ]
+    if max_duration is not None:
+        # "| !duration" accepts videos where duration is unknown in playlist mode
+        cmd.extend(["--match-filter", f"duration < {max_duration} | !duration"])
+    cmd.append(url)
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=500)
+        return result.stdout, result.stderr
+    except subprocess.TimeoutExpired:
+        return "", "TIMEOUT after 500s"
+
+
+def list_channel_video_ids(handle, tab, max_count):
+    """Get video IDs from a channel tab without downloading anything."""
+    url = f"https://www.youtube.com/{handle}{tab}"
+    cmd = [
+        "yt-dlp",
+        *_cookies_args(),
+        "--flat-playlist",
+        "--print", "%(id)s",
+        "--playlist-end", str(max_count),
+        "--ignore-errors",
+        "--no-warnings",
         url,
     ]
-    result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
-    return result.stdout, result.stderr
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=120)
+        ids = [line.strip() for line in result.stdout.strip().split("\n") if line.strip()]
+        return ids
+    except subprocess.TimeoutExpired:
+        return []
 
 
+def whisper_transcribe_video(video_id, out_dir):
+    """Download audio for one video and transcribe with Whisper.
+    Returns True if a transcript was written."""
+    out_path = out_dir / f"{video_id}.whisper.txt"
+    if out_path.exists():
+        return True
+
+    with tempfile.TemporaryDirectory() as tmp:
+        audio_template = str(Path(tmp) / "%(id)s.%(ext)s")
+        cmd = [
+            "yt-dlp",
+            *_cookies_args(),
+            "--extract-audio",
+            "--audio-format", "mp3",
+            "--audio-quality", "5",
+            "--no-warnings",
+            "--ignore-errors",
+            "-o", audio_template,
+            f"https://www.youtube.com/watch?v={video_id}",
+        ]
+        try:
+            subprocess.run(cmd, capture_output=True, timeout=180)
+        except subprocess.TimeoutExpired:
+            return False
+
+        mp3_files = list(Path(tmp).glob("*.mp3"))
+        if not mp3_files:
+            return False
+
+        try:
+            model = get_whisper_model()
+            result = model.transcribe(str(mp3_files[0]), fp16=False)
+            text = result.get("text", "").strip()
+            if len(text) < 80:
+                return False
+            out_path.write_text(text, encoding="utf-8")
+            return True
+        except Exception as e:
+            print(f"  Whisper error on {video_id}: {str(e)[:100]}")
+            return False
+
+
+# ═════════════════════════════════════════════════════════════════════════════
+# SCRAPE ONE CHANNEL
+# ═════════════════════════════════════════════════════════════════════════════
 def scrape_channel(handle, category, priority):
     out = OUT_DIR / category / handle.lstrip("@")
     out.mkdir(parents=True, exist_ok=True)
 
-    # Strategy: try /shorts first (fast, only short videos).
-    # If 0 results, fall back to /videos with duration<180s filter
-    # (catches both shorts and short narrative videos).
-    _, err1 = run_ytdlp(handle, "/shorts", out, max_duration=65)
-    saved = list(out.glob("*.json3"))
+    # Step 1: try /shorts (no duration filter — shorts are already short)
+    _, err1 = run_ytdlp_subs(handle, "/shorts", out, max_duration=None)
+    sub_count = len(list(out.glob("*.json3")))
 
-    used_fallback = False
+    # Step 2: if no subs, try /videos with duration filter
+    used_videos = False
     err2 = ""
-    if not saved:
-        _, err2 = run_ytdlp(handle, "/videos", out, max_duration=180)
-        saved = list(out.glob("*.json3"))
-        used_fallback = True
+    if sub_count == 0:
+        _, err2 = run_ytdlp_subs(handle, "/videos", out, max_duration=300)
+        sub_count = len(list(out.glob("*.json3")))
+        used_videos = True
 
-    # Surface the most relevant error line if we got nothing
+    # Step 3: if still nothing AND Whisper enabled, transcribe top N videos
+    whisper_count = 0
+    if sub_count == 0 and USE_WHISPER_FALLBACK:
+        # Try /shorts tab first for IDs, then /videos
+        video_ids = list_channel_video_ids(handle, "/shorts", WHISPER_MAX_VIDEOS_PER_CHANNEL)
+        if not video_ids:
+            video_ids = list_channel_video_ids(handle, "/videos", WHISPER_MAX_VIDEOS_PER_CHANNEL)
+        for vid in video_ids:
+            if whisper_transcribe_video(vid, out):
+                whisper_count += 1
+
+    # Build error snippet for reporting
     err_snippet = ""
-    if not saved:
+    total = sub_count + whisper_count
+    if total == 0:
         combined = (err2 or err1 or "").strip().split("\n")
         for line in reversed(combined):
-            if "ERROR" in line or "WARNING" in line:
+            if "ERROR" in line or "WARNING" in line or "TIMEOUT" in line:
                 err_snippet = line[:130]
                 break
         if not err_snippet and combined:
@@ -202,16 +300,21 @@ def scrape_channel(handle, category, priority):
         "handle": handle,
         "category": category,
         "priority": priority,
-        "transcript_files": len(saved),
-        "status": "ok" if saved else "no_transcripts",
-        "used_fallback": used_fallback,
+        "sub_count": sub_count,
+        "whisper_count": whisper_count,
+        "total": total,
+        "used_videos_tab": used_videos,
+        "status": "ok" if total > 0 else "no_transcripts",
         "error": err_snippet,
     }
 
 
+# ═════════════════════════════════════════════════════════════════════════════
+# TRANSCRIPT PARSING + JSONL BUILDING
+# ═════════════════════════════════════════════════════════════════════════════
 def parse_json3_transcript(filepath):
     try:
-        with open(filepath) as f:
+        with open(filepath, encoding="utf-8") as f:
             data = json.load(f)
         events = data.get("events", [])
         words = []
@@ -221,91 +324,126 @@ def parse_json3_transcript(filepath):
                 if utf8 and utf8 != "\n":
                     words.append(utf8)
         text = " ".join(words)
-        text = re.sub(r"\s+", " ", text).strip()
-        return text
-    except:
+        return re.sub(r"\s+", " ", text).strip()
+    except Exception:
         return ""
 
 
-def build_jsonl(out_dir, metadata_log):
-    SYSTEM = "You are a viral short-form video creator. Write engaging short-form story scripts with strong hooks, clear obstacles, satisfying twists, and tight payoffs. Every word must earn its place."
+def build_jsonl(out_dir):
+    SYSTEM = (
+        "You are a viral short-form video creator. Write engaging short-form story "
+        "scripts with strong hooks, clear obstacles, satisfying twists, and tight "
+        "payoffs. Every word must earn its place."
+    )
 
     jsonl_path = Path("story_v2_examples.jsonl")
-    stats = {"total": 0, "skipped_short": 0, "written": 0}
+    stats = {"written": 0, "skipped_short": 0, "from_subs": 0, "from_whisper": 0}
 
-    with open(jsonl_path, "w") as out_f:
-        for json3_file in Path(out_dir).rglob("*.json3"):
-            text = parse_json3_transcript(json3_file)
+    with open(jsonl_path, "w", encoding="utf-8") as out_f:
+        # json3 (auto-subs)
+        for f in Path(out_dir).rglob("*.json3"):
+            text = parse_json3_transcript(f)
             if len(text) < 80:
                 stats["skipped_short"] += 1
                 continue
-
-            vid_id = json3_file.stem
-            category = json3_file.parent.parent.name
-            channel = json3_file.parent.name
-
-            record = {
+            vid_id = f.stem.removesuffix(".en")
+            channel = f.parent.name
+            category = f.parent.parent.name
+            out_f.write(json.dumps({
                 "messages": [
                     {"role": "system", "content": SYSTEM},
-                    {"role": "user", "content": f"Write a short-form video script in the style of @{channel} ({category} category)."},
+                    {"role": "user",   "content": f"Write a short-form video script in the style of @{channel} ({category} category)."},
                     {"role": "assistant", "content": text}
                 ],
                 "source": f"youtube_transcript_{category}",
                 "channel": channel,
                 "video_id": vid_id,
-                "weight": 4
-            }
-            out_f.write(json.dumps(record) + "\n")
+                "weight": 4,
+                "transcript_source": "auto_subs",
+            }) + "\n")
             stats["written"] += 1
-        stats["total"] = stats["written"] + stats["skipped_short"]
+            stats["from_subs"] += 1
+
+        # Whisper transcripts
+        for f in Path(out_dir).rglob("*.whisper.txt"):
+            text = f.read_text(encoding="utf-8").strip()
+            if len(text) < 80:
+                stats["skipped_short"] += 1
+                continue
+            vid_id = f.stem.removesuffix(".whisper")
+            channel = f.parent.name
+            category = f.parent.parent.name
+            out_f.write(json.dumps({
+                "messages": [
+                    {"role": "system", "content": SYSTEM},
+                    {"role": "user",   "content": f"Write a short-form video script in the style of @{channel} ({category} category)."},
+                    {"role": "assistant", "content": text}
+                ],
+                "source": f"youtube_transcript_{category}",
+                "channel": channel,
+                "video_id": vid_id,
+                "weight": 4,
+                "transcript_source": "whisper",
+            }) + "\n")
+            stats["written"] += 1
+            stats["from_whisper"] += 1
 
     return jsonl_path, stats
 
 
-# ─────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
 # MAIN
-# ─────────────────────────────────────────────
+# ═════════════════════════════════════════════════════════════════════════════
 if __name__ == "__main__":
     to_scrape = [(h, c, p) for h, c, p in CHANNELS if p >= MIN_PRIORITY]
-    print(f"Scraping {len(to_scrape)} channels (priority >= {MIN_PRIORITY})")
-    print(f"Strategy: try /shorts first, fall back to /videos with duration<180s")
-    print(f"Max videos per channel: {MAX_VIDEOS_PER_CHANNEL}")
+    print(f"Story Scraper v2")
+    print(f"Channels: {len(to_scrape)} (priority >= {MIN_PRIORITY})")
+    print(f"Cookies from browser: {COOKIES_BROWSER or 'DISABLED'}")
+    print(f"Whisper fallback: {'ENABLED ('+WHISPER_MODEL_SIZE+')' if USE_WHISPER_FALLBACK else 'DISABLED'}")
+    print(f"Strategy per channel: /shorts → /videos (<300s) → whisper")
     print()
 
     metadata_log = []
     failed = []
 
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as pool:
+    # NOTE: if Whisper is enabled, run channels sequentially to avoid GPU contention
+    workers = 1 if USE_WHISPER_FALLBACK else MAX_WORKERS
+
+    with ThreadPoolExecutor(max_workers=workers) as pool:
         futures = {pool.submit(scrape_channel, h, c, p): (h, c, p) for h, c, p in to_scrape}
         for i, future in enumerate(as_completed(futures), 1):
             h, c, p = futures[future]
             try:
-                result = future.result(timeout=360)
-                metadata_log.append(result)
-                count = result['transcript_files']
-                fb = " [fallback]" if result.get('used_fallback') else ""
-                if count > 0:
-                    status = f"✓ {count:4d} transcripts{fb}"
+                r = future.result(timeout=3600)
+                metadata_log.append(r)
+                if r["total"] > 0:
+                    src = []
+                    if r["sub_count"]: src.append(f"{r['sub_count']} subs")
+                    if r["whisper_count"]: src.append(f"{r['whisper_count']} whisper")
+                    tag = " [videos]" if r["used_videos_tab"] else ""
+                    print(f"[{i:3d}/{len(to_scrape)}] {h:25s} ✓ {' + '.join(src)}{tag}")
                 else:
-                    err = result.get('error', '')
-                    status = f"✗ 0 transcripts  {err}"
-                print(f"[{i:3d}/{len(to_scrape)}] {h:25s} {status}")
+                    print(f"[{i:3d}/{len(to_scrape)}] {h:25s} ✗ 0  {r['error']}")
             except Exception as e:
                 failed.append(h)
-                print(f"[{i:3d}/{len(to_scrape)}] {h:25s} ✗ {str(e)[:60]}")
+                print(f"[{i:3d}/{len(to_scrape)}] {h:25s} ✗ EXCEPTION: {str(e)[:80]}")
 
     with open("story_v2_scrape_log.json", "w") as f:
         json.dump(metadata_log, f, indent=2)
 
-    total_transcripts = sum(r["transcript_files"] for r in metadata_log)
+    total_subs = sum(r["sub_count"] for r in metadata_log)
+    total_whisper = sum(r["whisper_count"] for r in metadata_log)
     print(f"\n{'='*60}")
-    print(f"Total transcripts downloaded: {total_transcripts}")
-    print(f"Failed channels: {len(failed)}")
-    print(f"\nBuilding training JSONL...")
+    print(f"Auto-subs transcripts: {total_subs}")
+    print(f"Whisper transcripts:   {total_whisper}")
+    print(f"Channels that failed:  {sum(1 for r in metadata_log if r['total']==0)}")
 
-    jsonl_path, stats = build_jsonl(str(OUT_DIR), metadata_log)
-    print(f"Training examples written: {stats['written']}")
-    print(f"Skipped (too short): {stats['skipped_short']}")
+    print(f"\nBuilding training JSONL...")
+    jsonl_path, stats = build_jsonl(str(OUT_DIR))
+    print(f"Total training examples: {stats['written']}")
+    print(f"  from auto-subs:  {stats['from_subs']}")
+    print(f"  from Whisper:    {stats['from_whisper']}")
+    print(f"  skipped (short): {stats['skipped_short']}")
 
     print("\nZipping...")
     with zipfile.ZipFile("story-v2-dataset.zip", "w", zipfile.ZIP_DEFLATED) as zf:
@@ -313,20 +451,24 @@ if __name__ == "__main__":
         zf.write("story_v2_scrape_log.json")
         for f in Path(OUT_DIR).rglob("*.json3"):
             zf.write(f)
+        for f in Path(OUT_DIR).rglob("*.whisper.txt"):
+            zf.write(f)
 
     size_mb = Path("story-v2-dataset.zip").stat().st_size / 1024 / 1024
     print(f"\n{'='*60}")
     print(f"Output: story-v2-dataset.zip ({size_mb:.1f} MB)")
-    print(f"Upload this file to Claude for processing.")
-    print(f"\nChannel summary by category:")
+    print(f"Upload to Claude for merge into training_data_v7.")
+
     from collections import Counter
     cats = Counter(r["category"] for r in metadata_log)
-    for cat, count in cats.most_common():
-        transcripts = sum(r["transcript_files"] for r in metadata_log if r["category"] == cat)
-        print(f"  {cat:25s} {count:3d} channels | {transcripts:5d} transcripts")
+    print(f"\nBy category:")
+    for cat in cats:
+        n_chan = sum(1 for r in metadata_log if r["category"] == cat)
+        n_trans = sum(r["total"] for r in metadata_log if r["category"] == cat)
+        print(f"  {cat:25s} {n_chan:3d} channels | {n_trans:5d} transcripts")
 
-    zero = [r["handle"] for r in metadata_log if r["transcript_files"] == 0]
+    zero = [r["handle"] for r in metadata_log if r["total"] == 0]
     if zero:
-        print(f"\nChannels that returned 0 transcripts (verify handle):")
+        print(f"\nChannels with 0 transcripts:")
         for h in zero:
             print(f"  {h}")
