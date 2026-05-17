@@ -296,7 +296,7 @@ if __name__ == "__main__":
 
     # Step 2: Process local masterclass if available
     # UPDATE THIS PATH if you have Creator Rant videos downloaded:
-    MASTERCLASS_VIDEO_DIR = None  # e.g. "/Users/deepak/Downloads/creator_rant_lessons"
+    MASTERCLASS_VIDEO_DIR = "C:/Users/deepa/OneDrive/Documents/creator-rant" # e.g. "/Users/deepak/Downloads/creator_rant_lessons"
     local_examples = process_local_masterclass_videos(MASTERCLASS_VIDEO_DIR)
 
     # Step 3: Build JSONL from all transcripts

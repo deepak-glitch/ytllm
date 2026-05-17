@@ -1,0 +1,1212 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 88999,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 80,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "how",
+      "acAsrConf": 0
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 119,
+      "acAsrConf": 0
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 240,
+      "acAsrConf": 0
+    }, {
+      "utf8": " measure",
+      "tOffsetMs": 360,
+      "acAsrConf": 0
+    }, {
+      "utf8": " high",
+      "tOffsetMs": 960,
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltage",
+      "tOffsetMs": 1280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1920,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 2149,
+    "dDurationMs": 1811,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2159,
+    "dDurationMs": 4881,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "course",
+      "acAsrConf": 0
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 321,
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 480,
+      "acAsrConf": 0
+    }, {
+      "utf8": " probe",
+      "tOffsetMs": 720,
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1040,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 3950,
+    "dDurationMs": 3090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3960,
+    "dDurationMs": 4880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "volt",
+      "acAsrConf": 0
+    }, {
+      "utf8": " check",
+      "tOffsetMs": 1000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " your",
+      "tOffsetMs": 1280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " setup",
+      "tOffsetMs": 1640,
+      "acAsrConf": 0
+    }, {
+      "utf8": " before",
+      "tOffsetMs": 2200,
+      "acAsrConf": 0
+    }, {
+      "utf8": " committing",
+      "tOffsetMs": 2640,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 7030,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7040,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to",
+      "acAsrConf": 0
+    }, {
+      "utf8": " something",
+      "tOffsetMs": 200,
+      "acAsrConf": 0
+    }, {
+      "utf8": " it's",
+      "tOffsetMs": 600,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 680,
+      "acAsrConf": 0
+    }, {
+      "utf8": " simplest",
+      "tOffsetMs": 799,
+      "acAsrConf": 0
+    }, {
+      "utf8": " way",
+      "tOffsetMs": 1240,
+      "acAsrConf": 0
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1479,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1599,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 8830,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 8840,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "divide",
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 320,
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltage",
+      "tOffsetMs": 440,
+      "acAsrConf": 0
+    }, {
+      "utf8": " down",
+      "tOffsetMs": 879,
+      "acAsrConf": 0
+    }, {
+      "utf8": " below",
+      "tOffsetMs": 1360,
+      "acAsrConf": 0
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 1879,
+      "acAsrConf": 0
+    }, {
+      "utf8": " your",
+      "tOffsetMs": 2000,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 11030,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11040,
+    "dDurationMs": 4679,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "measurement",
+      "acAsrConf": 0
+    }, {
+      "utf8": " device",
+      "tOffsetMs": 519,
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 840,
+      "acAsrConf": 0
+    }, {
+      "utf8": " handle",
+      "tOffsetMs": 1080,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1679,
+      "acAsrConf": 0
+    }, {
+      "utf8": " resistor",
+      "tOffsetMs": 1880,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 13390,
+    "dDurationMs": 2329,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13400,
+    "dDurationMs": 6000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "divider",
+      "acAsrConf": 0
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 480,
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 600,
+      "acAsrConf": 0
+    }, {
+      "utf8": " way",
+      "tOffsetMs": 800,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960,
+      "acAsrConf": 0
+    }, {
+      "utf8": " go",
+      "tOffsetMs": 1159,
+      "acAsrConf": 0
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1640,
+      "acAsrConf": 0
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1840,
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 2119,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 15709,
+    "dDurationMs": 3691,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15719,
+    "dDurationMs": 6441,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "measure",
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 521,
+      "acAsrConf": 0
+    }, {
+      "utf8": " oh",
+      "tOffsetMs": 921,
+      "acAsrConf": 0
+    }, {
+      "utf8": " damn",
+      "tOffsetMs": 1921,
+      "acAsrConf": 0
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 2121,
+      "acAsrConf": 0
+    }, {
+      "utf8": " oh",
+      "tOffsetMs": 2560,
+      "acAsrConf": 0
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 2841,
+      "acAsrConf": 0
+    }, {
+      "utf8": " only",
+      "tOffsetMs": 3320,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 19390,
+    "dDurationMs": 2770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19400,
+    "dDurationMs": 5560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "consume",
+      "acAsrConf": 0
+    }, {
+      "utf8": " power",
+      "tOffsetMs": 600,
+      "acAsrConf": 0
+    }, {
+      "utf8": " below",
+      "tOffsetMs": 1119,
+      "acAsrConf": 0
+    }, {
+      "utf8": " their",
+      "tOffsetMs": 1560,
+      "acAsrConf": 0
+    }, {
+      "utf8": " power",
+      "tOffsetMs": 1879,
+      "acAsrConf": 0
+    }, {
+      "utf8": " rating",
+      "tOffsetMs": 2200,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 22150,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22160,
+    "dDurationMs": 5039,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "these",
+      "acAsrConf": 0
+    }, {
+      "utf8": " 100K",
+      "tOffsetMs": 400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 1K",
+      "tOffsetMs": 959,
+      "acAsrConf": 0
+    }, {
+      "utf8": " resistors",
+      "tOffsetMs": 1439,
+      "acAsrConf": 0
+    }, {
+      "utf8": " should",
+      "tOffsetMs": 2199,
+      "acAsrConf": 0
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 2400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " good",
+      "tOffsetMs": 2560,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 24950,
+    "dDurationMs": 2249,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24960,
+    "dDurationMs": 5960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "though",
+      "acAsrConf": 0
+    }, {
+      "utf8": " there",
+      "tOffsetMs": 360,
+      "acAsrConf": 0
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 520,
+      "acAsrConf": 0
+    }, {
+      "utf8": " go",
+      "tOffsetMs": 720,
+      "acAsrConf": 0
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1079,
+      "acAsrConf": 0
+    }, {
+      "utf8": " these",
+      "tOffsetMs": 1319,
+      "acAsrConf": 0
+    }, {
+      "utf8": " values",
+      "tOffsetMs": 1639,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 27189,
+    "dDurationMs": 3731,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 27199,
+    "dDurationMs": 3721,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "they",
+      "acAsrConf": 0
+    }, {
+      "utf8": " remain",
+      "tOffsetMs": 361,
+      "acAsrConf": 0
+    }, {
+      "utf8": " cool",
+      "tOffsetMs": 721,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 31630,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31640,
+    "dDurationMs": 5079,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "it",
+      "acAsrConf": 0
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " always",
+      "tOffsetMs": 639,
+      "acAsrConf": 0
+    }, {
+      "utf8": " advised",
+      "tOffsetMs": 1160,
+      "acAsrConf": 0
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 1680,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1800,
+      "acAsrConf": 0
+    }, {
+      "utf8": " touch",
+      "tOffsetMs": 2040,
+      "acAsrConf": 0
+    }, {
+      "utf8": " live",
+      "tOffsetMs": 2360,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 34389,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 34399,
+    "dDurationMs": 4281,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "high",
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltage",
+      "tOffsetMs": 201,
+      "acAsrConf": 0
+    }, {
+      "utf8": " same",
+      "tOffsetMs": 921,
+      "acAsrConf": 0
+    }, {
+      "utf8": " divider",
+      "tOffsetMs": 1241,
+      "acAsrConf": 0
+    }, {
+      "utf8": " trick",
+      "tOffsetMs": 1721,
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 2041,
+      "acAsrConf": 0
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 2201,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 36709,
+    "dDurationMs": 1971,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36719,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "used",
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 281,
+      "acAsrConf": 0
+    }, {
+      "utf8": " measure",
+      "tOffsetMs": 401,
+      "acAsrConf": 0
+    }, {
+      "utf8": " very",
+      "tOffsetMs": 840,
+      "acAsrConf": 0
+    }, {
+      "utf8": " high",
+      "tOffsetMs": 1081,
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltages",
+      "tOffsetMs": 1321,
+      "acAsrConf": 0
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1801,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 38670,
+    "dDurationMs": 2729,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38680,
+    "dDurationMs": 5800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "on",
+      "acAsrConf": 0
+    }, {
+      "utf8": " My",
+      "tOffsetMs": 160,
+      "acAsrConf": 0
+    }, {
+      "utf8": " vandor",
+      "tOffsetMs": 320,
+      "acAsrConf": 0
+    }, {
+      "utf8": " Graph",
+      "tOffsetMs": 719,
+      "acAsrConf": 0
+    }, {
+      "utf8": " generator",
+      "tOffsetMs": 960,
+      "acAsrConf": 0
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1760,
+      "acAsrConf": 0
+    }, {
+      "utf8": " zero",
+      "tOffsetMs": 2359,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 41389,
+    "dDurationMs": 3091,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41399,
+    "dDurationMs": 3081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "volts",
+      "acAsrConf": 0
+    }, {
+      "utf8": " it's",
+      "tOffsetMs": 801,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 45990,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 46000,
+    "dDurationMs": 6399,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "impossible",
+      "acAsrConf": 0
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1120,
+      "acAsrConf": 0
+    }, {
+      "utf8": " use",
+      "tOffsetMs": 1280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 1559,
+      "acAsrConf": 0
+    }, {
+      "utf8": " man-made",
+      "tOffsetMs": 1879,
+      "acAsrConf": 0
+    }, {
+      "utf8": " driver",
+      "tOffsetMs": 2800,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 49790,
+    "dDurationMs": 2609,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 49800,
+    "dDurationMs": 5439,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "which",
+      "acAsrConf": 0
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 200,
+      "acAsrConf": 0
+    }, {
+      "utf8": " maintain",
+      "tOffsetMs": 560,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1320,
+      "acAsrConf": 0
+    }, {
+      "utf8": " much",
+      "tOffsetMs": 1560,
+      "acAsrConf": 0
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 1800,
+      "acAsrConf": 0
+    }, {
+      "utf8": " powerful",
+      "tOffsetMs": 2120,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 52389,
+    "dDurationMs": 2850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 52399,
+    "dDurationMs": 5201,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "output",
+      "acAsrConf": 0
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 521,
+      "acAsrConf": 0
+    }, {
+      "utf8": " I'm",
+      "tOffsetMs": 921,
+      "acAsrConf": 0
+    }, {
+      "utf8": " using",
+      "tOffsetMs": 1081,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1401,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 10",
+      "tOffsetMs": 1601,
+      "acAsrConf": 0
+    }, {
+      "utf8": " megaohm",
+      "tOffsetMs": 1881,
+      "acAsrConf": 0
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2480,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2680,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 55229,
+    "dDurationMs": 2371,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 55239,
+    "dDurationMs": 7320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "10",
+      "acAsrConf": 0
+    }, {
+      "utf8": " km",
+      "tOffsetMs": 281,
+      "acAsrConf": 0
+    }, {
+      "utf8": " resistor",
+      "tOffsetMs": 761,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1201,
+      "acAsrConf": 0
+    }, {
+      "utf8": " divide",
+      "tOffsetMs": 1320,
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1640,
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltage",
+      "tOffsetMs": 1761,
+      "acAsrConf": 0
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 2120,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 57590,
+    "dDurationMs": 4969,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 57600,
+    "dDurationMs": 4959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "almost",
+      "acAsrConf": 0
+    }, {
+      "utf8": " 1,000",
+      "tOffsetMs": 520,
+      "acAsrConf": 0
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1520,
+      "acAsrConf": 0
+    }, {
+      "utf8": " turn",
+      "tOffsetMs": 1799,
+      "acAsrConf": 0
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 2040,
+      "acAsrConf": 0
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 2439,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 64590,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 64600,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and",
+      "acAsrConf": 0
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1199,
+      "acAsrConf": 0
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 2",
+      "tOffsetMs": 1519,
+      "acAsrConf": 0
+    }, {
+      "utf8": " G",
+      "tOffsetMs": 1879,
+      "acAsrConf": 0
+    }, {
+      "utf8": " Ohm",
+      "tOffsetMs": 2120,
+      "acAsrConf": 0
+    }, {
+      "utf8": " resistor",
+      "tOffsetMs": 2400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " here",
+      "tOffsetMs": 2960,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 67749,
+    "dDurationMs": 1571,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 67759,
+    "dDurationMs": 4761,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that",
+      "acAsrConf": 0
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 121,
+      "acAsrConf": 0
+    }, {
+      "utf8": " connected",
+      "tOffsetMs": 281,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 641,
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 761,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 2",
+      "tOffsetMs": 881,
+      "acAsrConf": 0
+    }, {
+      "utf8": " Mega",
+      "tOffsetMs": 1081,
+      "acAsrConf": 0
+    }, {
+      "utf8": " Ohm",
+      "tOffsetMs": 1321,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 69310,
+    "dDurationMs": 3210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 69320,
+    "dDurationMs": 6799,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "resistor",
+      "acAsrConf": 0
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 520,
+      "acAsrConf": 0
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 839,
+      "acAsrConf": 0
+    }, {
+      "utf8": " almost",
+      "tOffsetMs": 1280,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 1,000",
+      "tOffsetMs": 2000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " to1",
+      "tOffsetMs": 2680,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 72510,
+    "dDurationMs": 3609,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 72520,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "division",
+      "acAsrConf": 0
+    }, {
+      "utf8": " ratio",
+      "tOffsetMs": 520,
+      "acAsrConf": 0
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1160,
+      "acAsrConf": 0
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1360,
+      "acAsrConf": 0
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 1560,
+      "acAsrConf": 0
+    }, {
+      "utf8": " turn",
+      "tOffsetMs": 1760,
+      "acAsrConf": 0
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 2080,
+      "acAsrConf": 0
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 2599,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 76109,
+    "dDurationMs": 1931,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 76119,
+    "dDurationMs": 2541,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "let's",
+      "acAsrConf": 0
+    }, {
+      "utf8": " reduce",
+      "tOffsetMs": 241,
+      "acAsrConf": 0
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 601,
+      "acAsrConf": 0
+    }, {
+      "utf8": " supply",
+      "tOffsetMs": 761,
+      "acAsrConf": 0
+    }, {
+      "utf8": " voltage",
+      "tOffsetMs": 1081,
+      "acAsrConf": 0
+    }, {
+      "utf8": " how",
+      "tOffsetMs": 1761,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 78030,
+    "dDurationMs": 630,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 78040,
+    "dDurationMs": 1800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "about",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 78650,
+    "dDurationMs": 1190,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 78660,
+    "dDurationMs": 3419,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  }, {
+    "tStartMs": 79830,
+    "dDurationMs": 2249,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 79840,
+    "dDurationMs": 5840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "now",
+      "acAsrConf": 0
+    }, {
+      "utf8": " how",
+      "tOffsetMs": 1000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 1200,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 82069,
+    "dDurationMs": 3611,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 82079,
+    "dDurationMs": 4761,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "now",
+      "acAsrConf": 0
+    }, {
+      "utf8": " okay",
+      "tOffsetMs": 1000,
+      "acAsrConf": 0
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1641,
+      "acAsrConf": 0
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 1720,
+      "acAsrConf": 0
+    }, {
+      "utf8": " measuring",
+      "tOffsetMs": 1881,
+      "acAsrConf": 0
+    }, {
+      "utf8": " above",
+      "tOffsetMs": 2321,
+      "acAsrConf": 0
+    }, {
+      "utf8": " 9,000",
+      "tOffsetMs": 2680,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 85670,
+    "dDurationMs": 1170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 85680,
+    "dDurationMs": 3319,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "volts",
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 86830,
+    "dDurationMs": 2169,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 86840,
+    "dDurationMs": 2159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  } ]
+}

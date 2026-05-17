@@ -1,0 +1,831 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 53760,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " wanted",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " ask",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " question",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " Vox",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 2070,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2080,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "audience"
+    }, {
+      "utf8": " member.",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " They",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " asked",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 3670,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3680,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Save"
+    }, {
+      "utf8": " America",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " Act.",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " told",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " House",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 5910,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5920,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Republicans"
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " week",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " bill",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 7910,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7920,
+    "dDurationMs": 3520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "will"
+    }, {
+      "utf8": " quote",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " guarantee",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " midterms",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 9670,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9680,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "won't"
+    }, {
+      "utf8": " sign",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " any",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " legislation",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " until",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 11430,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11440,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "it's"
+    }, {
+      "utf8": " done.",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " Democrats",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " called",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 13270,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13280,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "voter"
+    }, {
+      "utf8": " suppression",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " dressed",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " up",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 15350,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15360,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "patriotism."
+    }, {
+      "utf8": " Donald",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " saying",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 17110,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 17120,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " requirement",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " proof",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " citizenship",
+      "tOffsetMs": 1200
+    } ]
+  }, {
+    "tStartMs": 19390,
+    "dDurationMs": 1530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19400,
+    "dDurationMs": 2760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "is"
+    }, {
+      "utf8": " important",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " doesn't",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 20910,
+    "dDurationMs": 1250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20920,
+    "dDurationMs": 2960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "understand"
+    }, {
+      "utf8": " why",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " Democrats",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " wouldn't",
+      "tOffsetMs": 1040
+    } ]
+  }, {
+    "tStartMs": 22150,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22160,
+    "dDurationMs": 2680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "support"
+    }, {
+      "utf8": " it.",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Do",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " support",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 23870,
+    "dDurationMs": 970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 23880,
+    "dDurationMs": 2920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " Save",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " America?",
+      "tOffsetMs": 320
+    } ]
+  }, {
+    "tStartMs": 24830,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24840,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Oh,"
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " absolutely",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " totally",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " completely",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 26790,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26800,
+    "dDurationMs": 5120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "oppose"
+    }, {
+      "utf8": " it.",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " Tell",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " why.",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " It's",
+      "tOffsetMs": 2200
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 29110,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29120,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "disgraceful"
+    }, {
+      "utf8": " insult",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " our",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " founders",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " who",
+      "tOffsetMs": 2600
+    } ]
+  }, {
+    "tStartMs": 31910,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31920,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "created"
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " country",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " democracy",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 34190,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 34200,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " rest.",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " Some",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " things",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 36510,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36520,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "it"
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " say",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " want",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " go",
+      "tOffsetMs": 2240
+    } ]
+  }, {
+    "tStartMs": 38910,
+    "dDurationMs": 1370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38920,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "register"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " vote,",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " bring",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 40270,
+    "dDurationMs": 2890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 40280,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "passport"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " prove",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " your",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " citizenship.",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " How",
+      "tOffsetMs": 2720
+    } ]
+  }, {
+    "tStartMs": 43150,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43160,
+    "dDurationMs": 5000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "many"
+    }, {
+      "utf8": " people",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " think",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " carry",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " around",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 45230,
+    "dDurationMs": 2930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 45240,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "passport?"
+    }, {
+      "utf8": " Actually,",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " fact",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 2760
+    } ]
+  }, {
+    "tStartMs": 48150,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 48160,
+    "dDurationMs": 5600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Democrats"
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " than",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " Republicans,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " uh",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 50630,
+    "dDurationMs": 3130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 50640,
+    "dDurationMs": 3120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "he'll"
+    }, {
+      "utf8": " find",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " out.",
+      "tOffsetMs": 640
+    } ]
+  } ]
+}

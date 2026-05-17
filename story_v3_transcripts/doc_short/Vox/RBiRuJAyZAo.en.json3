@@ -1,0 +1,1755 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 125320,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Today's"
+    }, {
+      "utf8": " Earth",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " Day,",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " some,",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 2030,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2040,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "might"
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " reminder",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " start",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " composting,",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 4590,
+    "dDurationMs": 2610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4600,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " ditch",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " fast",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " fashion,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " carpool",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 7190,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7200,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "more."
+    }, {
+      "utf8": " However,",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " lot",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " people",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 9270,
+    "dDurationMs": 1690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9280,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "environmental"
+    }, {
+      "utf8": " movement",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " become",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 10950,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10960,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "skeptical"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " idea",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " individuals",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 13510,
+    "dDurationMs": 2610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13520,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "like"
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " really",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " power",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2440
+    } ]
+  }, {
+    "tStartMs": 16110,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16120,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fix"
+    }, {
+      "utf8": " climate",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " change,",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " instead,",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 18350,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18360,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "believe"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " all",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " responsibility",
+      "tOffsetMs": 960
+    } ]
+  }, {
+    "tStartMs": 20150,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20160,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "falls"
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " governments",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " corporations.",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 22470,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22480,
+    "dDurationMs": 4200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "actually"
+    }, {
+      "utf8": " think",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " they're",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " largely",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " right,",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 24390,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24400,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "but"
+    }, {
+      "utf8": " there",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " few",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " individual",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " actions",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 26670,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26680,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that"
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " make",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " big",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " difference",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 28550,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28560,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "planet,"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " most",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " impactful",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 30630,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 30640,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "ones"
+    }, {
+      "utf8": " might",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " you'd",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " expect.",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 32630,
+    "dDurationMs": 2690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32640,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "It's"
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " composting",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " carpooling,",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " it's",
+      "tOffsetMs": 2440
+    } ]
+  }, {
+    "tStartMs": 35310,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35320,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "eating"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " plant-based",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " diet.",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " Here's",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 37710,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 37720,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "why."
+    }, {
+      "utf8": " First,",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " meat",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " dairy",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " production",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 39790,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39800,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "are"
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " really",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " inefficient",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " ways",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 41710,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41720,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "produce"
+    }, {
+      "utf8": " food.",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " For",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " example,",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 43870,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43880,
+    "dDurationMs": 5240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "feed"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " pig",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " 11",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " calories",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " feed",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " crops",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 46430,
+    "dDurationMs": 2690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 46440,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "like"
+    }, {
+      "utf8": " corn",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " soy",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " produce",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 49110,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 49120,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "calorie"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " meat.",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " Environmental",
+      "tOffsetMs": 920
+    } ]
+  }, {
+    "tStartMs": 50590,
+    "dDurationMs": 2770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 50600,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "scientists"
+    }, {
+      "utf8": " say",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " could",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " feed",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " people",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 53350,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53360,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "with"
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " land",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " resources",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 55750,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 55760,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "grew"
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " food",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " directly",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " instead",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 58310,
+    "dDurationMs": 2970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 58320,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of"
+    }, {
+      "utf8": " funneling",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " many",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " our",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " crops",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " into",
+      "tOffsetMs": 2560
+    } ]
+  }, {
+    "tStartMs": 61270,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 61280,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "farmed"
+    }, {
+      "utf8": " animals.",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Second,",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " growing",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " all",
+      "tOffsetMs": 2240
+    } ]
+  }, {
+    "tStartMs": 63750,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 63760,
+    "dDurationMs": 4920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "these"
+    }, {
+      "utf8": " feed",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " crops",
+      "tOffsetMs": 479
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " setting",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " aside",
+      "tOffsetMs": 1439
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 65990,
+    "dDurationMs": 2690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 66000,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "much"
+    }, {
+      "utf8": " space",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " cattle",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " sheep",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " graze",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 68670,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 68680,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "gobbles"
+    }, {
+      "utf8": " up",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " 1/3",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " planet's",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 71190,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 71200,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "usable"
+    }, {
+      "utf8": " land.",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " That",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " makes",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " meat",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " dairy",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 73150,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 73160,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "production"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " leading",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " cause",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " global",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 75310,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 75320,
+    "dDurationMs": 4800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "deforestation,"
+    }, {
+      "utf8": " habitat",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " loss,",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2520
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2680
+    } ]
+  }, {
+    "tStartMs": 78110,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 78120,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "turn,"
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " makes",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " top",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " threat",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 80110,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 80120,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "wildlife."
+    }, {
+      "utf8": " In",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " comparison,",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " lower",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " meat",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2520
+    } ]
+  }, {
+    "tStartMs": 82750,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 82760,
+    "dDurationMs": 5040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "vegetarian"
+    }, {
+      "utf8": " diets",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " require",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " lot",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 85190,
+    "dDurationMs": 2610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 85200,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "land,"
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " see",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " here.",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " lastly,",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 87790,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 87800,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "there's"
+    }, {
+      "utf8": " climate",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " change.",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " Globally,",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " meat",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 90030,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 90040,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " dairy",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " production",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " together",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 92190,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 92200,
+    "dDurationMs": 5000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " leading",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " drivers",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " climate",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " change,",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 94310,
+    "dDurationMs": 2890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 94320,
+    "dDurationMs": 5000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "accounting"
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " nearly",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " 20%",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2280
+    }, {
+      "utf8": " global",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 97190,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 97200,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "greenhouse"
+    }, {
+      "utf8": " gas",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " emissions.",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " So,",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " could",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 99310,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 99320,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "make"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " huge",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " dent",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " climate",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " change",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 101510,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 101520,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "all"
+    }, {
+      "utf8": " ate",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " fewer",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " burgers",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " chicken",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 103350,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 103360,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "nuggets"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " drink",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " milk.",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " that's",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 105550,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 105560,
+    "dDurationMs": 5360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "because"
+    }, {
+      "utf8": " plant-based",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " protein",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " sources",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 107710,
+    "dDurationMs": 3210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 107720,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Impossible"
+    }, {
+      "utf8": " Burgers,",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " beans,",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " tofu",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 2920
+    } ]
+  }, {
+    "tStartMs": 110910,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 110920,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "much"
+    }, {
+      "utf8": " lower",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " carbon",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " footprints.",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " If",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 112910,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 112920,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "want"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " try",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " plant-based",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " diet",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 114870,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 114880,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this"
+    }, {
+      "utf8": " Earth",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " Day,",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " we've",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " got",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " covered.",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 116910,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 116920,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Check"
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " Meat",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " Less,",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " Vox's",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " practical",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 119310,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 119320,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "guide"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " eating",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " meat",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 121350,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 121360,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "plant-based"
+    }, {
+      "utf8": " foods",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " link",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " our",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 122790,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 122800,
+    "dDurationMs": 2520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "bio."
+    } ]
+  } ]
+}

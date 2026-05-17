@@ -1,0 +1,155 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 16289,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 7519,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "yeah",
+      "acAsrConf": 248
+    }, {
+      "utf8": " she",
+      "tOffsetMs": 539,
+      "acAsrConf": 248
+    }, {
+      "utf8": " worked",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1079,
+      "acAsrConf": 248
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 30",
+      "tOffsetMs": 1319,
+      "acAsrConf": 248
+    }, {
+      "utf8": " years",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " ago",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    }, {
+      "utf8": " oh",
+      "tOffsetMs": 2040,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 2389,
+    "dDurationMs": 5130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2399,
+    "dDurationMs": 10381,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "yeah",
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 240,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 70s",
+      "tOffsetMs": 601,
+      "acAsrConf": 248
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 1992.",
+      "tOffsetMs": 1821,
+      "acAsrConf": 244
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 3201,
+      "acAsrConf": 198
+    } ]
+  }, {
+    "tStartMs": 7509,
+    "dDurationMs": 5271,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7519,
+    "dDurationMs": 5261,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "1992",
+      "acAsrConf": 248
+    }, {
+      "utf8": " 30",
+      "tOffsetMs": 1000,
+      "acAsrConf": 246
+    }, {
+      "utf8": " years",
+      "tOffsetMs": 1601,
+      "acAsrConf": 246
+    }, {
+      "utf8": " ago",
+      "tOffsetMs": 1901,
+      "acAsrConf": 242
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 2261,
+      "acAsrConf": 225
+    } ]
+  }, {
+    "tStartMs": 13210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13220,
+    "dDurationMs": 3069,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  } ]
+}

@@ -1,0 +1,108 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 8160,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 4880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and",
+      "acAsrConf": 248
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 599,
+      "acAsrConf": 248
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 960,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 2022",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " season",
+      "tOffsetMs": 2220,
+      "acAsrConf": 248
+    }, {
+      "utf8": " comes",
+      "tOffsetMs": 2580,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 3419,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 3530,
+    "dDurationMs": 1350,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3540,
+    "dDurationMs": 4620,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "an",
+      "acAsrConf": 248
+    }, {
+      "utf8": " end",
+      "tOffsetMs": 180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " good",
+      "tOffsetMs": 359,
+      "acAsrConf": 248
+    }, {
+      "utf8": " night",
+      "tOffsetMs": 960,
+      "acAsrConf": 236
+    } ]
+  }, {
+    "tStartMs": 4870,
+    "dDurationMs": 3290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4880,
+    "dDurationMs": 3280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  } ]
+}

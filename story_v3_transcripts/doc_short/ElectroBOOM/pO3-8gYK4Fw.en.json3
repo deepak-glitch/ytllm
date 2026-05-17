@@ -1,0 +1,359 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 59360,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5460,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I",
+      "acAsrConf": 248
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 780,
+      "acAsrConf": 248
+    }, {
+      "utf8": " bunch",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1319,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 15",
+      "tOffsetMs": 1560,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 000",
+      "tOffsetMs": 2340,
+      "acAsrConf": 248
+    }, {
+      "utf8": " volts",
+      "tOffsetMs": 2399,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2820,
+      "acAsrConf": 221
+    } ]
+  }, {
+    "tStartMs": 2990,
+    "dDurationMs": 2470,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3000,
+    "dDurationMs": 4620,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "nanofarad",
+      "acAsrConf": 248
+    }, {
+      "utf8": " capacitors",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " I'll",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " use",
+      "tOffsetMs": 1680,
+      "acAsrConf": 246
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 1980,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 5450,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5460,
+    "dDurationMs": 4260,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "original",
+      "acAsrConf": 248
+    }, {
+      "utf8": " magic",
+      "tOffsetMs": 240,
+      "acAsrConf": 248
+    }, {
+      "utf8": " wand",
+      "tOffsetMs": 720,
+      "acAsrConf": 232
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1200,
+      "acAsrConf": 248
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " generate",
+      "tOffsetMs": 1680,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 7610,
+    "dDurationMs": 2110,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7620,
+    "dDurationMs": 5760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "over",
+      "acAsrConf": 246
+    }, {
+      "utf8": " 100",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 9710,
+    "dDurationMs": 3670,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9720,
+    "dDurationMs": 6060,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "000",
+      "acAsrConf": 248
+    }, {
+      "utf8": " volts",
+      "tOffsetMs": 120,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " charge",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    }, {
+      "utf8": " capacitor",
+      "tOffsetMs": 1379,
+      "acAsrConf": 248
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2299,
+      "acAsrConf": 248
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 3299,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 13370,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13380,
+    "dDurationMs": 5600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "arc",
+      "acAsrConf": 244
+    }, {
+      "utf8": " will",
+      "tOffsetMs": 419,
+      "acAsrConf": 248
+    }, {
+      "utf8": " jump",
+      "tOffsetMs": 719,
+      "acAsrConf": 248
+    }, {
+      "utf8": " between",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1259,
+      "acAsrConf": 244
+    }, {
+      "utf8": " legs",
+      "tOffsetMs": 1620,
+      "acAsrConf": 248
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 1919,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2160,
+      "acAsrConf": 241
+    } ]
+  }, {
+    "tStartMs": 15770,
+    "dDurationMs": 3210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15780,
+    "dDurationMs": 3200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "voltage",
+      "acAsrConf": 244
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 359,
+      "acAsrConf": 248
+    }, {
+      "utf8": " high",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    }, {
+      "utf8": " enough",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 35450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35460,
+    "dDurationMs": 3000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "foreign",
+      "acAsrConf": 216
+    } ]
+  }, {
+    "tStartMs": 53029,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53039,
+    "dDurationMs": 4141,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "always",
+      "acAsrConf": 242
+    }, {
+      "utf8": " discharge",
+      "tOffsetMs": 540,
+      "acAsrConf": 242
+    }, {
+      "utf8": " your",
+      "tOffsetMs": 1200,
+      "acAsrConf": 242
+    }, {
+      "utf8": " capacitors",
+      "tOffsetMs": 1261,
+      "acAsrConf": 247
+    }, {
+      "utf8": " before",
+      "tOffsetMs": 1801,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 55130,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 55140,
+    "dDurationMs": 4220,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "handling",
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 480,
+      "acAsrConf": 247
+    }, {
+      "utf8": " circuit",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 57170,
+    "dDurationMs": 2190,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 57180,
+    "dDurationMs": 2180,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "foreign",
+      "acAsrConf": 151
+    } ]
+  } ]
+}

@@ -1,0 +1,793 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 59840,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 320,
+    "dDurationMs": 4479,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "fully",
+      "acAsrConf": 255
+    }, {
+      "utf8": " autonomous",
+      "tOffsetMs": 399,
+      "acAsrConf": 255
+    }, {
+      "utf8": " flight",
+      "tOffsetMs": 960,
+      "acAsrConf": 255
+    }, {
+      "utf8": " may",
+      "tOffsetMs": 1440,
+      "acAsrConf": 255
+    }, {
+      "utf8": " seem",
+      "tOffsetMs": 1680,
+      "acAsrConf": 255
+    }, {
+      "utf8": " easy",
+      "tOffsetMs": 2000,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 3030,
+    "dDurationMs": 1769,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3040,
+    "dDurationMs": 3520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "you",
+      "acAsrConf": 255
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 159,
+      "acAsrConf": 255
+    }, {
+      "utf8": " need",
+      "tOffsetMs": 320,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 480,
+      "acAsrConf": 255
+    }, {
+      "utf8": " stick",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 800,
+      "acAsrConf": 255
+    }, {
+      "utf8": " roads",
+      "tOffsetMs": 960,
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1600,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 4789,
+    "dDurationMs": 1771,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4799,
+    "dDurationMs": 3361,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "have",
+      "acAsrConf": 255
+    }, {
+      "utf8": " much",
+      "tOffsetMs": 161,
+      "acAsrConf": 255
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 401,
+      "acAsrConf": 255
+    }, {
+      "utf8": " space",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960,
+      "acAsrConf": 255
+    }, {
+      "utf8": " maneuver",
+      "tOffsetMs": 1121,
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1681,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 6550,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 6560,
+    "dDurationMs": 5119,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "avoid",
+      "acAsrConf": 255
+    }, {
+      "utf8": " obstacles",
+      "tOffsetMs": 400,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 8150,
+    "dDurationMs": 3529,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 8160,
+    "dDurationMs": 6320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "but",
+      "acAsrConf": 255
+    }, {
+      "utf8": " detecting",
+      "tOffsetMs": 479,
+      "acAsrConf": 255
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 1120,
+      "acAsrConf": 255
+    }, {
+      "utf8": " aircraft",
+      "tOffsetMs": 1439,
+      "acAsrConf": 255
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 2240,
+      "acAsrConf": 255
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 2399,
+      "acAsrConf": 255
+    }, {
+      "utf8": " hard",
+      "tOffsetMs": 2559,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 11669,
+    "dDurationMs": 2811,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11679,
+    "dDurationMs": 4961,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "even",
+      "acAsrConf": 255
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 401,
+      "acAsrConf": 255
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 561,
+      "acAsrConf": 255
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 721,
+      "acAsrConf": 255
+    }, {
+      "utf8": " ninety",
+      "tOffsetMs": 1601,
+      "acAsrConf": 255
+    }, {
+      "utf8": " percent",
+      "tOffsetMs": 1920,
+      "acAsrConf": 255
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2401,
+      "acAsrConf": 255
+    }, {
+      "utf8": " low",
+      "tOffsetMs": 2561,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 14470,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14480,
+    "dDurationMs": 4559,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "altitude",
+      "acAsrConf": 255
+    }, {
+      "utf8": " flights",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 1279,
+      "acAsrConf": 255
+    }, {
+      "utf8": " require",
+      "tOffsetMs": 1520,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 16630,
+    "dDurationMs": 2409,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16640,
+    "dDurationMs": 4639,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "transponders",
+      "acAsrConf": 255
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1120,
+      "acAsrConf": 255
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 1280,
+      "acAsrConf": 255
+    }, {
+      "utf8": " allow",
+      "tOffsetMs": 1520,
+      "acAsrConf": 255
+    }, {
+      "utf8": " drones",
+      "tOffsetMs": 1840,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2240,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 19029,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19039,
+    "dDurationMs": 4641,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "detect",
+      "acAsrConf": 255
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 721,
+      "acAsrConf": 255
+    }, {
+      "utf8": " aircraft",
+      "tOffsetMs": 1041,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 21269,
+    "dDurationMs": 2411,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21279,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "drones",
+      "acAsrConf": 255
+    }, {
+      "utf8": " need",
+      "tOffsetMs": 481,
+      "acAsrConf": 255
+    }, {
+      "utf8": " cheap",
+      "tOffsetMs": 721,
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1041,
+      "acAsrConf": 255
+    }, {
+      "utf8": " low",
+      "tOffsetMs": 1281,
+      "acAsrConf": 255
+    }, {
+      "utf8": " weight",
+      "tOffsetMs": 1521,
+      "acAsrConf": 255
+    }, {
+      "utf8": " sensors",
+      "tOffsetMs": 1840,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 23670,
+    "dDurationMs": 2769,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 23680,
+    "dDurationMs": 5999,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that",
+      "acAsrConf": 255
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 160,
+      "acAsrConf": 255
+    }, {
+      "utf8": " see",
+      "tOffsetMs": 320,
+      "acAsrConf": 255
+    }, {
+      "utf8": " through",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " fog",
+      "tOffsetMs": 800,
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1280,
+      "acAsrConf": 255
+    }, {
+      "utf8": " clouds",
+      "tOffsetMs": 1439,
+      "acAsrConf": 255
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 2160,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 26429,
+    "dDurationMs": 3250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26439,
+    "dDurationMs": 6361,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "360",
+      "acAsrConf": 255
+    }, {
+      "utf8": " degrees",
+      "tOffsetMs": 1000,
+      "acAsrConf": 255
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1481,
+      "acAsrConf": 255
+    }, {
+      "utf8": " spherical",
+      "tOffsetMs": 1561,
+      "acAsrConf": 255
+    }, {
+      "utf8": " sight",
+      "tOffsetMs": 2201,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 29669,
+    "dDurationMs": 3131,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29679,
+    "dDurationMs": 6880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "zipline",
+      "acAsrConf": 255
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 561,
+      "acAsrConf": 255
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 801,
+      "acAsrConf": 255
+    }, {
+      "utf8": " batty",
+      "tOffsetMs": 961,
+      "acAsrConf": 255
+    }, {
+      "utf8": " idea",
+      "tOffsetMs": 1440,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1920,
+      "acAsrConf": 255
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 2081,
+      "acAsrConf": 255
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 2321,
+      "acAsrConf": 255
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 2801,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 32790,
+    "dDurationMs": 3769,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32800,
+    "dDurationMs": 6400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cheap",
+      "acAsrConf": 255
+    }, {
+      "utf8": " off-the-shelf",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " sensors",
+      "tOffsetMs": 1279,
+      "acAsrConf": 255
+    }, {
+      "utf8": " microphones",
+      "tOffsetMs": 2320,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 36549,
+    "dDurationMs": 2651,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36559,
+    "dDurationMs": 5361,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "zipline",
+      "acAsrConf": 255
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 481,
+      "acAsrConf": 255
+    }, {
+      "utf8": " created",
+      "tOffsetMs": 721,
+      "acAsrConf": 255
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1361,
+      "acAsrConf": 255
+    }, {
+      "utf8": " reliable",
+      "tOffsetMs": 1520,
+      "acAsrConf": 255
+    }, {
+      "utf8": " system",
+      "tOffsetMs": 2160,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 39190,
+    "dDurationMs": 2730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39200,
+    "dDurationMs": 6320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that",
+      "acAsrConf": 255
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 160,
+      "acAsrConf": 255
+    }, {
+      "utf8": " pinpoint",
+      "tOffsetMs": 400,
+      "acAsrConf": 255
+    }, {
+      "utf8": " aircraft",
+      "tOffsetMs": 960,
+      "acAsrConf": 255
+    }, {
+      "utf8": " locations",
+      "tOffsetMs": 1519,
+      "acAsrConf": 255
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2480,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 41910,
+    "dDurationMs": 3610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41920,
+    "dDurationMs": 6400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "3d",
+      "acAsrConf": 255
+    }, {
+      "utf8": " space",
+      "tOffsetMs": 400,
+      "acAsrConf": 255
+    }, {
+      "utf8": " using",
+      "tOffsetMs": 1120,
+      "acAsrConf": 255
+    }, {
+      "utf8": " these",
+      "tOffsetMs": 1600,
+      "acAsrConf": 255
+    }, {
+      "utf8": " eight",
+      "tOffsetMs": 2159,
+      "acAsrConf": 255
+    }, {
+      "utf8": " microphones",
+      "tOffsetMs": 2479,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 45510,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 45520,
+    "dDurationMs": 4879,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "using",
+      "acAsrConf": 255
+    }, {
+      "utf8": " signal",
+      "tOffsetMs": 480,
+      "acAsrConf": 255
+    }, {
+      "utf8": " processing",
+      "tOffsetMs": 960,
+      "acAsrConf": 255
+    }, {
+      "utf8": " algorithms",
+      "tOffsetMs": 1600,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 48310,
+    "dDurationMs": 2089,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 48320,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "allowing",
+      "acAsrConf": 255
+    }, {
+      "utf8": " their",
+      "tOffsetMs": 480,
+      "acAsrConf": 255
+    }, {
+      "utf8": " drones",
+      "tOffsetMs": 719,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1120,
+      "acAsrConf": 255
+    }, {
+      "utf8": " automatically",
+      "tOffsetMs": 1360,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 50389,
+    "dDurationMs": 3371,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 50399,
+    "dDurationMs": 5521,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "detect",
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 800,
+      "acAsrConf": 255
+    }, {
+      "utf8": " avoid",
+      "tOffsetMs": 1041,
+      "acAsrConf": 255
+    }, {
+      "utf8": " aircraft",
+      "tOffsetMs": 1441,
+      "acAsrConf": 255
+    }, {
+      "utf8": " bringing",
+      "tOffsetMs": 2401,
+      "acAsrConf": 255
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 2800,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 53750,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53760,
+    "dDurationMs": 6080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "one",
+      "acAsrConf": 255
+    }, {
+      "utf8": " step",
+      "tOffsetMs": 160,
+      "acAsrConf": 255
+    }, {
+      "utf8": " closer",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1200,
+      "acAsrConf": 255
+    }, {
+      "utf8": " safe",
+      "tOffsetMs": 1439,
+      "acAsrConf": 255
+    }, {
+      "utf8": " drone",
+      "tOffsetMs": 1680,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 55910,
+    "dDurationMs": 3930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 55920,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "integration",
+      "acAsrConf": 255
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 959,
+      "acAsrConf": 255
+    }, {
+      "utf8": " our",
+      "tOffsetMs": 1360,
+      "acAsrConf": 255
+    }, {
+      "utf8": " airspace",
+      "tOffsetMs": 1600,
+      "acAsrConf": 255
+    } ]
+  } ]
+}

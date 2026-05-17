@@ -1,0 +1,173 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 28840,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " want",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " hippopotamus",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " Christmas.",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 5884,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5894,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [screaming]"
+    } ]
+  }, {
+    "tStartMs": 10469,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10479,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[screaming]"
+    } ]
+  }, {
+    "tStartMs": 15430,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15440,
+    "dDurationMs": 2955,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e PLEASE"
+    }, {
+      "utf8": " NO.",
+      "tOffsetMs": 280
+    } ]
+  }, {
+    "tStartMs": 16365,
+    "dDurationMs": 2030,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16375,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [screaming]"
+    } ]
+  }, {
+    "tStartMs": 22310,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22320,
+    "dDurationMs": 6520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e WHY"
+    }, {
+      "utf8": " DO",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " KIDS",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " KEEP",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " ASKING",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " FOR",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " THESE?",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 25430,
+    "dDurationMs": 3410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25440,
+    "dDurationMs": 3400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " JUST",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " follow",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " list,",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " bro.",
+      "tOffsetMs": 960
+    } ]
+  } ]
+}

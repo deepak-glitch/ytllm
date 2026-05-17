@@ -1,0 +1,129 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 22229,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 160,
+    "dDurationMs": 6159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "everyone",
+      "acAsrConf": 255
+    }, {
+      "utf8": " underestimates",
+      "tOffsetMs": 559,
+      "acAsrConf": 255
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 1520,
+      "acAsrConf": 255
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 1840,
+      "acAsrConf": 255
+    }, {
+      "utf8": " then",
+      "tOffsetMs": 2080,
+      "acAsrConf": 255
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 2239,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 2629,
+    "dDurationMs": 3690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2639,
+    "dDurationMs": 6680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "turn",
+      "acAsrConf": 255
+    }, {
+      "utf8": " their",
+      "tOffsetMs": 321,
+      "acAsrConf": 255
+    }, {
+      "utf8": " back",
+      "tOffsetMs": 560,
+      "acAsrConf": 255
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 881,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i'm",
+      "tOffsetMs": 1040,
+      "acAsrConf": 255
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1280,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 6309,
+    "dDurationMs": 3010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9460,
+    "dDurationMs": 3159,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  }, {
+    "tStartMs": 16319,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16329,
+    "dDurationMs": 5900,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[Music]"
+    } ]
+  } ]
+}

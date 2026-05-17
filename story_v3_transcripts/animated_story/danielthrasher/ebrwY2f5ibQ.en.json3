@@ -1,0 +1,98 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 9680,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Is"
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " door",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " push",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " pull?",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " It's",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 1870,
+    "dDurationMs": 3490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1880,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "surfboard."
+    }, {
+      "utf8": " Oh.",
+      "tOffsetMs": 1200
+    } ]
+  }, {
+    "tStartMs": 5510,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5520,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Remember"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " breaks.",
+      "tOffsetMs": 1240
+    } ]
+  } ]
+}

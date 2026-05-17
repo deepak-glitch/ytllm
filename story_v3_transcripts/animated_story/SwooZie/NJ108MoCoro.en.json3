@@ -1,0 +1,108 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 8540,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 8540,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "have",
+      "acAsrConf": 248
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 659,
+      "acAsrConf": 248
+    }, {
+      "utf8": " ever",
+      "tOffsetMs": 780,
+      "acAsrConf": 248
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1140,
+      "acAsrConf": 243
+    }, {
+      "utf8": " dream",
+      "tOffsetMs": 1319,
+      "acAsrConf": 248
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1560,
+      "acAsrConf": 240
+    } ]
+  }, {
+    "tStartMs": 3110,
+    "dDurationMs": 5430,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3120,
+    "dDurationMs": 5420,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that's",
+      "acAsrConf": 222
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 59,
+      "acAsrConf": 236
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " um",
+      "tOffsetMs": 1320,
+      "acAsrConf": 246
+    }, {
+      "utf8": " you",
+      "acAsrConf": 248
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 1679,
+      "acAsrConf": 248
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1860,
+      "acAsrConf": 248
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 2639,
+      "acAsrConf": 244
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 3060,
+      "acAsrConf": 213
+    } ]
+  } ]
+}

@@ -1,0 +1,801 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 59899,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 1820,
+    "dDurationMs": 7239,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "did",
+      "acAsrConf": 248
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1000,
+      "acAsrConf": 248
+    }, {
+      "utf8": " know",
+      "tOffsetMs": 1180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1300,
+      "acAsrConf": 248
+    }, {
+      "utf8": " longest-standing",
+      "tOffsetMs": 1599,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Roman",
+      "tOffsetMs": 2260,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 4490,
+    "dDurationMs": 4569,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4500,
+    "dDurationMs": 7320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "legion",
+      "acAsrConf": 248
+    }, {
+      "utf8": " served",
+      "tOffsetMs": 360,
+      "acAsrConf": 248
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 779,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 680",
+      "tOffsetMs": 1520,
+      "acAsrConf": 248
+    }, {
+      "utf8": " years",
+      "tOffsetMs": 2520,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 3060,
+      "acAsrConf": 248
+    }, {
+      "utf8": " legio5",
+      "tOffsetMs": 3840,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 9049,
+    "dDurationMs": 2771,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9059,
+    "dDurationMs": 5341,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "macedonica",
+      "acAsrConf": 248
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 901,
+      "acAsrConf": 248
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 1201,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1381,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 28",
+      "tOffsetMs": 1741,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Legions",
+      "tOffsetMs": 2221,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 11810,
+    "dDurationMs": 2590,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11820,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "originally",
+      "acAsrConf": 248
+    }, {
+      "utf8": " raised",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Octavian",
+      "tOffsetMs": 1260,
+      "acAsrConf": 248
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1859,
+      "acAsrConf": 248
+    }, {
+      "utf8": " fought",
+      "tOffsetMs": 2460,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 14390,
+    "dDurationMs": 2950,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14400,
+    "dDurationMs": 5639,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in",
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 239,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Battle",
+      "tOffsetMs": 359,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " actium",
+      "tOffsetMs": 659,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 31",
+      "tOffsetMs": 1319,
+      "acAsrConf": 248
+    }, {
+      "utf8": " BC",
+      "tOffsetMs": 1739,
+      "acAsrConf": 248
+    }, {
+      "utf8": " before",
+      "tOffsetMs": 2219,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 17330,
+    "dDurationMs": 2709,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 17340,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "being",
+      "acAsrConf": 248
+    }, {
+      "utf8": " stationed",
+      "tOffsetMs": 359,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Macedonia",
+      "tOffsetMs": 1019,
+      "acAsrConf": 248
+    }, {
+      "utf8": " gaining",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 2340,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 20029,
+    "dDurationMs": 2471,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20039,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cognomen",
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 601,
+      "acAsrConf": 248
+    }, {
+      "utf8": " legion",
+      "tOffsetMs": 1201,
+      "acAsrConf": 248
+    }, {
+      "utf8": " played",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1801,
+      "acAsrConf": 248
+    }, {
+      "utf8": " role",
+      "tOffsetMs": 1921,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2160,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2281,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 22490,
+    "dDurationMs": 2949,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22500,
+    "dDurationMs": 5640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "first",
+      "acAsrConf": 248
+    }, {
+      "utf8": " Jewish",
+      "tOffsetMs": 180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Roman",
+      "tOffsetMs": 660,
+      "acAsrConf": 248
+    }, {
+      "utf8": " war",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " darcia",
+      "tOffsetMs": 1800,
+      "acAsrConf": 248
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2400,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2760,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 25429,
+    "dDurationMs": 2711,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25439,
+    "dDurationMs": 5660,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "near",
+      "acAsrConf": 248
+    }, {
+      "utf8": " East",
+      "tOffsetMs": 121,
+      "acAsrConf": 248
+    }, {
+      "utf8": " even",
+      "tOffsetMs": 420,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Emperor",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Hadrian",
+      "tOffsetMs": 1621,
+      "acAsrConf": 248
+    }, {
+      "utf8": " served",
+      "tOffsetMs": 2100,
+      "acAsrConf": 248
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 2580,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 28130,
+    "dDurationMs": 2969,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28140,
+    "dDurationMs": 5700,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "an",
+      "acAsrConf": 248
+    }, {
+      "utf8": " officer",
+      "tOffsetMs": 180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " tribunas",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    }, {
+      "utf8": " militum",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2280,
+      "acAsrConf": 248
+    }, {
+      "utf8": " legia",
+      "tOffsetMs": 2459,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 31089,
+    "dDurationMs": 2751,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31099,
+    "dDurationMs": 5980,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "5.",
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1000,
+      "acAsrConf": 248
+    }, {
+      "utf8": " fifth",
+      "tOffsetMs": 1241,
+      "acAsrConf": 248
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1541,
+      "acAsrConf": 248
+    }, {
+      "utf8": " awarded",
+      "tOffsetMs": 1721,
+      "acAsrConf": 248
+    }, {
+      "utf8": " honors",
+      "tOffsetMs": 2081,
+      "acAsrConf": 248
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 2501,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 33830,
+    "dDurationMs": 3249,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 33840,
+    "dDurationMs": 5580,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "7pia",
+      "acAsrConf": 240
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 899,
+      "acAsrConf": 248
+    }, {
+      "utf8": " seven",
+      "tOffsetMs": 1320,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Fidelis",
+      "tOffsetMs": 1620,
+      "acAsrConf": 248
+    }, {
+      "utf8": " meaning",
+      "tOffsetMs": 2399,
+      "acAsrConf": 248
+    }, {
+      "utf8": " seven",
+      "tOffsetMs": 2700,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 37069,
+    "dDurationMs": 2351,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 37079,
+    "dDurationMs": 4081,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "times",
+      "acAsrConf": 248
+    }, {
+      "utf8": " faithful",
+      "tOffsetMs": 241,
+      "acAsrConf": 248
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 841,
+      "acAsrConf": 248
+    }, {
+      "utf8": " loyal",
+      "tOffsetMs": 1081,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " last",
+      "tOffsetMs": 2221,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 39410,
+    "dDurationMs": 1750,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39420,
+    "dDurationMs": 3959,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "mention",
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 299,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " fifth",
+      "tOffsetMs": 659,
+      "acAsrConf": 246
+    }, {
+      "utf8": " dates",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    }, {
+      "utf8": " back",
+      "tOffsetMs": 1260,
+      "acAsrConf": 248
+    }, {
+      "utf8": " right",
+      "tOffsetMs": 1440,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 41150,
+    "dDurationMs": 2229,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41160,
+    "dDurationMs": 5340,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "before",
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 239,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Arab",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " conquest",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1260,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Egypt",
+      "tOffsetMs": 1559,
+      "acAsrConf": 248
+    }, {
+      "utf8": " where",
+      "tOffsetMs": 1860,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 43369,
+    "dDurationMs": 3131,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43379,
+    "dDurationMs": 7381,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the",
+      "acAsrConf": 248
+    }, {
+      "utf8": " legion",
+      "tOffsetMs": 121,
+      "acAsrConf": 248
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 421,
+      "acAsrConf": 248
+    }, {
+      "utf8": " stationed",
+      "tOffsetMs": 661,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1141,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 637",
+      "tOffsetMs": 1561,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2281,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 46490,
+    "dDurationMs": 4270,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 46500,
+    "dDurationMs": 6899,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "service",
+      "acAsrConf": 246
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 43",
+      "tOffsetMs": 540,
+      "acAsrConf": 246
+    }, {
+      "utf8": " BC",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " 637",
+      "tOffsetMs": 1800,
+      "acAsrConf": 248
+    }, {
+      "utf8": " A.D",
+      "tOffsetMs": 2520,
+      "acAsrConf": 248
+    }, {
+      "utf8": " ligio",
+      "tOffsetMs": 3059,
+      "acAsrConf": 246
+    }, {
+      "utf8": " 5",
+      "tOffsetMs": 4020,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 50750,
+    "dDurationMs": 2649,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 50760,
+    "dDurationMs": 5220,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "macedonica",
+      "acAsrConf": 248
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1200,
+      "acAsrConf": 248
+    }, {
+      "utf8": " longest-lived",
+      "tOffsetMs": 1380,
+      "acAsrConf": 230
+    }, {
+      "utf8": " Roman",
+      "tOffsetMs": 2220,
+      "acAsrConf": 244
+    } ]
+  }, {
+    "tStartMs": 53389,
+    "dDurationMs": 2591,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53399,
+    "dDurationMs": 6500,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "legion",
+      "acAsrConf": 244
+    }, {
+      "utf8": " encompassing",
+      "tOffsetMs": 500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " entire",
+      "tOffsetMs": 1800,
+      "acAsrConf": 248
+    }, {
+      "utf8": " classical",
+      "tOffsetMs": 2160,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 55970,
+    "dDurationMs": 3929,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 55980,
+    "dDurationMs": 3919,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "era",
+      "acAsrConf": 247
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 899,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1200,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Roman",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Empire",
+      "tOffsetMs": 1739,
+      "acAsrConf": 248
+    } ]
+  } ]
+}

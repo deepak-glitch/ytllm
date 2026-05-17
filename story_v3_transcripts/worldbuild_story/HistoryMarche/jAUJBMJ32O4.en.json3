@@ -1,0 +1,781 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 56239,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 480,
+    "dDurationMs": 5580,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the",
+      "acAsrConf": 248
+    }, {
+      "utf8": " Norman",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " victory",
+      "tOffsetMs": 839,
+      "acAsrConf": 248
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 1260,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1440,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Battle",
+      "tOffsetMs": 1620,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 2510,
+    "dDurationMs": 3550,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2520,
+    "dDurationMs": 6360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "shivitate",
+      "acAsrConf": 248
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    }, {
+      "utf8": " far-reaching",
+      "tOffsetMs": 1320,
+      "acAsrConf": 237
+    }, {
+      "utf8": " consequences",
+      "tOffsetMs": 2100,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 6050,
+    "dDurationMs": 2830,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 6060,
+    "dDurationMs": 4920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "after",
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " brief",
+      "tOffsetMs": 779,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Siege",
+      "tOffsetMs": 1020,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1560,
+      "acAsrConf": 248
+    }, {
+      "utf8": " town",
+      "tOffsetMs": 1799,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1980,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 8870,
+    "dDurationMs": 2110,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 8880,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Normans",
+      "acAsrConf": 248
+    }, {
+      "utf8": " captured",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 960,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Pope",
+      "tOffsetMs": 1200,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 10970,
+    "dDurationMs": 2350,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10980,
+    "dDurationMs": 5100,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in",
+      "acAsrConf": 248
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 420,
+      "acAsrConf": 248
+    }, {
+      "utf8": " likely",
+      "tOffsetMs": 539,
+      "acAsrConf": 248
+    }, {
+      "utf8": " record",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1079,
+      "acAsrConf": 248
+    }, {
+      "utf8": " events",
+      "tOffsetMs": 1440,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1920,
+      "acAsrConf": 248
+    }, {
+      "utf8": " local",
+      "tOffsetMs": 2220,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 13310,
+    "dDurationMs": 2770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13320,
+    "dDurationMs": 4980,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "population",
+      "acAsrConf": 248
+    }, {
+      "utf8": " threw",
+      "tOffsetMs": 420,
+      "acAsrConf": 248
+    }, {
+      "utf8": " him",
+      "tOffsetMs": 1199,
+      "acAsrConf": 248
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 1319,
+      "acAsrConf": 248
+    }, {
+      "utf8": " understanding",
+      "tOffsetMs": 1760,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 16070,
+    "dDurationMs": 2230,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16080,
+    "dDurationMs": 4500,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that",
+      "acAsrConf": 248
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 299,
+      "acAsrConf": 248
+    }, {
+      "utf8": " having",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    }, {
+      "utf8": " pope",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " within",
+      "tOffsetMs": 1440,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1680,
+      "acAsrConf": 248
+    }, {
+      "utf8": " walls",
+      "tOffsetMs": 1860,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 18290,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18300,
+    "dDurationMs": 4920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of",
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 120,
+      "acAsrConf": 248
+    }, {
+      "utf8": " city",
+      "tOffsetMs": 360,
+      "acAsrConf": 248
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 479,
+      "acAsrConf": 248
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 1440,
+      "acAsrConf": 248
+    }, {
+      "utf8": " face",
+      "tOffsetMs": 1620,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1860,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 20570,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20580,
+    "dDurationMs": 5100,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "devastation",
+      "acAsrConf": 248
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Slaughter",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 23210,
+    "dDurationMs": 2470,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 23220,
+    "dDurationMs": 5460,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the",
+      "acAsrConf": 248
+    }, {
+      "utf8": " Byzantine",
+      "tOffsetMs": 300,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Army",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " learned",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1799,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1979,
+      "acAsrConf": 248
+    }, {
+      "utf8": " papal",
+      "tOffsetMs": 2160,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 25670,
+    "dDurationMs": 3010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25680,
+    "dDurationMs": 4380,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "defeat",
+      "acAsrConf": 248
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " decided",
+      "tOffsetMs": 1080,
+      "acAsrConf": 248
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 1560,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1859,
+      "acAsrConf": 248
+    }, {
+      "utf8": " continue",
+      "tOffsetMs": 2099,
+      "acAsrConf": 248
+    }, {
+      "utf8": " their",
+      "tOffsetMs": 2339,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 28670,
+    "dDurationMs": 1390,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28680,
+    "dDurationMs": 3780,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "campaign",
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 30050,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 30060,
+    "dDurationMs": 4980,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "they",
+      "acAsrConf": 248
+    }, {
+      "utf8": " disbanded",
+      "tOffsetMs": 600,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1200,
+      "acAsrConf": 248
+    }, {
+      "utf8": " troops",
+      "tOffsetMs": 1379,
+      "acAsrConf": 248
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 2100,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2339,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 32450,
+    "dDurationMs": 2590,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32460,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "their",
+      "acAsrConf": 248
+    }, {
+      "utf8": " soldiers",
+      "tOffsetMs": 240,
+      "acAsrConf": 248
+    }, {
+      "utf8": " remaining",
+      "tOffsetMs": 599,
+      "acAsrConf": 248
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Italy",
+      "tOffsetMs": 1380,
+      "acAsrConf": 248
+    }, {
+      "utf8": " While",
+      "tOffsetMs": 1860,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 35030,
+    "dDurationMs": 2590,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35040,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "others",
+      "acAsrConf": 248
+    }, {
+      "utf8": " sailed",
+      "tOffsetMs": 420,
+      "acAsrConf": 248
+    }, {
+      "utf8": " back",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Greece",
+      "tOffsetMs": 1260,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 37610,
+    "dDurationMs": 2590,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 37620,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "after",
+      "acAsrConf": 248
+    }, {
+      "utf8": " nine",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    }, {
+      "utf8": " months",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " imprisonment",
+      "tOffsetMs": 1680,
+      "acAsrConf": 248
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 2220,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 40190,
+    "dDurationMs": 2950,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 40200,
+    "dDurationMs": 5100,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "benevento",
+      "acAsrConf": 247
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Normans",
+      "tOffsetMs": 1500,
+      "acAsrConf": 247
+    }, {
+      "utf8": " released",
+      "tOffsetMs": 2039,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2400,
+      "acAsrConf": 247
+    }, {
+      "utf8": " pope",
+      "tOffsetMs": 2580,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 43130,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43140,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "but",
+      "acAsrConf": 248
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 180,
+      "acAsrConf": 248
+    }, {
+      "utf8": " before",
+      "tOffsetMs": 419,
+      "acAsrConf": 248
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 599,
+      "acAsrConf": 248
+    }, {
+      "utf8": " recognized",
+      "tOffsetMs": 960,
+      "acAsrConf": 247
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1560,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Norman",
+      "tOffsetMs": 1800,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 45290,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 45300,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "conquests",
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 47090,
+    "dDurationMs": 3730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 47100,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the",
+      "acAsrConf": 248
+    }, {
+      "utf8": " victory",
+      "tOffsetMs": 540,
+      "acAsrConf": 248
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 959,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Monumental",
+      "tOffsetMs": 1400,
+      "acAsrConf": 248
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 2400,
+      "acAsrConf": 239
+    }, {
+      "utf8": " Robert",
+      "tOffsetMs": 2639,
+      "acAsrConf": 227
+    } ]
+  }, {
+    "tStartMs": 50810,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 50820,
+    "dDurationMs": 5419,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who",
+      "acAsrConf": 248
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 300,
+      "acAsrConf": 248
+    }, {
+      "utf8": " elevated",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 840,
+      "acAsrConf": 248
+    }, {
+      "utf8": " leader",
+      "tOffsetMs": 1140,
+      "acAsrConf": 248
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1500,
+      "acAsrConf": 248
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1620,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 52610,
+    "dDurationMs": 3629,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 52620,
+    "dDurationMs": 3619,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Normans",
+      "acAsrConf": 245
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 480,
+      "acAsrConf": 248
+    }, {
+      "utf8": " southern",
+      "tOffsetMs": 720,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Italy",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    } ]
+  } ]
+}

@@ -1,0 +1,135 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 9880,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Oh,"
+    }, {
+      "utf8": " hello.",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " My",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " name",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " Ludwig",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " von",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 1830,
+    "dDurationMs": 3370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1840,
+    "dDurationMs": 6020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Beethoven."
+    }, {
+      "utf8": " What",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " your",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " name?",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 5190,
+    "dDurationMs": 2670,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5200,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " know",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " why",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " asked.",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " am",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " deaf.",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 7850,
+    "dDurationMs": 2030,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7860,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [music]"
+    } ]
+  } ]
+}

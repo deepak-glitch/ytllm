@@ -1,0 +1,131 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 12480,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 2440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Damn."
+    } ]
+  }, {
+    "tStartMs": 5229,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5239,
+    "dDurationMs": 2401,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [music]"
+    } ]
+  }, {
+    "tStartMs": 5550,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5560,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e This"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " something",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " [singing]",
+      "tOffsetMs": 990
+    }, {
+      "utf8": " new,",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 7630,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7640,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "something"
+    }, {
+      "utf8": " you've",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " never",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " heard",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " before.",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 9830,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9840,
+    "dDurationMs": 2640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " go.",
+      "tOffsetMs": 320
+    } ]
+  } ]
+}

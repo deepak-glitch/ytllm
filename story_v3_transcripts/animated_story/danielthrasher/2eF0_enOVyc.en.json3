@@ -1,0 +1,89 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 5840,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 80,
+    "dDurationMs": 5760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Play",
+      "acAsrConf": 0
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 240,
+      "acAsrConf": 0
+    }, {
+      "utf8": " guy",
+      "tOffsetMs": 400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " who",
+      "tOffsetMs": 480,
+      "acAsrConf": 0
+    }, {
+      "utf8": " everybody",
+      "tOffsetMs": 720,
+      "acAsrConf": 0
+    }, {
+      "utf8": " hates.",
+      "tOffsetMs": 1119,
+      "acAsrConf": 0
+    } ]
+  }, {
+    "tStartMs": 1590,
+    "dDurationMs": 4250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1600,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e You",
+      "acAsrConf": 0
+    }, {
+      "utf8": " mean",
+      "tOffsetMs": 239,
+      "acAsrConf": 0
+    }, {
+      "utf8": " whom",
+      "tOffsetMs": 400,
+      "acAsrConf": 0
+    }, {
+      "utf8": " everybody",
+      "tOffsetMs": 960,
+      "acAsrConf": 0
+    }, {
+      "utf8": " hates?",
+      "tOffsetMs": 1440,
+      "acAsrConf": 0
+    } ]
+  } ]
+}

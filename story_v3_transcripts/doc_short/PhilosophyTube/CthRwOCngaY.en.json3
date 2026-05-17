@@ -1,0 +1,603 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 38600,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Hi."
+    }, {
+      "utf8": " On",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " 20th",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " December,",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " I'm",
+      "tOffsetMs": 2240
+    }, {
+      "utf8": " going",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 2510,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2520,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " charity",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " live",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " stream",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 3950,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3960,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Philosophy"
+    }, {
+      "utf8": " Tube",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " reading",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Charles",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " Dickens'",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 5950,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5960,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "A"
+    }, {
+      "utf8": " Christmas",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " Carol",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " raise",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " money",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 7910,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7920,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "World"
+    }, {
+      "utf8": " Central",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " Kitchen.",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Christmas",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 10230,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10240,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "time"
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " lot",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " nice",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " food,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 12550,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 12560,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "everyone"
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " enough",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " eat.",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " World",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 14630,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14640,
+    "dDurationMs": 4355,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Central"
+    }, {
+      "utf8": " Kitchen",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " feed",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " people",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " who",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " suffered",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 16630,
+    "dDurationMs": 2365,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16640,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "natural"
+    }, {
+      "utf8": " disasters",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " wildfires",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 18985,
+    "dDurationMs": 2055,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18995,
+    "dDurationMs": 4565,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[music]"
+    }, {
+      "utf8": " LA",
+      "tOffsetMs": 5
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 325
+    }, {
+      "utf8": " year",
+      "tOffsetMs": 565
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1205
+    }, {
+      "utf8": " also",
+      "tOffsetMs": 1365
+    }, {
+      "utf8": " man-made",
+      "tOffsetMs": 1605
+    } ]
+  }, {
+    "tStartMs": 21030,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21040,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "disasters"
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Gaza",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " Ukraine.",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " So,",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 23550,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 23560,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " hope",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " join",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " cozy",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " read",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 25350,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25360,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " fantastic",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " story",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " together",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 27550,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 27560,
+    "dDurationMs": 3360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "do"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " little",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " bit",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " good",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Christmas",
+      "tOffsetMs": 1160
+    } ]
+  }, {
+    "tStartMs": 29110,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29120,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "season."
+    }, {
+      "utf8": " Link",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " below",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " you'd",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 30910,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 30920,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "donate"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " campaign",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " otherwise",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 32710,
+    "dDurationMs": 2930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32720,
+    "dDurationMs": 5880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "will"
+    }, {
+      "utf8": " see",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " 20th.",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 35630,
+    "dDurationMs": 2970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35640,
+    "dDurationMs": 2960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Merry"
+    }, {
+      "utf8": " Christmas.",
+      "tOffsetMs": 320
+    } ]
+  } ]
+}

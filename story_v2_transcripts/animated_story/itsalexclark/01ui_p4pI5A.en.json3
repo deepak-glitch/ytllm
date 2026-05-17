@@ -1,0 +1,337 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 24290,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5894,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "That"
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " nice.",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " No",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " laughed",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2280
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 2430,
+    "dDurationMs": 3464,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2440,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "heard"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " guy",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " say",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " funny.",
+      "tOffsetMs": 1040
+    } ]
+  }, {
+    "tStartMs": 5884,
+    "dDurationMs": 1956,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5894,
+    "dDurationMs": 3666,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [laughter]"
+    } ]
+  }, {
+    "tStartMs": 7830,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7840,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Can't"
+    }, {
+      "utf8": " wait",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " write",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 9550,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9560,
+    "dDurationMs": 2320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "book."
+    } ]
+  }, {
+    "tStartMs": 11910,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11920,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " knew",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " going",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " make",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " it.",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 13470,
+    "dDurationMs": 3090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13480,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "a"
+    }, {
+      "utf8": " room",
+      "tOffsetMs": 40
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " Pasadena",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " Valentine's",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " Day",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 16550,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16560,
+    "dDurationMs": 3320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "when"
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " should",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " making",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " love",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " woman",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 18150,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18160,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " heard",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " man",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " say,",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " \"That",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 19870,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19880,
+    "dDurationMs": 2360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "funny.\""
+    } ]
+  }, {
+    "tStartMs": 22260,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22270,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [laughter]"
+    } ]
+  } ]
+}

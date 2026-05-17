@@ -1,0 +1,471 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 34040,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 4584,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " couldn't",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " help",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " feeling",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " intense",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " FOMO",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 2550,
+    "dDurationMs": 2034,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2560,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "scrolling"
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " Tumblr",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " feed.",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " These",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " girls",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 4574,
+    "dDurationMs": 1866,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4584,
+    "dDurationMs": 5696,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[music]"
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 136
+    }, {
+      "utf8": " flannels,",
+      "tOffsetMs": 336
+    }, {
+      "utf8": " gauged",
+      "tOffsetMs": 1096
+    }, {
+      "utf8": " ear",
+      "tOffsetMs": 1656
+    } ]
+  }, {
+    "tStartMs": 6430,
+    "dDurationMs": 3850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 6440,
+    "dDurationMs": 5960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "piercings,"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " galaxy",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " print",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " leggings.",
+      "tOffsetMs": 2800
+    }, {
+      "utf8": " An",
+      "tOffsetMs": 3680
+    } ]
+  }, {
+    "tStartMs": 10270,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10280,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "iconic"
+    }, {
+      "utf8": " aesthetic",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " brimming",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 12390,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 12400,
+    "dDurationMs": 4800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "horizon,"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " wanted",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " try",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 14550,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14560,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "badly."
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " something.",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 2520
+    } ]
+  }, {
+    "tStartMs": 17190,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 17200,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "anxiety"
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " eating",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " alive.",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " couldn't",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 19630,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19640,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "keep"
+    }, {
+      "utf8": " up",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " facade",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " forever,",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " had",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 21670,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21680,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to."
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " needed",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " fit",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " in.",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " needed",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 24070,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24080,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "normal."
+    }, {
+      "utf8": " So,",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " does",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " girl",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 25950,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25960,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "walls"
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " closing",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " all",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " around",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " her",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 27550,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 27560,
+    "dDurationMs": 6480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "there's"
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " way",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " out?",
+      "tOffsetMs": 680
+    } ]
+  }, {
+    "tStartMs": 30070,
+    "dDurationMs": 3970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 30080,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Did"
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " get",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " bangs?",
+      "tOffsetMs": 1080
+    } ]
+  } ]
+}

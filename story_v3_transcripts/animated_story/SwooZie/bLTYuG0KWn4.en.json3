@@ -1,0 +1,161 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 8520,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 160,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "i",
+      "acAsrConf": 255
+    }, {
+      "utf8": " see",
+      "tOffsetMs": 160,
+      "acAsrConf": 255
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 480,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 880,
+      "acAsrConf": 255
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1039,
+      "acAsrConf": 255
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1360,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 1520,
+      "acAsrConf": 255
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 1679,
+      "acAsrConf": 255
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1840,
+      "acAsrConf": 255
+    }, {
+      "utf8": " price",
+      "tOffsetMs": 1920,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 2400,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 2629,
+    "dDurationMs": 2091,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2639,
+    "dDurationMs": 5881,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "put",
+      "acAsrConf": 255
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 240,
+      "acAsrConf": 255
+    }, {
+      "utf8": " back",
+      "tOffsetMs": 321,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 800,
+      "acAsrConf": 255
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 881,
+      "acAsrConf": 255
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1121,
+      "acAsrConf": 255
+    }, {
+      "utf8": " price",
+      "tOffsetMs": 1201,
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 1601,
+      "acAsrConf": 255
+    }, {
+      "utf8": " put",
+      "tOffsetMs": 1761,
+      "acAsrConf": 255
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 2001,
+      "acAsrConf": 255
+    } ]
+  }, {
+    "tStartMs": 4710,
+    "dDurationMs": 3810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4720,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "back",
+      "acAsrConf": 255
+    }, {
+      "utf8": " i",
+      "tOffsetMs": 400,
+      "acAsrConf": 255
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 480,
+      "acAsrConf": 255
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 639,
+      "acAsrConf": 255
+    }, {
+      "utf8": " price",
+      "tOffsetMs": 800,
+      "acAsrConf": 255
+    } ]
+  } ]
+}

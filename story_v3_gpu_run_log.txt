@@ -1,0 +1,50 @@
+Story Scraper v3
+Channels: 58 (priority >= 3)
+Cookies from browser: edge
+Whisper fallback: ENABLED (base, device=auto) (triggers only when cookies return 0)
+Strategy per channel: /shorts -> /videos (<600s) -> whisper
+
+  WARN: Cannot read edge cookies (locked or DPAPI-encrypted). Continuing WITHOUT cookies — Whisper will handle the rest.
+[  1/58] @inanutshell              FAIL 0  ERROR: [youtube:tab] @inanutshell: Unable to download API page: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)
+[  2/58] @TED-Ed                   FAIL 0  ERROR: [youtube:tab] @TED-Ed: Unable to download API page: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)
+[  3/58] @danielthrasher           OK 148 subs
+[  4/58] @SomethingElseYT          OK 4 subs
+[  5/58] @GingerPale               OK 24 subs
+[  6/58] @Domics                   OK 4 subs
+[  7/58] @LetMeExplainStudios      OK 13 subs
+[  8/58] @SwooZie                  OK 25 subs
+[  9/58] @illymation               OK 32 subs
+[ 10/58] @MarkRober                OK 41 subs
+[ 11/58] @CGPGrey                  OK 11 whisper [videos]
+[ 12/58] @3blue1brown              OK 66 subs
+[ 13/58] @TomScottGo               OK 20 whisper [videos]
+[ 14/58] @Wendoverproductions      OK 20 whisper [videos]
+[ 15/58] @RealEngineering          OK 85 subs
+[ 16/58] @PracticalEngineering     OK 11 subs
+Whisper GPU: cuda:0 (NVIDIA GeForce RTX 3050 Ti Laptop GPU)
+Loading Whisper 'base' on cuda:0 (first time only)...
+Whisper model loaded.
+[ 17/58] @ColdFusion               OK 20 whisper [videos]
+[ 18/58] @ElectroBOOM              OK 125 subs
+[ 19/58] @Vox                      OK 149 subs
+[ 20/58] @ContraPoints             OK 20 whisper [videos]
+[ 21/58] @PhilosophyTube           OK 34 subs
+[ 22/58] @Oversimplified           OK 20 whisper [videos]
+[ 23/58] @SamONellaAcademy         OK 20 whisper [videos]
+[ 24/58] @TierZoo                  OK 7 subs
+[ 25/58] @Nerdwriter1              OK 4 subs
+[ 26/58] @LEMMiNO                  OK 20 whisper [videos]
+[ 27/58] @HelloFutureMe            OK 67 subs
+[ 28/58] @halfasinteresting        OK 2 subs
+[ 29/58] @MapMen                   FAIL 0  ERROR: [youtube:tab] @MapMen: This channel does not have a videos tab
+[ 30/58] @AlternateHistoryHub      OK 1 subs
+[ 31/58] @HistoryMarche            OK 57 subs
+[ 32/58] @RealLifeLore             OK 62 subs
+[ 33/58] @drewisgooden             OK 19 whisper [videos]
+[ 34/58] @Danny-Gonzalez           OK 2 subs
+[ 35/58] @EddyBurback              OK 20 whisper [videos]
+[ 36/58] @KurtisConner             OK 7 subs
+[ 37/58] @penguinz0                OK 10 subs
+[ 38/58] @JarvisJohnson            FAIL 0  ERROR: [youtube:tab] @JarvisJohnson: Unable to download API page: HTTP Error 404: Not Found (caused by <HTTPError 404: Not Found>)
+[ 39/58] @ScottTheWoz              OK 20 whisper [videos]
+[ 40/58] @SunnyV2                  OK 20 whisper [videos]

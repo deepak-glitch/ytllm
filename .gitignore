@@ -5,3 +5,10 @@
 pipeline_output/
 extra_channels_output/
 masterclass_local/
+
+# Local-only: large video lessons (700MB+, exceeds GitHub file size limits)
+creator-rant/
+
+# Python bytecode
+__pycache__/
+*.pyc

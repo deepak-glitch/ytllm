@@ -1,0 +1,332 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 22325,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " saw",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " street",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " performer",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " steps",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 1910,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1920,
+    "dDurationMs": 3200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Faneuil"
+    }, {
+      "utf8": " Hall",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " saw",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " money",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 3670,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3680,
+    "dDurationMs": 5960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "making"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " traveled",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " world,",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " get",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 5110,
+    "dDurationMs": 4530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5120,
+    "dDurationMs": 4520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "go"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " cool",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " places",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " Pocatello.",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 9750,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9760,
+    "dDurationMs": 3995,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I"
+    }, {
+      "utf8": " went",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " Pocatello",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " cuz",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 11830,
+    "dDurationMs": 1925,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11840,
+    "dDurationMs": 3160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cleaning"
+    }, {
+      "utf8": " museum.",
+      "tOffsetMs": 360
+    } ]
+  }, {
+    "tStartMs": 13745,
+    "dDurationMs": 1255,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13755,
+    "dDurationMs": 2485,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [laughter]"
+    } ]
+  }, {
+    "tStartMs": 14990,
+    "dDurationMs": 1250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15000,
+    "dDurationMs": 3240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e They"
+    }, {
+      "utf8": " do.",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " like,",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " should",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " use",
+      "tOffsetMs": 1080
+    } ]
+  }, {
+    "tStartMs": 16230,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16240,
+    "dDurationMs": 4065,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this"
+    }, {
+      "utf8": " museum",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " downtown",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " area",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 18230,
+    "dDurationMs": 2075,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18240,
+    "dDurationMs": 4085,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Pocatello."
+    } ]
+  }, {
+    "tStartMs": 20295,
+    "dDurationMs": 2030,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20305,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [laughter]"
+    } ]
+  } ]
+}

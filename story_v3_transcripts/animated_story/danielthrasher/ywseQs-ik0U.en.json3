@@ -1,0 +1,297 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 17720,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 2640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Hey,"
+    }, {
+      "utf8": " how's",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " vacation?",
+      "tOffsetMs": 520
+    } ]
+  }, {
+    "tStartMs": 1150,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1160,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Dude,"
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 40
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " great.",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " started",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 2630,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2640,
+    "dDurationMs": 2760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Germany,"
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " went",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Luxembourg,",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Spain,",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 4710,
+    "dDurationMs": 690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4720,
+    "dDurationMs": 2440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Portugal."
+    } ]
+  }, {
+    "tStartMs": 5390,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5400,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Oh,"
+    }, {
+      "utf8": " cool.",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " Oh,",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " yeah,",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Amsterdam.",
+      "tOffsetMs": 1160
+    } ]
+  }, {
+    "tStartMs": 7150,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7160,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e I"
+    }, {
+      "utf8": " heard",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " country",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " beautiful.",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 9470,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9480,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Amsterdam's"
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " country.",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Right.",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " Right.",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 11710,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11720,
+    "dDurationMs": 2440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Right."
+    }, {
+      "utf8": " Right.",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Yeah.",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Do",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " know",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " where",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 13430,
+    "dDurationMs": 730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13440,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Portugal"
+    }, {
+      "utf8": " is?",
+      "tOffsetMs": 520
+    } ]
+  }, {
+    "tStartMs": 14150,
+    "dDurationMs": 3570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14160,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e I barely"
+    }, {
+      "utf8": " know",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " where",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " am",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " right",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " now.",
+      "tOffsetMs": 1200
+    } ]
+  } ]
+}

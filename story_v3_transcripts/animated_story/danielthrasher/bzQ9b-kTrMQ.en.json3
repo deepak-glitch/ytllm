@@ -1,0 +1,122 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 9880,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 2080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "What's"
+    }, {
+      "utf8": " that?",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " You",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " guys",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " jamming?",
+      "tOffsetMs": 800
+    } ]
+  }, {
+    "tStartMs": 1230,
+    "dDurationMs": 850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1240,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e We"
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 40
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " wrapping",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " up.",
+      "tOffsetMs": 640
+    } ]
+  }, {
+    "tStartMs": 2070,
+    "dDurationMs": 3490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2080,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Come"
+    }, {
+      "utf8": " on,",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " brought",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " drum",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " pants.",
+      "tOffsetMs": 880
+    } ]
+  }, {
+    "tStartMs": 7850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7860,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [music]"
+    } ]
+  } ]
+}

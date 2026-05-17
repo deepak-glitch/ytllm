@@ -1,0 +1,678 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 45320,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Americans"
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " longer",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " agree",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 1630,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1640,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "basic"
+    }, {
+      "utf8": " facts.",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Did",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " Joe",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " Biden",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " win",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " 2020",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 3990,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4000,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "election?"
+    }, {
+      "utf8": " Do",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " vaccines",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " cause",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " autism?",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " Does",
+      "tOffsetMs": 2320
+    } ]
+  }, {
+    "tStartMs": 6470,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 6480,
+    "dDurationMs": 3200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " Clinton",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " family",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " drink",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " blood",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 7910,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7920,
+    "dDurationMs": 2520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "kidnapped"
+    }, {
+      "utf8": " babies",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " basement",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " DC",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 9670,
+    "dDurationMs": 770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9680,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "pizza"
+    }, {
+      "utf8": " parlor?",
+      "tOffsetMs": 320
+    } ]
+  }, {
+    "tStartMs": 10430,
+    "dDurationMs": 3290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10440,
+    "dDurationMs": 5720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e I"
+    }, {
+      "utf8": " started",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " being",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " asked",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " UFOs",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 13710,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13720,
+    "dDurationMs": 3360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " series",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " questions",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 16150,
+    "dDurationMs": 930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16160,
+    "dDurationMs": 2680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Pizzagate."
+    } ]
+  }, {
+    "tStartMs": 17070,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 17080,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Many"
+    }, {
+      "utf8": " assume",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " AI",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " will",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " make",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " even",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 18830,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18840,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "harder"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " reach",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " social",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " consensus.",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " After",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 21150,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21160,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "all,"
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " world",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " deep",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " fakes,",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " even",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 22870,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22880,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "video"
+    }, {
+      "utf8": " evidence",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " might",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " lose",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " capacity",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 24710,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24720,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " persuade.",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " But",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " rather",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " than",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " reinforcing",
+      "tOffsetMs": 1200
+    } ]
+  }, {
+    "tStartMs": 26630,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26640,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "social"
+    }, {
+      "utf8": " media's",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " impacts",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " discourse,",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 28750,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28760,
+    "dDurationMs": 4720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "AI"
+    }, {
+      "utf8": " might",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " actually",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " reverse",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " them.",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " To",
+      "tOffsetMs": 2320
+    } ]
+  }, {
+    "tStartMs": 31190,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31200,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "understand"
+    }, {
+      "utf8": " why,",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " need",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " examine",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 33470,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 33480,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "differences"
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " business",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " models",
+      "tOffsetMs": 1160
+    } ]
+  }, {
+    "tStartMs": 35030,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35040,
+    "dDurationMs": 4760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "between"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " AI",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " social",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " media",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 36910,
+    "dDurationMs": 2890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36920,
+    "dDurationMs": 4920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "industries."
+    }, {
+      "utf8": " Hi,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " I'm",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " Eric",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " Levitz.",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " I'm",
+      "tOffsetMs": 2680
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2800
+    } ]
+  }, {
+    "tStartMs": 39790,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39800,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "senior"
+    }, {
+      "utf8": " correspondent",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " Vox,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 41830,
+    "dDurationMs": 3490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41840,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "is"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " Reporter",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " Extra.",
+      "tOffsetMs": 880
+    } ]
+  } ]
+}

@@ -1,0 +1,1711 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 115000,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Late"
+    }, {
+      "utf8": " night",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " TV",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " trouble",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " again,",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 2270,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2280,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " administration",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " behind",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " it.",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 4110,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4120,
+    "dDurationMs": 3720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This"
+    }, {
+      "utf8": " time,",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " Stephen",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Colbert",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " says",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 6190,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 6200,
+    "dDurationMs": 3640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "blocked"
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " airing",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " political",
+      "tOffsetMs": 1120
+    } ]
+  }, {
+    "tStartMs": 7830,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7840,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "interview."
+    }, {
+      "utf8": " On",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Monday",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " night,",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " Colbert",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " told",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 9830,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9840,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "his"
+    }, {
+      "utf8": " audience",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " CBS",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " lawyers",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " wouldn't",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 11670,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11680,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "let"
+    }, {
+      "utf8": " him",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " air",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " interview",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " Texas",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 13510,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13520,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Democratic"
+    }, {
+      "utf8": " Senate",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " candidate",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " James",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 15430,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15440,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Talarico."
+    }, {
+      "utf8": " We",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " told",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " uncertain",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 17750,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 17760,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "terms"
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " our",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " network's",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " lawyers",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " who",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 19710,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19720,
+    "dDurationMs": 2960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "called"
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " directly",
+      "tOffsetMs": 360
+    } ]
+  }, {
+    "tStartMs": 21190,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21200,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that"
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " could",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " him",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 22670,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22680,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "broadcast."
+    }, {
+      "utf8": " Why?",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " Because",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " something",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 24990,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25000,
+    "dDurationMs": 4200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "called"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " equal",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " time",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " rule.",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " It's",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " old",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 26990,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 27000,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "FCC"
+    }, {
+      "utf8": " regulation",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " says",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " give",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 29190,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29200,
+    "dDurationMs": 3720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "airtime"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " candidate,",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 31030,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31040,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "give"
+    }, {
+      "utf8": " equal",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " time",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " their",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " opponent.",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " For",
+      "tOffsetMs": 1719
+    } ]
+  }, {
+    "tStartMs": 32910,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32920,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "decades,"
+    }, {
+      "utf8": " late",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " night",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " shows",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " basically",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 34910,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 34920,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "considered"
+    }, {
+      "utf8": " exempt",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " rule.",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " But",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 36710,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36720,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "last"
+    }, {
+      "utf8": " month,",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " administration",
+      "tOffsetMs": 1000
+    } ]
+  }, {
+    "tStartMs": 38350,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38360,
+    "dDurationMs": 3520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "announced"
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " start",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " enforcing",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " it.",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 40190,
+    "dDurationMs": 1690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 40200,
+    "dDurationMs": 3760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Colbert's"
+    }, {
+      "utf8": " team",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " did",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " post",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " interview",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 41870,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 41880,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "YouTube"
+    }, {
+      "utf8": " where",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " those",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " rules",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " apply.",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 43950,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43960,
+    "dDurationMs": 5165,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "think"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " Donald",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " worried",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 46310,
+    "dDurationMs": 2815,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 46320,
+    "dDurationMs": 4825,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "we're"
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " flip",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " Texas.",
+      "tOffsetMs": 760
+    } ]
+  }, {
+    "tStartMs": 49115,
+    "dDurationMs": 2030,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 49125,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [cheering]"
+    } ]
+  }, {
+    "tStartMs": 51735,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 51745,
+    "dDurationMs": 2020,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[applause]"
+    } ]
+  }, {
+    "tStartMs": 54355,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 54365,
+    "dDurationMs": 2515,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[cheering]"
+    } ]
+  }, {
+    "tStartMs": 54870,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 54880,
+    "dDurationMs": 4070,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e And"
+    }, {
+      "utf8": " Stephen,",
+      "tOffsetMs": 320
+    } ]
+  }, {
+    "tStartMs": 56870,
+    "dDurationMs": 2080,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 56880,
+    "dDurationMs": 3160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this"
+    } ]
+  }, {
+    "tStartMs": 58940,
+    "dDurationMs": 1100,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 58950,
+    "dDurationMs": 3730,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e [cheering and applause]"
+    } ]
+  }, {
+    "tStartMs": 60030,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 60040,
+    "dDurationMs": 4760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e This"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " party",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " ran",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " against",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 62670,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 62680,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cancel"
+    }, {
+      "utf8": " culture,",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " now",
+      "tOffsetMs": 1519
+    }, {
+      "utf8": " they're",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " trying",
+      "tOffsetMs": 1879
+    } ]
+  }, {
+    "tStartMs": 64790,
+    "dDurationMs": 3330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 64800,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " control",
+      "tOffsetMs": 79
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " watch,",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 2200
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 2640
+    }, {
+      "utf8": " say,",
+      "tOffsetMs": 2800
+    } ]
+  }, {
+    "tStartMs": 68110,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 68120,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "what"
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " read.",
+      "tOffsetMs": 440
+    } ]
+  }, {
+    "tStartMs": 69750,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 69760,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "And"
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " most",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " dangerous",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " kind",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 71590,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 71600,
+    "dDurationMs": 2720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cancel"
+    }, {
+      "utf8": " culture,",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " kind",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " comes",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 73710,
+    "dDurationMs": 610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 73720,
+    "dDurationMs": 2840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " top.",
+      "tOffsetMs": 120
+    } ]
+  }, {
+    "tStartMs": 74310,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 74320,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e It"
+    }, {
+      "utf8": " already",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " than",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " 5.7",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " million",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 76550,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 76560,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "views"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " counting.",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Now,",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " isn't",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 78710,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 78720,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "isolated"
+    }, {
+      "utf8": " incident.",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " long",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 80550,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 80560,
+    "dDurationMs": 3520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "history"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " clashing",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " late",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " night",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 82150,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 82160,
+    "dDurationMs": 3640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "hosts."
+    }, {
+      "utf8": " Last",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " year,",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " his",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " administration",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 84070,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 84080,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "contributed"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " pushing",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " Jimmy",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Kimmel",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " off",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 85790,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 85800,
+    "dDurationMs": 4520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " air",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " after",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " remarks",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " Kimmel",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " made",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 87950,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 87960,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "following"
+    }, {
+      "utf8": " Charlie",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Kirk's",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " death.",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " CBS",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 90310,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 90320,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "recently"
+    }, {
+      "utf8": " canceled",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " Colbert's",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " late",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " show,",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 92310,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 92320,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "move"
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " publicly",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " celebrated.",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " He",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 94630,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 94640,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "also"
+    }, {
+      "utf8": " called",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " firing",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " Jimmy",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 96190,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 96200,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Fallon,"
+    }, {
+      "utf8": " Seth",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " Meyers,",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " talk",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " show",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 98470,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 98480,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "hosts"
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " well.",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " FCC",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " reportedly",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 100750,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 100760,
+    "dDurationMs": 3280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "investigating"
+    }, {
+      "utf8": " whether",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " View",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " also",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 102550,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 102560,
+    "dDurationMs": 3320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "violated"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " equal",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " time",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " rule",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 104030,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 104040,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "interviewing"
+    }, {
+      "utf8": " Talarico.",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " So,",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " isn't",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 105870,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 105880,
+    "dDurationMs": 3320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "just"
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " interview,",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " it's",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 107630,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 107640,
+    "dDurationMs": 3400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "whether"
+    }, {
+      "utf8": " late",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " night",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " comedy",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " shows",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 109190,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 109200,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "still"
+    }, {
+      "utf8": " book",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " political",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " guests",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " freely,",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 111030,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 111040,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "whether"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " federal",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " government",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " will",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " step",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 112630,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 112640,
+    "dDurationMs": 2360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in."
+    } ]
+  } ]
+}

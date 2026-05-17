@@ -1,0 +1,1935 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 136080,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 560,
+    "dDurationMs": 5120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " internet's",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " favorite",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " phone,",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 2550,
+    "dDurationMs": 3130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2560,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " indestructible",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " Nokia",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " 3310,",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2600
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 2800
+    }, {
+      "utf8": " put",
+      "tOffsetMs": 2920
+    } ]
+  }, {
+    "tStartMs": 5670,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5680,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "it"
+    }, {
+      "utf8": " into",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " Loma",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " Field",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " CT",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " scanner",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " we",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 7950,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7960,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "can"
+    }, {
+      "utf8": " find",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " how",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " phone",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " earned",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 9830,
+    "dDurationMs": 2730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9840,
+    "dDurationMs": 4800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "durability"
+    }, {
+      "utf8": " meme",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " status.",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " But,",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2240
+    }, {
+      "utf8": " CT",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 12550,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 12560,
+    "dDurationMs": 4200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "scans"
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " show",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " us",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " missing",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 14630,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 14640,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "from"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " phone.",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " If",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " look",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " Nokia",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 16750,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16760,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "3310"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " direct",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " predecessor,",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2440
+    } ]
+  }, {
+    "tStartMs": 19270,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19280,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Nokia"
+    }, {
+      "utf8": " 3210,",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " put",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " them",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " line",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 2560
+    } ]
+  }, {
+    "tStartMs": 21910,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21920,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "their"
+    }, {
+      "utf8": " direct",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " competition,",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " you'll",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " notice",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 23830,
+    "dDurationMs": 2730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 23840,
+    "dDurationMs": 5480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "very"
+    }, {
+      "utf8": " quickly",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " why",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " they",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " stand",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " out.",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " There",
+      "tOffsetMs": 2560
+    } ]
+  }, {
+    "tStartMs": 26550,
+    "dDurationMs": 2770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26560,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "is"
+    }, {
+      "utf8": " no",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " stub,",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " which",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " immediately",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 29310,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29320,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "made"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " phone",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " more",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " durable",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 31110,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31120,
+    "dDurationMs": 4880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "antenna"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " major",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " source",
+      "tOffsetMs": 1159
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " stress",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 33150,
+    "dDurationMs": 2850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 33160,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "concentration"
+    }, {
+      "utf8": " during",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " falls.",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " Before",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 35990,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36000,
+    "dDurationMs": 3640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "internal"
+    }, {
+      "utf8": " antennas",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " practical,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " most",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 38110,
+    "dDurationMs": 1530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38120,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cell"
+    }, {
+      "utf8": " phones",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " used",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " quarter-wave",
+      "tOffsetMs": 880
+    } ]
+  }, {
+    "tStartMs": 39630,
+    "dDurationMs": 2770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39640,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "monopole."
+    }, {
+      "utf8": " Antennas",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " evolved",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " over",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " time.",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 42390,
+    "dDurationMs": 2690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 42400,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "The"
+    }, {
+      "utf8": " simplest",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " pull-out",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " wire",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " antenna.",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 45070,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 45080,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "But,"
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " phones",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " shrank",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " networks",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " added",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 47030,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 47040,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "more"
+    }, {
+      "utf8": " towers,",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " manufacturers",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " switched",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 49070,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 49080,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "more"
+    }, {
+      "utf8": " compact",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " helical",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " stub.",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 51630,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 51640,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Instead"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " long",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " vertical",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " wire,",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 53630,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 53640,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "coil"
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " becomes",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " short",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " cylinder.",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 55990,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 56000,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Helical"
+    }, {
+      "utf8": " antennas",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " bit",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 57550,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 57560,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "efficient,"
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " denser",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " network",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 59590,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 59600,
+    "dDurationMs": 2560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "coverage"
+    }, {
+      "utf8": " made",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " up",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " power",
+      "tOffsetMs": 1120
+    } ]
+  }, {
+    "tStartMs": 61030,
+    "dDurationMs": 1130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 61040,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "difference."
+    } ]
+  }, {
+    "tStartMs": 62150,
+    "dDurationMs": 3330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 62160,
+    "dDurationMs": 5040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "So,"
+    }, {
+      "utf8": " where",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " 3310's",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " hiding?",
+      "tOffsetMs": 2359
+    } ]
+  }, {
+    "tStartMs": 65470,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 65480,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "You"
+    }, {
+      "utf8": " may",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " even",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " able",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " spot",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 67190,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 67200,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " scans",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " without",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " knowledge",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 69030,
+    "dDurationMs": 3010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 69040,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "planar"
+    }, {
+      "utf8": " inverted",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " F",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " antennas.",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " Nokia",
+      "tOffsetMs": 2320
+    }, {
+      "utf8": " phones",
+      "tOffsetMs": 2640
+    } ]
+  }, {
+    "tStartMs": 72030,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 72040,
+    "dDurationMs": 3040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "were"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " first",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " use",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " them.",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " This",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 73990,
+    "dDurationMs": 1090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 74000,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "here."
+    } ]
+  }, {
+    "tStartMs": 75070,
+    "dDurationMs": 2730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 75080,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "A"
+    }, {
+      "utf8": " planar",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " inverted",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " F",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " uses",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2360
+    }, {
+      "utf8": " metal",
+      "tOffsetMs": 2440
+    } ]
+  }, {
+    "tStartMs": 77790,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 77800,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "plate."
+    }, {
+      "utf8": " One",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " end",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " plate",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " connected",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 80270,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 80280,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "directly"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " ground",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " through",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 81910,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 81920,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "shorting"
+    }, {
+      "utf8": " tab,",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " radio",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " feeds",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 83950,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 83960,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "plate"
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " point",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " short",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " distance",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " away.",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 86510,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 86520,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "When"
+    }, {
+      "utf8": " transmitting,",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " current",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " flows",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 88270,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 88280,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " feed",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " across",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " plate",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " returns",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 90510,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 90520,
+    "dDurationMs": 3720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "through"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " short",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " into",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " ground",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " plane,",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 92750,
+    "dDurationMs": 1490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 92760,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "forming"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " resonant",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " path",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 94230,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 94240,
+    "dDurationMs": 4600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "radiates."
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " unusual",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " shape",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2280
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2440
+    } ]
+  }, {
+    "tStartMs": 96790,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 96800,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "antenna"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " because",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " designed",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 98830,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 98840,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "resonate"
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " two",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " frequencies,",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 101270,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 101280,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "each"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " 2G",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " bands.",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " resonant",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 103670,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 103680,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "frequencies"
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " customized",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " by",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 105390,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 105400,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "changing"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " dimensions",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 107510,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 107520,
+    "dDurationMs": 4480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " slit",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " middle.",
+      "tOffsetMs": 720
+    } ]
+  }, {
+    "tStartMs": 109670,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 109680,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This"
+    }, {
+      "utf8": " simple",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " antenna",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " paid",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " off.",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " They",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " were",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 111990,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 112000,
+    "dDurationMs": 5240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "cheap"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " make,",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " metal",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " stamp.",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " They",
+      "tOffsetMs": 2520
+    } ]
+  }, {
+    "tStartMs": 114630,
+    "dDurationMs": 2610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 114640,
+    "dDurationMs": 5680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "never"
+    }, {
+      "utf8": " bent,",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " broke,",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " went",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " tune,",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 117230,
+    "dDurationMs": 3090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 117240,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "adding"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " durability",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " phone.",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 120310,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 120320,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "The"
+    }, {
+      "utf8": " Nokia",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " 3310",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " first",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " episode",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 122630,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 122640,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "our"
+    }, {
+      "utf8": " new",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " Nebula",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " exclusive",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " series,",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 124870,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 124880,
+    "dDurationMs": 4120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Anatomy"
+    }, {
+      "utf8": " of,",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " watch",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 126630,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 126640,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "episodes"
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " Nokia",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " 3310",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2119
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 128990,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 129000,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "first-generation"
+    }, {
+      "utf8": " iPod",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " right",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " now,",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 130950,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 130960,
+    "dDurationMs": 5120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "exclusively"
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Nebula,",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " links",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 133270,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 133280,
+    "dDurationMs": 2800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " comments.",
+      "tOffsetMs": 80
+    } ]
+  } ]
+}

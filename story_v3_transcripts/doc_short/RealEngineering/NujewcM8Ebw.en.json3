@@ -1,0 +1,1008 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 79680,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 680,
+    "dDurationMs": 4840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "This"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " M1",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " A2",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " Abrams,",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2320
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 2440
+    }, {
+      "utf8": " Army's",
+      "tOffsetMs": 2760
+    } ]
+  }, {
+    "tStartMs": 3790,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3800,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "main"
+    }, {
+      "utf8": " battle",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " tank,",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " most",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 5510,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5520,
+    "dDurationMs": 4880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "advanced"
+    }, {
+      "utf8": " armored",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " vehicles",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " world.",
+      "tOffsetMs": 1560
+    } ]
+  }, {
+    "tStartMs": 7870,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7880,
+    "dDurationMs": 4440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "It's"
+    }, {
+      "utf8": " armed",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " cannon",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " over",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " 5",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " m",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " long",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 10390,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 10400,
+    "dDurationMs": 5240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that"
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " punch",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " through",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " nearly",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " meter",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 12310,
+    "dDurationMs": 3330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 12320,
+    "dDurationMs": 5680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "steel"
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " 2",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " km",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " away.",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " Depleted",
+      "tOffsetMs": 2440
+    }, {
+      "utf8": " uranium",
+      "tOffsetMs": 2880
+    } ]
+  }, {
+    "tStartMs": 15630,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15640,
+    "dDurationMs": 4200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "plates"
+    }, {
+      "utf8": " protect",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " turret",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " hull.",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 2240
+    } ]
+  }, {
+    "tStartMs": 17990,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 18000,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "latest"
+    }, {
+      "utf8": " upgrades",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " added",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " additional",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 19830,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19840,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "anti-mine"
+    }, {
+      "utf8": " under",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " place,",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " reactive",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " armor",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 21870,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21880,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "tiles"
+    }, {
+      "utf8": " over",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " flanks,",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " trophy",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 23990,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24000,
+    "dDurationMs": 4200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "active"
+    }, {
+      "utf8": " protection",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " system",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " top.",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " But",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 26190,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26200,
+    "dDurationMs": 5600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "this"
+    }, {
+      "utf8": " raises",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " Abrams",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " fully",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " loaded",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 28190,
+    "dDurationMs": 3610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28200,
+    "dDurationMs": 7080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "combat"
+    }, {
+      "utf8": " weight",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " 78",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " tons.",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " That's",
+      "tOffsetMs": 2880
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 3200
+    }, {
+      "utf8": " much",
+      "tOffsetMs": 3360
+    } ]
+  }, {
+    "tStartMs": 31790,
+    "dDurationMs": 3490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31800,
+    "dDurationMs": 6440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "as"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " Boeing",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " 737",
+      "tOffsetMs": 639
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " takeoff",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 2480
+    }, {
+      "utf8": " 20",
+      "tOffsetMs": 2640
+    }, {
+      "utf8": " Ford",
+      "tOffsetMs": 3080
+    } ]
+  }, {
+    "tStartMs": 35270,
+    "dDurationMs": 2970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35280,
+    "dDurationMs": 5320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "F-450s"
+    }, {
+      "utf8": " stacked",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " top",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " each",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " other.",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 38230,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38240,
+    "dDurationMs": 4640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Yes,"
+    }, {
+      "utf8": " here",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " racing",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " down",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " dirt",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " roads",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 40590,
+    "dDurationMs": 2290,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 40600,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "at"
+    }, {
+      "utf8": " highway",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " speeds,",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " jumping",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " firing",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 42870,
+    "dDurationMs": 2890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 42880,
+    "dDurationMs": 6040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "mid-air,"
+    }, {
+      "utf8": " wading",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " through",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " meter-deep",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " mud,",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 45750,
+    "dDurationMs": 3170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 45760,
+    "dDurationMs": 5640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " drifting",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " it's",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " Toyota",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " AE86.",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 48910,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 48920,
+    "dDurationMs": 5800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "But"
+    }, {
+      "utf8": " out",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " 31",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " Abram",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " tanks",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " delivered",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 51390,
+    "dDurationMs": 3330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 51400,
+    "dDurationMs": 5560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " Ukraine,",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " 27",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " been",
+      "tOffsetMs": 2200
+    }, {
+      "utf8": " lost.",
+      "tOffsetMs": 2400
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 3200
+    } ]
+  }, {
+    "tStartMs": 54710,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 54720,
+    "dDurationMs": 5880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "except"
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " single",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " case",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " direct",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " hit",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 56950,
+    "dDurationMs": 3650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 56960,
+    "dDurationMs": 5560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "from"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " Russian",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " T-72",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " B3,",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " every",
+      "tOffsetMs": 2520
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 2920
+    }, {
+      "utf8": " loss",
+      "tOffsetMs": 3160
+    } ]
+  }, {
+    "tStartMs": 60590,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 60600,
+    "dDurationMs": 4040,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "has"
+    }, {
+      "utf8": " been",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " drone",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " attacks,",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " anti-tank",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 62510,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 62520,
+    "dDurationMs": 5280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "missiles,"
+    }, {
+      "utf8": " artillery,",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " anti-tank",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 64630,
+    "dDurationMs": 3170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 64640,
+    "dDurationMs": 5840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "mines."
+    }, {
+      "utf8": " We",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " examine",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " why",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " how",
+      "tOffsetMs": 2320
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2640
+    }, {
+      "utf8": " M1",
+      "tOffsetMs": 2840
+    } ]
+  }, {
+    "tStartMs": 67790,
+    "dDurationMs": 2690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 67800,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Abrams"
+    }, {
+      "utf8": " became",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " outdated",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " failed",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " NATO",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 70470,
+    "dDurationMs": 2010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 70480,
+    "dDurationMs": 4520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "development"
+    }, {
+      "utf8": " projects",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " inefficient",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 72470,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 72480,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "military"
+    }, {
+      "utf8": " doctrine",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " 20-minute-long",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 74990,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 75000,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "documentary"
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " Real",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Engineering",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 76830,
+    "dDurationMs": 2850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 76840,
+    "dDurationMs": 2840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "YouTube"
+    }, {
+      "utf8": " channel.",
+      "tOffsetMs": 360
+    } ]
+  } ]
+}

@@ -1,0 +1,141 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 11700,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 179,
+    "dDurationMs": 4321,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "inside",
+      "acAsrConf": 175
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 721,
+      "acAsrConf": 160
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 1260,
+      "acAsrConf": 223
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1381,
+      "acAsrConf": 191
+    }, {
+      "utf8": " going",
+      "tOffsetMs": 1501,
+      "acAsrConf": 223
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1681,
+      "acAsrConf": 182
+    } ]
+  }, {
+    "tStartMs": 2869,
+    "dDurationMs": 1631,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2879,
+    "dDurationMs": 5821,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "do",
+      "acAsrConf": 180
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 481,
+      "acAsrConf": 230
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 661,
+      "acAsrConf": 214
+    }, {
+      "utf8": " ready",
+      "tOffsetMs": 780,
+      "acAsrConf": 248
+    } ]
+  }, {
+    "tStartMs": 4490,
+    "dDurationMs": 4210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 4500,
+    "dDurationMs": 7200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "your",
+      "acAsrConf": 248
+    }, {
+      "utf8": " beauty",
+      "tOffsetMs": 900,
+      "acAsrConf": 248
+    }, {
+      "utf8": " never",
+      "tOffsetMs": 1259,
+      "acAsrConf": 248
+    }, {
+      "utf8": " ever",
+      "tOffsetMs": 1740,
+      "acAsrConf": 248
+    }, {
+      "utf8": " scared",
+      "tOffsetMs": 2040,
+      "acAsrConf": 248
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 2520,
+      "acAsrConf": 248
+    }, {
+      "utf8": " Mariana",
+      "tOffsetMs": 3200,
+      "acAsrConf": 246
+    } ]
+  }, {
+    "tStartMs": 8690,
+    "dDurationMs": 3010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 8700,
+    "dDurationMs": 3000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Marriott",
+      "acAsrConf": 109
+    } ]
+  } ]
+}

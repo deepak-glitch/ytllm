@@ -1,0 +1,2697 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 180680,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 3200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "The"
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " meeting",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " time",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 1790,
+    "dDurationMs": 1410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 1800,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "when"
+    }, {
+      "utf8": " one",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " thing",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " top",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1280
+    } ]
+  }, {
+    "tStartMs": 3190,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 3200,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "everyone's"
+    }, {
+      "utf8": " minds,",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " Iran.",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " And",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 5590,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5600,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "likely"
+    }, {
+      "utf8": " eyeing",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " key",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 7550,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 7560,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "solving"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " crisis.",
+      "tOffsetMs": 920
+    } ]
+  }, {
+    "tStartMs": 9190,
+    "dDurationMs": 2610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9200,
+    "dDurationMs": 6120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e The"
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " hoping",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " exert",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 11790,
+    "dDurationMs": 3530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11800,
+    "dDurationMs": 5160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "leverage,"
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " pressure",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 2560
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 3040
+    }, {
+      "utf8": " open",
+      "tOffsetMs": 3200
+    } ]
+  }, {
+    "tStartMs": 15310,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 15320,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " straight.",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 1055
+    } ]
+  }, {
+    "tStartMs": 16950,
+    "dDurationMs": 3570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16960,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "buys"
+    }, {
+      "utf8": " about",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " 80%",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " oil",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " exported",
+      "tOffsetMs": 2760
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 3360
+    } ]
+  }, {
+    "tStartMs": 20510,
+    "dDurationMs": 530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 20520,
+    "dDurationMs": 2080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Iran."
+    } ]
+  }, {
+    "tStartMs": 21030,
+    "dDurationMs": 1570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21040,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e And Beijing"
+    }, {
+      "utf8": " may",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " get",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " involved",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 22590,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 22600,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " wants",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " to,",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " unless",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " there's",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 25030,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 25040,
+    "dDurationMs": 2920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "something"
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " them",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " table.",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " First,",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 26870,
+    "dDurationMs": 1090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26880,
+    "dDurationMs": 2920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "let's"
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " look",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " history",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 960
+    } ]
+  }, {
+    "tStartMs": 27950,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 27960,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "China"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " Iran's",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " relationship,",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " which",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 29790,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 29800,
+    "dDurationMs": 3120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "goes"
+    }, {
+      "utf8": " much",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " deeper",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " than",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " oil",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " Strait",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 31950,
+    "dDurationMs": 970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31960,
+    "dDurationMs": 3440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of"
+    }, {
+      "utf8": " Hormuz.",
+      "tOffsetMs": 120
+    } ]
+  }, {
+    "tStartMs": 32910,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 32920,
+    "dDurationMs": 4400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e Crowds"
+    }, {
+      "utf8": " take",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " streets",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " Tehran.",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 35390,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 35400,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Hundreds"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " thousands",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " demonstrators",
+      "tOffsetMs": 1080
+    } ]
+  }, {
+    "tStartMs": 37310,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 37320,
+    "dDurationMs": 5640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "celebrate"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " ouster",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " Shah",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2120
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2320
+    } ]
+  }, {
+    "tStartMs": 39710,
+    "dDurationMs": 3250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 39720,
+    "dDurationMs": 5200,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "return"
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " exile",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " Ayatollah",
+      "tOffsetMs": 1920
+    }, {
+      "utf8": " Khomeini.",
+      "tOffsetMs": 2480
+    } ]
+  }, {
+    "tStartMs": 42950,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 42960,
+    "dDurationMs": 3360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "At"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " end",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " Iranian",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " Revolution,",
+      "tOffsetMs": 1160
+    } ]
+  }, {
+    "tStartMs": 44910,
+    "dDurationMs": 1410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 44920,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "China"
+    }, {
+      "utf8": " deepened",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " ties",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 46310,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 46320,
+    "dDurationMs": 5800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "country."
+    }, {
+      "utf8": " After",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " revolution,",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 48390,
+    "dDurationMs": 3730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 48400,
+    "dDurationMs": 6120,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "put"
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " arms",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " embargo",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 2200
+    }, {
+      "utf8": " Iran,",
+      "tOffsetMs": 2440
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2880
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 3000
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 3160
+    } ]
+  }, {
+    "tStartMs": 52110,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 52120,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "needed"
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " partners",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " both",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " supply",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " its",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 54510,
+    "dDurationMs": 3010,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 54520,
+    "dDurationMs": 4760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "military"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " other",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " economic",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " partners,",
+      "tOffsetMs": 2560
+    } ]
+  }, {
+    "tStartMs": 57510,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 57520,
+    "dDurationMs": 3520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " looked",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " China.",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " It",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " became",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " kind",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 59270,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 59280,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "of"
+    }, {
+      "utf8": " alliance",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " convenience.",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " China's",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 61030,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 61040,
+    "dDurationMs": 5720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "traditionally"
+    }, {
+      "utf8": " backed",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " countries",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 2400
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 2640
+    } ]
+  }, {
+    "tStartMs": 63830,
+    "dDurationMs": 2930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 63840,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "kind"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 359
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " counterweight",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 2520
+    } ]
+  }, {
+    "tStartMs": 66750,
+    "dDurationMs": 770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 66760,
+    "dDurationMs": 2480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "influence."
+    } ]
+  }, {
+    "tStartMs": 67510,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 67520,
+    "dDurationMs": 3400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e And"
+    }, {
+      "utf8": " though",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " Beijing",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " rarely",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " gets",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " directly",
+      "tOffsetMs": 1200
+    } ]
+  }, {
+    "tStartMs": 69230,
+    "dDurationMs": 1690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 69240,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "involved"
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " military",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " conflict",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 70910,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 70920,
+    "dDurationMs": 3160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Middle"
+    }, {
+      "utf8": " East,",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " does",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " history",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 2240
+    } ]
+  }, {
+    "tStartMs": 73310,
+    "dDurationMs": 770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 73320,
+    "dDurationMs": 3280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "mediating."
+    } ]
+  }, {
+    "tStartMs": 74070,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 74080,
+    "dDurationMs": 6360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e China"
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " also",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " important",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " factor",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 76590,
+    "dDurationMs": 3850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 76600,
+    "dDurationMs": 6400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "getting"
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " sign",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " 2015",
+      "tOffsetMs": 2600
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 3560
+    } ]
+  }, {
+    "tStartMs": 80430,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 80440,
+    "dDurationMs": 4800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "nuclear"
+    }, {
+      "utf8": " deal,",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " Obama's",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " deal.",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 82990,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 83000,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "basically"
+    }, {
+      "utf8": " convinced",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " China,",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " reluctantly,",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 85230,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 85240,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "to"
+    }, {
+      "utf8": " support",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " sanctions",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " at",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " United",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 87150,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 87160,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Nations,"
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " think",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " having",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 89030,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 89040,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "international"
+    }, {
+      "utf8": " pressure",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " was",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " important",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 90950,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 90960,
+    "dDurationMs": 4160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "getting"
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " table.",
+      "tOffsetMs": 1240
+    } ]
+  }, {
+    "tStartMs": 92710,
+    "dDurationMs": 2410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 92720,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e At"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " 2026",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " US-China",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " summit,",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " President",
+      "tOffsetMs": 2000
+    } ]
+  }, {
+    "tStartMs": 95110,
+    "dDurationMs": 1610,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 95120,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Trump"
+    }, {
+      "utf8": " may",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " hoping",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " repeat",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 96710,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 96720,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "playbook"
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " dual",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " pressure",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " from",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 1520
+    } ]
+  }, {
+    "tStartMs": 98670,
+    "dDurationMs": 2050,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 98680,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " negotiate",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 100710,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 100720,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "unblock"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " Strait",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " Hormuz.",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 1600
+    } ]
+  }, {
+    "tStartMs": 102550,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 102560,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "basically"
+    }, {
+      "utf8": " wants",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " stability.",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " They",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " don't",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 104190,
+    "dDurationMs": 2210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 104200,
+    "dDurationMs": 4080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "want"
+    }, {
+      "utf8": " this",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " sort",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " ongoing",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " conflict",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 2120
+    } ]
+  }, {
+    "tStartMs": 106390,
+    "dDurationMs": 1890,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 106400,
+    "dDurationMs": 3600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "the"
+    }, {
+      "utf8": " region.",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " That's",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " very",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " important.",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 108270,
+    "dDurationMs": 1730,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 108280,
+    "dDurationMs": 3160,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "would"
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " play",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " diplomatic",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " role.",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " It",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 109990,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 110000,
+    "dDurationMs": 3280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "would"
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " seen",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " as",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " kind",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 1320
+    } ]
+  }, {
+    "tStartMs": 111430,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 111440,
+    "dDurationMs": 4320,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "responsible"
+    }, {
+      "utf8": " actor",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " region,",
+      "tOffsetMs": 1080
+    } ]
+  }, {
+    "tStartMs": 113270,
+    "dDurationMs": 2490,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 113280,
+    "dDurationMs": 5280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "particularly"
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " appearing",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 2240
+    } ]
+  }, {
+    "tStartMs": 115750,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 115760,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "more"
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " an",
+      "tOffsetMs": 320
+    }, {
+      "utf8": " erratic,",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " unpredictable",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " actor.",
+      "tOffsetMs": 2280
+    } ]
+  }, {
+    "tStartMs": 118550,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 118560,
+    "dDurationMs": 3400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "But"
+    }, {
+      "utf8": " does",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " actually",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " have",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " enough",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 120310,
+    "dDurationMs": 1650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 120320,
+    "dDurationMs": 3480,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "leverage"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " convince",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " get",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 121950,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 121960,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "involved"
+    }, {
+      "utf8": " with",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " Strait",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Hormuz?",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 123790,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 123800,
+    "dDurationMs": 4679,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "closure"
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " actually",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " may",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " impacted",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 125870,
+    "dDurationMs": 2609,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 125880,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "China"
+    }, {
+      "utf8": " less",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " than",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " might",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " think.",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 2080
+    } ]
+  }, {
+    "tStartMs": 128469,
+    "dDurationMs": 2851,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 128479,
+    "dDurationMs": 4681,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "has"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 841
+    }, {
+      "utf8": " really",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " significant",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " petroleum",
+      "tOffsetMs": 2161
+    } ]
+  }, {
+    "tStartMs": 131310,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 131320,
+    "dDurationMs": 3960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "reserve"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " they've",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " been",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " able",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " tap.",
+      "tOffsetMs": 1440
+    } ]
+  }, {
+    "tStartMs": 133150,
+    "dDurationMs": 2130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 133160,
+    "dDurationMs": 2880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "They"
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " sort",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " skate",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2040
+    } ]
+  }, {
+    "tStartMs": 135270,
+    "dDurationMs": 770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 135280,
+    "dDurationMs": 2840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "little"
+    }, {
+      "utf8": " while.",
+      "tOffsetMs": 280
+    } ]
+  }, {
+    "tStartMs": 136030,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 136040,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "\u003e\u003e And"
+    }, {
+      "utf8": " China's",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " President",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " Xi",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " Jinping",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " likely",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 138110,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 138120,
+    "dDurationMs": 5400,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "senses"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " looking",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " win",
+      "tOffsetMs": 1880
+    } ]
+  }, {
+    "tStartMs": 140270,
+    "dDurationMs": 3250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 140280,
+    "dDurationMs": 5600,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "right"
+    }, {
+      "utf8": " now.",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " The",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " dream",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " for",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " Xi",
+      "tOffsetMs": 1960
+    }, {
+      "utf8": " Jinping",
+      "tOffsetMs": 2160
+    } ]
+  }, {
+    "tStartMs": 143510,
+    "dDurationMs": 2370,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 143520,
+    "dDurationMs": 5520,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "would"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " get",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " actually",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 145870,
+    "dDurationMs": 3170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 145880,
+    "dDurationMs": 4920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "explicitly"
+    }, {
+      "utf8": " say",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " opposes",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " Taiwanese",
+      "tOffsetMs": 2600
+    } ]
+  }, {
+    "tStartMs": 149030,
+    "dDurationMs": 1770,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 149040,
+    "dDurationMs": 3720,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "independence."
+    }, {
+      "utf8": " Traditionally,",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1320
+    }, {
+      "utf8": " US",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " has",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 150790,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 150800,
+    "dDurationMs": 3920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "taken"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " kind",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " of",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " ambiguous",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " stance",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1760
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 152750,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 152760,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "question."
+    }, {
+      "utf8": " It",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " seems",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " unlikely",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " would",
+      "tOffsetMs": 1840
+    } ]
+  }, {
+    "tStartMs": 154710,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 154720,
+    "dDurationMs": 3680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "go"
+    }, {
+      "utf8": " that",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " far,",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " but",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " know,",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " Trump",
+      "tOffsetMs": 1239
+    }, {
+      "utf8": " needs",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1760
+    } ]
+  }, {
+    "tStartMs": 156550,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 156560,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "win"
+    }, {
+      "utf8": " right",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " now.",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " Things",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " are",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " going",
+      "tOffsetMs": 1399
+    }, {
+      "utf8": " well",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 158390,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 158400,
+    "dDurationMs": 4240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "for"
+    }, {
+      "utf8": " him",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " world",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " stage.",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " This",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " war",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 160550,
+    "dDurationMs": 2090,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 160560,
+    "dDurationMs": 3880,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that"
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " launched",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 1160
+    }, {
+      "utf8": " doesn't",
+      "tOffsetMs": 1680
+    }, {
+      "utf8": " look",
+      "tOffsetMs": 1960
+    } ]
+  }, {
+    "tStartMs": 162630,
+    "dDurationMs": 1810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 162640,
+    "dDurationMs": 4760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "that"
+    }, {
+      "utf8": " close",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " resolution.",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " So,",
+      "tOffsetMs": 1400
+    }, {
+      "utf8": " if",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 1680
+    } ]
+  }, {
+    "tStartMs": 164430,
+    "dDurationMs": 2970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 164440,
+    "dDurationMs": 6360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "thinks"
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " can",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " get,",
+      "tOffsetMs": 519
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " know,",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " some",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " major",
+      "tOffsetMs": 2200
+    } ]
+  }, {
+    "tStartMs": 167390,
+    "dDurationMs": 3410,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 167400,
+    "dDurationMs": 5920,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "concession"
+    }, {
+      "utf8": " on",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " trade",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " or",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " even",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " get,",
+      "tOffsetMs": 2440
+    }, {
+      "utf8": " you",
+      "tOffsetMs": 3360
+    } ]
+  }, {
+    "tStartMs": 170790,
+    "dDurationMs": 2530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 170800,
+    "dDurationMs": 4680,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "know,"
+    }, {
+      "utf8": " China",
+      "tOffsetMs": 280
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " do",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " something",
+      "tOffsetMs": 1720
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " help",
+      "tOffsetMs": 2159
+    }, {
+      "utf8": " him",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 173310,
+    "dDurationMs": 2170,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 173320,
+    "dDurationMs": 3360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "on"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 80
+    }, {
+      "utf8": " Iran",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " file,",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " like",
+      "tOffsetMs": 960
+    } ]
+  }, {
+    "tStartMs": 175470,
+    "dDurationMs": 1210,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 175480,
+    "dDurationMs": 2640,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "who"
+    }, {
+      "utf8": " knows",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " what",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " he",
+      "tOffsetMs": 520
+    }, {
+      "utf8": " might",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " be",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " willing",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1120
+    } ]
+  }, {
+    "tStartMs": 176670,
+    "dDurationMs": 1450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 176680,
+    "dDurationMs": 4000,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "agree"
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 279
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " it",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " comes",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " to",
+      "tOffsetMs": 1360
+    } ]
+  }, {
+    "tStartMs": 178110,
+    "dDurationMs": 2570,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 178120,
+    "dDurationMs": 2560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Taiwan."
+    } ]
+  } ]
+}

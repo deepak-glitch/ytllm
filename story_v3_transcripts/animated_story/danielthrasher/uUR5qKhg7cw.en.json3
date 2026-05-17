@@ -1,0 +1,558 @@
+{
+  "wireMagic": "pb3",
+  "pens": [ {
+  
+  } ],
+  "wsWinStyles": [ {
+  
+  }, {
+    "mhModeHint": 2,
+    "juJustifCode": 0,
+    "sdScrollDir": 3
+  } ],
+  "wpWinPositions": [ {
+  
+  }, {
+    "apPoint": 6,
+    "ahHorPos": 20,
+    "avVerPos": 100,
+    "rcRows": 2,
+    "ccCols": 40
+  } ],
+  "events": [ {
+    "tStartMs": 0,
+    "dDurationMs": 45920,
+    "id": 1,
+    "wpWinPosId": 1,
+    "wsWinStyleId": 1
+  }, {
+    "tStartMs": 0,
+    "dDurationMs": 5840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "There's"
+    }, {
+      "utf8": " sunshine",
+      "tOffsetMs": 240
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 654
+    } ]
+  }, {
+    "tStartMs": 2150,
+    "dDurationMs": 3690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 2160,
+    "dDurationMs": 7360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " air.",
+      "tOffsetMs": 720
+    }, {
+      "utf8": " There's",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " rainbows",
+      "tOffsetMs": 1880
+    }, {
+      "utf8": " [singing]",
+      "tOffsetMs": 2424
+    } ]
+  }, {
+    "tStartMs": 5830,
+    "dDurationMs": 3690,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 5840,
+    "dDurationMs": 5295,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in"
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " sky.",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " There's",
+      "tOffsetMs": 1600
+    }, {
+      "utf8": " flowers",
+      "tOffsetMs": 1800
+    } ]
+  }, {
+    "tStartMs": 9510,
+    "dDurationMs": 1625,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 9520,
+    "dDurationMs": 4360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "in"
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " heart",
+      "tOffsetMs": 680
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 960
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " there's",
+      "tOffsetMs": 1400
+    } ]
+  }, {
+    "tStartMs": 11125,
+    "dDurationMs": 2755,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 11135,
+    "dDurationMs": 5545,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "[singing]"
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 65
+    }, {
+      "utf8": " kitty",
+      "tOffsetMs": 145
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 1425
+    }, {
+      "utf8": " that's",
+      "tOffsetMs": 1585
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 1825
+    }, {
+      "utf8": " favorite",
+      "tOffsetMs": 1985
+    } ]
+  }, {
+    "tStartMs": 13870,
+    "dDurationMs": 2810,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 13880,
+    "dDurationMs": 5440,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "part."
+    }, {
+      "utf8": " Every",
+      "tOffsetMs": 1200
+    }, {
+      "utf8": " morning",
+      "tOffsetMs": 1520
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 1840
+    }, {
+      "utf8": " I",
+      "tOffsetMs": 2160
+    }, {
+      "utf8": " wake",
+      "tOffsetMs": 2280
+    }, {
+      "utf8": " up",
+      "tOffsetMs": 2600
+    } ]
+  }, {
+    "tStartMs": 16670,
+    "dDurationMs": 2650,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 16680,
+    "dDurationMs": 4560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "and"
+    }, {
+      "utf8": " pet",
+      "tOffsetMs": 200
+    }, {
+      "utf8": " my",
+      "tOffsetMs": 600
+    }, {
+      "utf8": " kitty.",
+      "tOffsetMs": 840
+    }, {
+      "utf8": " Oh,",
+      "tOffsetMs": 1640
+    }, {
+      "utf8": " no.",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " On",
+      "tOffsetMs": 2080
+    }, {
+      "utf8": " days",
+      "tOffsetMs": 2120
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 19310,
+    "dDurationMs": 1930,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 19320,
+    "dDurationMs": 4760,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I'm"
+    }, {
+      "utf8": " not",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " feeling",
+      "tOffsetMs": 360
+    }, {
+      "utf8": " great,",
+      "tOffsetMs": 800
+    }, {
+      "utf8": " her",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " fur",
+      "tOffsetMs": 1240
+    }, {
+      "utf8": " is",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 1720
+    } ]
+  }, {
+    "tStartMs": 21230,
+    "dDurationMs": 2850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 21240,
+    "dDurationMs": 5280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "pretty."
+    }, {
+      "utf8": " She's",
+      "tOffsetMs": 1120
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " fluffy",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 1685
+    }, {
+      "utf8": " kitty",
+      "tOffsetMs": 2040
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 2640
+    } ]
+  }, {
+    "tStartMs": 24070,
+    "dDurationMs": 2450,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 24080,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "she"
+    }, {
+      "utf8": " makes",
+      "tOffsetMs": 120
+    }, {
+      "utf8": " me",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " so",
+      "tOffsetMs": 560
+    }, {
+      "utf8": " happy",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " when",
+      "tOffsetMs": 1560
+    }, {
+      "utf8": " she",
+      "tOffsetMs": 1800
+    }, {
+      "utf8": " does",
+      "tOffsetMs": 2000
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 2360
+    } ]
+  }, {
+    "tStartMs": 26510,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 26520,
+    "dDurationMs": 5080,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "kitty"
+    }, {
+      "utf8": " sleep",
+      "tOffsetMs": 400
+    }, {
+      "utf8": " and",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " takes",
+      "tOffsetMs": 1000
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " little",
+      "tOffsetMs": 1360
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 1645
+    } ]
+  }, {
+    "tStartMs": 28350,
+    "dDurationMs": 3250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 28360,
+    "dDurationMs": 6360,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "kitty"
+    }, {
+      "utf8": " nap.",
+      "tOffsetMs": 440
+    }, {
+      "utf8": " I'm",
+      "tOffsetMs": 880
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1080
+    }, {
+      "utf8": " happiest,",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " happiest,",
+      "tOffsetMs": 2400
+    } ]
+  }, {
+    "tStartMs": 31590,
+    "dDurationMs": 3130,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 31600,
+    "dDurationMs": 4960,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "happiest"
+    }, {
+      "utf8": " [singing]",
+      "tOffsetMs": 495
+    }, {
+      "utf8": " guy",
+      "tOffsetMs": 760
+    }, {
+      "utf8": " in",
+      "tOffsetMs": 1280
+    }, {
+      "utf8": " the",
+      "tOffsetMs": 1480
+    }, {
+      "utf8": " world.",
+      "tOffsetMs": 1640
+    } ]
+  }, {
+    "tStartMs": 34710,
+    "dDurationMs": 1850,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 34720,
+    "dDurationMs": 3800,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Oh,"
+    }, {
+      "utf8": " yeah.",
+      "tOffsetMs": 400
+    } ]
+  }, {
+    "tStartMs": 36550,
+    "dDurationMs": 1970,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 36560,
+    "dDurationMs": 4280,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "I'm"
+    }, {
+      "utf8": " just",
+      "tOffsetMs": 160
+    }, {
+      "utf8": " a",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " happy,",
+      "tOffsetMs": 640
+    }, {
+      "utf8": " peppy,",
+      "tOffsetMs": 1040
+    }, {
+      "utf8": " [music]",
+      "tOffsetMs": 1430
+    }, {
+      "utf8": " snappy,",
+      "tOffsetMs": 1480
+    } ]
+  }, {
+    "tStartMs": 38510,
+    "dDurationMs": 2330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 38520,
+    "dDurationMs": 3840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "tappy,"
+    }, {
+      "utf8": " whappy,",
+      "tOffsetMs": 480
+    }, {
+      "utf8": " flappy,",
+      "tOffsetMs": 920
+    }, {
+      "utf8": " clappy,",
+      "tOffsetMs": 1440
+    }, {
+      "utf8": " happy",
+      "tOffsetMs": 1920
+    } ]
+  }, {
+    "tStartMs": 40830,
+    "dDurationMs": 1530,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 40840,
+    "dDurationMs": 2840,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "guy."
+    } ]
+  }, {
+    "tStartMs": 42350,
+    "dDurationMs": 1330,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 42360,
+    "dDurationMs": 3560,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Aha."
+    } ]
+  }, {
+    "tStartMs": 43670,
+    "dDurationMs": 2250,
+    "wWinId": 1,
+    "aAppend": 1,
+    "segs": [ {
+      "utf8": "\n"
+    } ]
+  }, {
+    "tStartMs": 43680,
+    "dDurationMs": 2240,
+    "wWinId": 1,
+    "segs": [ {
+      "utf8": "Happy."
+    } ]
+  } ]
+}
