@@ -5,11 +5,16 @@ Generates training examples in instruct format:
   user: story prompt
   assistant: valid JSON scene manifest
 
-Run:
+Template mode (no API key needed):
   python synthetic_data/generate.py --count 1000 --output synthetic_data/manifests_v1.jsonl
 
-Optional LLM mode (requires OPENAI_API_KEY or TOGETHER_API_KEY):
+Claude mode (requires ANTHROPIC_API_KEY):
+  python synthetic_data/generate.py --count 1000 --llm claude --output synthetic_data/manifests_claude.jsonl
+
+Together AI mode (requires TOGETHER_API_KEY):
   python synthetic_data/generate.py --count 1000 --llm together --model Qwen/Qwen3-8B-Instruct
+
+Use --template-fallback to fall back to templates when LLM fails.
 """
 
 import json
@@ -240,29 +245,42 @@ def manifest_to_training_example(prompt: str, manifest: dict) -> dict:
 # LLM-based generation (optional)
 # ---------------------------------------------------------------------------
 
-def generate_llm_manifest(prompt: str, client, model: str) -> dict | None:
+def generate_llm_manifest(prompt: str, client, model: str, provider: str = "openai") -> dict | None:
     """Call an LLM to generate a manifest. Returns dict or None on failure."""
     import json as _json
     messages = build_prompt(prompt, include_few_shot=True)
     try:
-        response = client.chat.completions.create(
-            model=model,
-            messages=messages,
-            temperature=0.8,
-            max_tokens=1200,
-        )
-        content = response.choices[0].message.content.strip()
+        if provider == "claude":
+            # Anthropic SDK — extract system prompt separately
+            system = next(m["content"] for m in messages if m["role"] == "system")
+            convo = [m for m in messages if m["role"] != "system"]
+            response = client.messages.create(
+                model=model,
+                max_tokens=1200,
+                system=system,
+                messages=convo,
+            )
+            content = response.content[0].text.strip()
+        else:
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=0.8,
+                max_tokens=1200,
+            )
+            content = response.choices[0].message.content.strip()
+
         # Strip markdown code fences if present
         if content.startswith("```"):
             content = content.split("```")[1]
             if content.startswith("json"):
                 content = content[4:]
         data = _json.loads(content)
-        manifest, err = validate_manifest(data) if True else (None, None)
+        _, err = validate_manifest(data)
         if err:
             return None
         return data
-    except Exception:
+    except Exception as e:
         return None
 
 
@@ -274,26 +292,45 @@ def main():
     parser = argparse.ArgumentParser(description="Generate synthetic JSON manifest training data")
     parser.add_argument("--count", type=int, default=1000, help="Number of examples to generate")
     parser.add_argument("--output", type=str, default="synthetic_data/manifests_v1.jsonl")
-    parser.add_argument("--llm", choices=["together", "openai"], default=None,
+    parser.add_argument("--llm", choices=["claude", "together", "openai"], default=None,
                         help="Use LLM for generation instead of templates")
-    parser.add_argument("--model", type=str, default="Qwen/Qwen3-8B-Instruct",
-                        help="Model to use for LLM generation")
+    parser.add_argument("--model", type=str, default=None,
+                        help="Model to use (defaults: claude=claude-haiku-4-5-20251001, together=Qwen/Qwen3-8B-Instruct)")
     parser.add_argument("--template-fallback", action="store_true",
                         help="Fall back to templates if LLM generation fails")
     args = parser.parse_args()
 
     client = None
+    provider = args.llm
+    model = args.model
+
     if args.llm:
+        import os
         try:
-            from openai import OpenAI
-            import os
-            if args.llm == "together":
+            if args.llm == "claude":
+                import anthropic
+                client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+                if model is None:
+                    model = "claude-haiku-4-5-20251001"
+                print(f"Using Claude ({model})")
+            elif args.llm == "together":
+                from openai import OpenAI
                 client = OpenAI(
                     api_key=os.environ["TOGETHER_API_KEY"],
                     base_url="https://api.together.xyz/v1",
                 )
+                if model is None:
+                    model = "Qwen/Qwen3-8B-Instruct"
+                print(f"Using Together AI ({model})")
             else:
+                from openai import OpenAI
                 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+                if model is None:
+                    model = "gpt-4o-mini"
+                print(f"Using OpenAI ({model})")
+        except KeyError as e:
+            print(f"Missing environment variable: {e}")
+            sys.exit(1)
         except Exception as e:
             print(f"Failed to init LLM client: {e}")
             sys.exit(1)
@@ -316,7 +353,7 @@ def main():
             manifest = None
 
             if client:
-                manifest = generate_llm_manifest(prompt, client, args.model)
+                manifest = generate_llm_manifest(prompt, client, model, provider=provider)
                 if manifest is None:
                     invalid += 1
                     if not args.template_fallback:
