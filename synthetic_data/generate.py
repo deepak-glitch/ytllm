@@ -245,13 +245,25 @@ def manifest_to_training_example(prompt: str, manifest: dict) -> dict:
 # LLM-based generation (optional)
 # ---------------------------------------------------------------------------
 
-def generate_llm_manifest(prompt: str, client, model: str, provider: str = "openai") -> dict | None:
-    """Call an LLM to generate a manifest. Returns dict or None on failure."""
+# Haiku 4.5 pricing (per million tokens)
+HAIKU_INPUT_COST  = 0.80   # $0.80 / MTok
+HAIKU_OUTPUT_COST = 4.00   # $4.00 / MTok
+
+
+def tokens_to_cost(input_tokens: int, output_tokens: int) -> float:
+    return (input_tokens * HAIKU_INPUT_COST + output_tokens * HAIKU_OUTPUT_COST) / 1_000_000
+
+
+def generate_llm_manifest(
+    prompt: str, client, model: str, provider: str = "openai"
+) -> tuple[dict | None, int, int]:
+    """Call an LLM to generate a manifest.
+    Returns (manifest_or_None, input_tokens, output_tokens).
+    """
     import json as _json
     messages = build_prompt(prompt, include_few_shot=True)
     try:
         if provider == "claude":
-            # Anthropic SDK — extract system prompt separately
             system = next(m["content"] for m in messages if m["role"] == "system")
             convo = [m for m in messages if m["role"] != "system"]
             response = client.messages.create(
@@ -261,6 +273,8 @@ def generate_llm_manifest(prompt: str, client, model: str, provider: str = "open
                 messages=convo,
             )
             content = response.content[0].text.strip()
+            in_tok  = response.usage.input_tokens
+            out_tok = response.usage.output_tokens
         else:
             response = client.chat.completions.create(
                 model=model,
@@ -269,8 +283,9 @@ def generate_llm_manifest(prompt: str, client, model: str, provider: str = "open
                 max_tokens=1200,
             )
             content = response.choices[0].message.content.strip()
+            in_tok  = response.usage.prompt_tokens
+            out_tok = response.usage.completion_tokens
 
-        # Strip markdown code fences if present
         if content.startswith("```"):
             content = content.split("```")[1]
             if content.startswith("json"):
@@ -278,10 +293,10 @@ def generate_llm_manifest(prompt: str, client, model: str, provider: str = "open
         data = _json.loads(content)
         _, err = validate_manifest(data)
         if err:
-            return None
-        return data
-    except Exception as e:
-        return None
+            return None, in_tok, out_tok
+        return data, in_tok, out_tok
+    except Exception:
+        return None, 0, 0
 
 
 # ---------------------------------------------------------------------------
@@ -298,6 +313,8 @@ def main():
                         help="Model to use (defaults: claude=claude-haiku-4-5-20251001, together=Qwen/Qwen3-8B-Instruct)")
     parser.add_argument("--template-fallback", action="store_true",
                         help="Fall back to templates if LLM generation fails")
+    parser.add_argument("--budget", type=float, default=None,
+                        help="Hard spend cap in USD — stops generation when reached")
     args = parser.parse_args()
 
     client = None
@@ -347,35 +364,52 @@ def main():
 
     valid = 0
     invalid = 0
+    total_cost = 0.0
+    total_in_tok = 0
+    total_out_tok = 0
+    budget = args.budget
 
     with open(out_path, "w") as f:
         for i, prompt in enumerate(prompts):
             manifest = None
 
             if client:
-                manifest = generate_llm_manifest(prompt, client, model, provider=provider)
+                manifest, in_tok, out_tok = generate_llm_manifest(prompt, client, model, provider=provider)
+                call_cost = tokens_to_cost(in_tok, out_tok)
+                total_cost += call_cost
+                total_in_tok += in_tok
+                total_out_tok += out_tok
+
                 if manifest is None:
                     invalid += 1
                     if not args.template_fallback:
+                        if budget and total_cost >= budget:
+                            print(f"\n  Budget cap ${budget:.2f} reached at ${total_cost:.4f} — stopping.")
+                            break
                         continue
                     manifest = generate_template_manifest(prompt)
             else:
                 manifest = generate_template_manifest(prompt)
 
-            # Validate
             _, err = validate_manifest(manifest)
             if err:
                 invalid += 1
-                continue
-
-            example = manifest_to_training_example(prompt, manifest)
-            f.write(json.dumps(example) + "\n")
-            valid += 1
+            else:
+                example = manifest_to_training_example(prompt, manifest)
+                f.write(json.dumps(example) + "\n")
+                valid += 1
 
             if (i + 1) % 100 == 0:
-                print(f"  [{i+1}/{args.count}] valid={valid} invalid={invalid}")
+                cost_str = f" | cost=${total_cost:.4f}" if client else ""
+                print(f"  [{i+1}/{args.count}] valid={valid} invalid={invalid}{cost_str}")
+
+            if budget and total_cost >= budget:
+                print(f"\n  Budget cap ${budget:.2f} reached at ${total_cost:.4f} — stopping.")
+                break
 
     print(f"\nDone. {valid} valid examples written to {out_path} ({invalid} discarded)")
+    if client:
+        print(f"Total cost: ${total_cost:.4f} ({total_in_tok:,} input tokens, {total_out_tok:,} output tokens)")
 
 
 if __name__ == "__main__":
