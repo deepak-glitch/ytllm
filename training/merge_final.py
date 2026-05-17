@@ -16,10 +16,10 @@ from collections import Counter
 ROOT = Path(__file__).parent.parent
 
 SOURCES = [
-    ROOT / "training_data_v7_clean.jsonl",         # 9720 transcript/script examples
-    ROOT / "synthetic_data" / "manifests_v1.jsonl", # 980 template JSON manifests
-    # Add more here as generated:
-    # ROOT / "synthetic_data" / "manifests_claude.jsonl",
+    ROOT / "training_data_v7_clean.jsonl",              # 9720 transcript/script examples
+    ROOT / "synthetic_data" / "manifests_v1.jsonl",     # 980 template JSON manifests
+    ROOT / "synthetic_data" / "manifests_claude.jsonl", # 114 Haiku-generated manifests
+    ROOT / "synthetic_data" / "manifests_10k.jsonl",    # 9746 template JSON manifests
 ]
 
 OUT = ROOT / "training" / "training_data_final.jsonl"
