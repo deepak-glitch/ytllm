@@ -1,9 +1,6 @@
 # Axolotl QLoRA config for Qwen3-27B Story Director fine-tuning
-# Platform: Vast.ai 8x A100 PCIE 80GB
-# Run: accelerate launch --num_processes=8 --multi_gpu -m axolotl.cli.train axolotl_config.yml
-#
-# Effective batch size = num_gpus * micro_batch_size * gradient_accumulation_steps
-#                      = 8 * 1 * 1 = 8 (same as single-GPU version)
+# Platform: Vast.ai single RTX PRO 6000 96GB (or A100 80GB)
+# Run: accelerate launch -m axolotl.cli.train training/axolotl_config.yml
 
 base_model: Qwen/Qwen3-27B
 model_type: AutoModelForCausalLM
@@ -43,10 +40,9 @@ gradient_checkpointing: true
 gradient_checkpointing_kwargs:
   use_reentrant: false
 
-micro_batch_size: 1
-gradient_accumulation_steps: 1
+micro_batch_size: 2
+gradient_accumulation_steps: 4
 num_epochs: 3
-ddp_find_unused_parameters: false
 optimizer: adamw_torch_fused
 lr_scheduler: cosine
 learning_rate: 2e-4
