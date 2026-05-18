@@ -1,0 +1,62 @@
+# Axolotl QLoRA config for Qwen3-27B Story Director fine-tuning
+# Platform: RunPod or Vast.ai (A100 80GB)
+# Run: accelerate launch -m axolotl.cli.train axolotl_config.yml
+
+base_model: Qwen/Qwen3-27B
+model_type: AutoModelForCausalLM
+tokenizer_type: AutoTokenizer
+trust_remote_code: true
+
+load_in_4bit: true
+strict: false
+
+datasets:
+  - path: /workspace/training_data_sharegpt.jsonl
+    type: sharegpt
+    conversation: chatml
+
+dataset_prepared_path: /workspace/last_run_prepared
+val_set_size: 0.02
+output_dir: /workspace/qwen3-27b-story-director
+
+sequence_len: 2048
+sample_packing: false
+pad_to_sequence_len: true
+
+adapter: qlora
+lora_r: 32
+lora_alpha: 64
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+gradient_checkpointing: true
+gradient_checkpointing_kwargs:
+  use_reentrant: false
+
+micro_batch_size: 1
+gradient_accumulation_steps: 8
+num_epochs: 3
+optimizer: adamw_torch_fused
+lr_scheduler: cosine
+learning_rate: 2e-4
+warmup_ratio: 0.05
+weight_decay: 0.01
+
+bf16: true
+tf32: true
+flash_attention: true
+
+logging_steps: 10
+eval_steps: 200
+save_steps: 400
+save_total_limit: 2
+
+# Optional: add wandb key to env before running
+# wandb_project: ytllm-story-director
