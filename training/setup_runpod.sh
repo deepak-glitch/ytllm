@@ -1,5 +1,5 @@
 #!/bin/bash
-# Works on A100 (Ampere sm_80) — auto-detects 1 or 2 GPUs
+# Works on A100 (Ampere sm_80) and RTX PRO 6000 (Blackwell sm_120) — auto-detects 1 or 2 GPUs
 # Background it: nohup bash training/setup_runpod.sh > training.log 2>&1 &
 
 set -e
@@ -17,22 +17,19 @@ print(f'Torch: {torch.__version__}')
 print(f'CUDA : {torch.version.cuda}')
 "
 GPU_COUNT=$(python -c "import torch; print(torch.cuda.device_count())")
-GPU_CAP=$(python -c "import torch; print(torch.cuda.get_device_capability(0)[0])")
-echo "GPUs: $GPU_COUNT | Compute capability major: $GPU_CAP"
+echo "GPUs: $GPU_COUNT"
 
 echo "=== Step 2/4: Installing Axolotl ==="
 pip install -q --upgrade pip wheel packaging
 pip install -q "axolotl[deepspeed]"
 
-# Blackwell (sm_12x) needs torch 2.7+ — reinstall after axolotl downgrades it
-if [ "$GPU_CAP" -ge 12 ]; then
-    echo "--- Blackwell detected: reinstalling torch 2.7+ for sm_120 support ---"
-    pip install -q torch torchvision torchaudio --upgrade \
-        --index-url https://download.pytorch.org/whl/cu128
-    pip install -q bitsandbytes --upgrade
-else
-    echo "--- Ampere/Hopper detected: keeping installed torch ---"
-fi
+# Axolotl downgrades torch to 2.5.x which breaks the NGC torchvision (built for 2.10).
+# Always reinstall a matched torch+torchvision pair from pytorch.org after axolotl.
+# cu128 wheels run on CUDA 12.x and 13.x — covers A100, H100, and Blackwell.
+echo "--- Reinstalling matched torch + torchvision (cu128) ---"
+pip install -q torch torchvision torchaudio --upgrade \
+    --index-url https://download.pytorch.org/whl/cu128
+pip install -q bitsandbytes --upgrade
 
 echo "=== Step 3/4: Installing flash-attn ==="
 pip install -q flash-attn --no-build-isolation
