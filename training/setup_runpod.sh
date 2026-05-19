@@ -31,7 +31,10 @@ pip install -q torch torchvision torchaudio --upgrade \
     --index-url https://download.pytorch.org/whl/cu128
 pip install -q bitsandbytes --upgrade
 
-echo "=== Step 3/4: Installing flash-attn ==="
+echo "=== Step 3/4: Installing flash-attn + fixing pynvml ==="
+# Old pynvml (no submodule) conflicts with axolotl's `from pynvml.nvml import NVMLError`
+pip uninstall -q -y pynvml 2>/dev/null || true
+pip install -q nvidia-ml-py
 pip install -q flash-attn --no-build-isolation
 
 # Verify GPU is accessible
