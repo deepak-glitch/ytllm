@@ -43,11 +43,15 @@ Outputs:
   training_data_v8.jsonl   ← merged with v7_clean, ready to fine-tune
 """
 
-import os, json, re, sys, time, subprocess
+import os, json, re, sys, time, subprocess, ssl, urllib3
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from collections import defaultdict, Counter
+
+# SSL bypass — needed in some cloud/proxy environments
+ssl._create_default_https_context = ssl._create_unverified_context
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ── Auto-install ──────────────────────────────────────────────────────────────
 def _pip(*pkgs):
@@ -388,7 +392,9 @@ def get_youtube():
         print("   3. Credentials → Create API Key")
         print("   4. Create .env file:  YOUTUBE_API_KEY=AIza...")
         sys.exit(1)
-    return build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
+    import httplib2
+    http = httplib2.Http(disable_ssl_certificate_validation=True)
+    return build("youtube", "v3", developerKey=YOUTUBE_API_KEY, http=http)
 
 
 # Rate limit: YouTube API allows ~10k units/day free. Add small delays.
@@ -613,24 +619,25 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
 
 def get_transcript(video_id: str) -> str:
     """
-    Fetch transcript using youtube-transcript-api (no YouTube API quota).
+    Fetch transcript using youtube-transcript-api v1.x (no YouTube API quota).
     Tries English first, falls back to any available language.
     """
     try:
+        api = YouTubeTranscriptApi()
         try:
-            chunks = YouTubeTranscriptApi.get_transcript(video_id, languages=["en", "en-US", "en-GB"])
-        except NoTranscriptFound:
-            # Try any available transcript
-            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-            transcript_obj  = transcript_list.find_transcript(["en"])
-            chunks = transcript_obj.fetch()
+            result = api.fetch(video_id, languages=["en", "en-US", "en-GB"])
+        except Exception:
+            # Fallback: list available transcripts and pick first
+            transcript_list = api.list(video_id)
+            transcript_obj  = next(iter(transcript_list), None)
+            if transcript_obj is None:
+                return ""
+            result = transcript_obj.fetch()
 
-        text = " ".join(c.get("text", "") for c in chunks)
+        text = " ".join(s.text if hasattr(s, "text") else s["text"] for s in result)
         text = re.sub(r"\s+", " ", text).strip()
         return text if len(text.split()) >= MIN_TRANSCRIPT_WORDS else ""
 
-    except (NoTranscriptFound, TranscriptsDisabled):
-        return ""
     except Exception:
         return ""
 
