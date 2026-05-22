@@ -12,8 +12,7 @@ creator-rant/
 # Python bytecode
 __pycache__/
 *.pyc
-# Environment variables (never commit API keys)
-.env
+# Environment variables
 .env.local
 
 # Scrape outputs (large, regenerable)
