@@ -12,3 +12,13 @@ creator-rant/
 # Python bytecode
 __pycache__/
 *.pyc
+# Environment variables (never commit API keys)
+.env
+.env.local
+
+# Scrape outputs (large, regenerable)
+checkpoint/
+raw_data/
+everything_raw.jsonl
+everything_training.jsonl
+yt_transcripts/
