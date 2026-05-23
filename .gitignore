@@ -20,7 +20,11 @@ __pycache__/
 
 # Scrape outputs (large, regenerable)
 checkpoint/
+checkpoints_api/
 raw_data/
 everything_raw.jsonl
 everything_training.jsonl
+api_raw.jsonl
+api_training.jsonl
+video_ids_cache.json
 yt_transcripts/

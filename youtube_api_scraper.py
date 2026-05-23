@@ -108,9 +108,9 @@ MIN_TRANSCRIPT_WORDS= 10         # skip near-empty transcripts
 COMMENT_WORKERS     = 8          # parallel comment fetchers
 TRANSCRIPT_WORKERS  = 12         # parallel transcript fetchers (no quota)
 
-CHECKPOINT_DIR      = Path("checkpoint")
-OUT_RAW             = Path("everything_raw.jsonl")
-OUT_TRAINING        = Path("everything_training.jsonl")
+CHECKPOINT_DIR      = Path("checkpoints_api")
+OUT_RAW             = Path("api_raw.jsonl")
+OUT_TRAINING        = Path("api_training.jsonl")
 CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 
@@ -1201,17 +1201,30 @@ def main():
         for ex in all_examples:
             f.write(json.dumps(ex) + "\n")
 
-    # Merge with v7_clean → v8
-    v7 = Path("training_data_v7_clean.jsonl")
-    v8 = Path("training_data_v8.jsonl")
+    # Merge with existing v8 → v9
+    existing_v8 = Path("training_data_v8.jsonl")
+    v9 = Path("training_data_v9.jsonl")
     merged = 0
-    with open(v8, "w") as f:
-        if v7.exists():
-            for line in v7.read_text().splitlines():
+    seen_ids = set()
+    with open(v9, "w") as f:
+        # Keep everything already in v8
+        if existing_v8.exists():
+            for line in existing_v8.read_text().splitlines():
                 if line.strip():
-                    f.write(line + "\n"); merged += 1
+                    try:
+                        ex = json.loads(line)
+                        key = ex.get("video_id","") + ex.get("source","")
+                        if key not in seen_ids:
+                            seen_ids.add(key)
+                            f.write(line + "\n"); merged += 1
+                    except Exception:
+                        pass
+        # Add new API examples (deduped)
         for ex in all_examples:
-            f.write(json.dumps(ex) + "\n"); merged += 1
+            key = ex.get("video_id","") + ex.get("source","")
+            if key not in seen_ids:
+                seen_ids.add(key)
+                f.write(json.dumps(ex) + "\n"); merged += 1
 
     # Final report
     type_counts = Counter(ex["source"]  for ex in all_examples)
@@ -1222,7 +1235,7 @@ def main():
     print(f"✅ COMPLETE")
     print(f"   Video records:        {len(all_records):,}")
     print(f"   Training examples:    {len(all_examples):,}")
-    print(f"   v8 total (with v7):   {merged:,}")
+    print(f"   v9 total (v8 + new):  {merged:,}")
     print()
     print("📊 By example type:")
     for src, cnt in type_counts.most_common():
@@ -1236,16 +1249,16 @@ def main():
     for ch, cnt in ch_counts.most_common(10):
         print(f"   {ch:30s} {cnt:>6,}")
     print()
-    print(f"💾 everything_raw.jsonl       ← raw data")
-    print(f"💾 everything_training.jsonl  ← training examples")
-    print(f"💾 training_data_v8.jsonl     ← merged, ready to fine-tune")
+    print(f"💾 api_raw.jsonl              ← raw API data")
+    print(f"💾 api_training.jsonl         ← API training examples")
+    print(f"💾 training_data_v9.jsonl     ← merged v8 + new, ready to fine-tune")
     print()
     print("▶️  Next: python prep_finetune.py")
 
     # ─────────────────────────────────────────────────────────────────────
     # AUTO-DOWNLOAD (Colab only)
     # ─────────────────────────────────────────────────────────────────────
-    _colab_download([v8, OUT_TRAINING, OUT_RAW])
+    _colab_download([v9, OUT_TRAINING, OUT_RAW])
 
 
 if __name__ == "__main__":
