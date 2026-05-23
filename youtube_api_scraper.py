@@ -83,7 +83,23 @@ except ImportError:
     load_dotenv()
 
 # ── Config ────────────────────────────────────────────────────────────────────
-YOUTUBE_API_KEY     = os.getenv("YOUTUBE_API_KEY", "")
+def _load_api_keys() -> list:
+    """Load API keys from env. Supports:
+       YOUTUBE_API_KEYS=key1,key2,key3        (preferred)
+       YOUTUBE_API_KEY=key1, YOUTUBE_API_KEY_2=key2, ... (also works)
+    """
+    keys = []
+    bulk = os.getenv("YOUTUBE_API_KEYS", "")
+    if bulk:
+        keys.extend(k.strip() for k in bulk.split(",") if k.strip())
+    for env_name in ["YOUTUBE_API_KEY"] + [f"YOUTUBE_API_KEY_{i}" for i in range(2, 11)]:
+        v = os.getenv(env_name, "").strip()
+        if v and v not in keys:
+            keys.append(v)
+    return keys
+
+API_KEYS            = _load_api_keys()
+YOUTUBE_API_KEY     = API_KEYS[0] if API_KEYS else ""
 MAX_VIDEOS_PER_CH   = 50         # videos to pull per channel (50 = 1 quota unit)
 MAX_COMMENTS        = 100        # comments per video (1 quota unit per 100)
 MAX_DURATION_SEC    = 180        # skip videos longer than 3 min
@@ -380,44 +396,204 @@ CHANNELS = [
 # YOUTUBE API CLIENT
 # ─────────────────────────────────────────────────────────────────────────────
 
+class AllKeysExhausted(Exception):
+    pass
+
+
+class QuotaTracker:
+    """Rotates through a pool of API keys when one hits its daily quota."""
+
+    SAFETY_LIMIT = 9_800  # leave ~200 unit buffer below 10k daily free tier
+    STATE_FILE   = Path("quota_state.json")
+
+    def __init__(self, keys: list):
+        self.keys = list(keys)
+        self.idx  = 0
+        # by-key (last 8 chars) → units used today (UTC)
+        self.usage = {}
+        self.day   = time.strftime("%Y-%m-%d", time.gmtime())
+        self._load()
+        # advance past any already-exhausted keys
+        for _ in range(len(self.keys)):
+            if self._units(self.keys[self.idx]) < self.SAFETY_LIMIT:
+                break
+            self.idx = (self.idx + 1) % len(self.keys)
+
+    def _short(self, k: str) -> str:
+        return k[-8:]
+
+    def _units(self, key: str) -> int:
+        return self.usage.get(self._short(key), 0)
+
+    def _load(self):
+        if not self.STATE_FILE.exists():
+            return
+        try:
+            data = json.loads(self.STATE_FILE.read_text())
+            if data.get("day") == self.day:
+                self.usage = data.get("usage", {})
+        except Exception:
+            pass
+
+    def _save(self):
+        try:
+            self.STATE_FILE.write_text(json.dumps({
+                "day": self.day, "usage": self.usage,
+            }))
+        except Exception:
+            pass
+
+    @property
+    def current_key(self) -> str:
+        return self.keys[self.idx]
+
+    def charge(self, units: int):
+        # New UTC day → reset
+        today = time.strftime("%Y-%m-%d", time.gmtime())
+        if today != self.day:
+            self.day = today
+            self.usage = {}
+        short = self._short(self.current_key)
+        if self.usage.get(short, 0) + units > self.SAFETY_LIMIT:
+            raise QuotaExhausted()
+        self.usage[short] = self.usage.get(short, 0) + units
+        self._save()
+
+    def mark_exhausted(self):
+        self.usage[self._short(self.current_key)] = self.SAFETY_LIMIT
+        self._save()
+
+    def rotate(self) -> bool:
+        """Move to next non-exhausted key. Returns False if all are spent."""
+        n = len(self.keys)
+        for i in range(1, n + 1):
+            cand = (self.idx + i) % n
+            if self._units(self.keys[cand]) < self.SAFETY_LIMIT:
+                self.idx = cand
+                print(f"\n  🔄 Rotated to API key #{self.idx + 1} of {n} "
+                      f"(...{self._short(self.current_key)})")
+                return True
+        return False
+
+    def add_key(self, key: str):
+        if key and key not in self.keys:
+            self.keys.append(key)
+            self.idx = len(self.keys) - 1
+            print(f"  ➕ Added new API key — now using #{self.idx + 1}")
+
+
+class QuotaExhausted(Exception):
+    pass
+
+
+def _ask_for_new_key() -> str:
+    print("\n" + "=" * 60)
+    print("⚠️  ALL API KEYS HAVE HIT TODAY'S QUOTA (~10k units each)")
+    print("=" * 60)
+    print("Options:")
+    print("  1. Wait until midnight Pacific Time — quotas auto-reset")
+    print("  2. Create a new API key:")
+    print("     https://console.cloud.google.com/apis/credentials")
+    print("     (new project → enable YouTube Data API v3 → create key)")
+    print("  3. Paste the new key below and we'll continue immediately.")
+    try:
+        key = input("\nPaste new API key (or press Enter to abort): ").strip()
+    except EOFError:
+        key = ""
+    return key
+
+
+# Mutable single-element list so we can swap the client mid-run after rotation.
+_yt_client = [None]
+
+def _build_yt(api_key: str):
+    return build("youtube", "v3", developerKey=api_key, cache_discovery=False)
+
+
 def get_youtube():
-    if not YOUTUBE_API_KEY:
-        print("\n❌ YOUTUBE_API_KEY not set!")
+    if not API_KEYS:
+        print("\n❌ No YouTube API keys found!")
         print("   1. Go to https://console.cloud.google.com/")
         print("   2. Create project → Enable 'YouTube Data API v3'")
         print("   3. Credentials → Create API Key")
-        print("   4. Create .env file:  YOUTUBE_API_KEY=AIza...")
+        print("   4. Add to .env:")
+        print("        YOUTUBE_API_KEYS=AIza_key1,AIza_key2,AIza_key3")
         sys.exit(1)
-    return build("youtube", "v3", developerKey=YOUTUBE_API_KEY)
+    if _yt_client[0] is None:
+        _yt_client[0] = _build_yt(QUOTA.current_key)
+    return _yt_client[0]
 
 
-# Rate limit: YouTube API allows ~10k units/day free. Add small delays.
+# Global quota tracker (built once keys are loaded)
+QUOTA = QuotaTracker(API_KEYS) if API_KEYS else None
+
+
+def _handle_quota_hit():
+    """Try to rotate to the next un-exhausted key; if none left, ask user."""
+    if QUOTA.rotate():
+        _yt_client[0] = _build_yt(QUOTA.current_key)
+        return
+    new_key = _ask_for_new_key()
+    if not new_key:
+        raise AllKeysExhausted()
+    QUOTA.add_key(new_key)
+    _yt_client[0] = _build_yt(QUOTA.current_key)
+
+
+# Rate limit: YouTube API allows ~10k units/day free per key. Add small delays.
 _last_api_call = [0.0]
 _api_lock = Lock()
 API_DELAY = 0.05  # 50ms between calls = max ~20 calls/sec
 
-def _api_call(request):
-    """Execute an API request with rate limiting and retry on quota errors."""
-    with _api_lock:
-        now = time.time()
-        since = now - _last_api_call[0]
-        if since < API_DELAY:
-            time.sleep(API_DELAY - since)
-        _last_api_call[0] = time.time()
+def _api_call(request_fn, units: int = 1):
+    """Execute an API request with rate limiting + key rotation on quota errors.
 
-    for attempt in range(4):
+    request_fn must be a zero-arg callable (lambda) that returns a fresh
+    request object — this lets us rebuild it against the new client after a
+    key rotation."""
+    while True:
         try:
-            return request.execute()
+            QUOTA.charge(units)
+        except QuotaExhausted:
+            try:
+                _handle_quota_hit()
+            except AllKeysExhausted:
+                print("\n  ❌ All API keys exhausted and no new key provided.")
+                return None
+            continue
+
+        with _api_lock:
+            now = time.time()
+            since = now - _last_api_call[0]
+            if since < API_DELAY:
+                time.sleep(API_DELAY - since)
+            _last_api_call[0] = time.time()
+
+        try:
+            return request_fn().execute()
         except HttpError as e:
-            if e.resp.status in (403, 429):
-                wait = 2 ** attempt * 10
-                print(f"\n  ⏳ Quota/rate limit hit — waiting {wait}s...")
-                time.sleep(wait)
-            elif e.resp.status in (400, 404):
-                return None  # channel not found or bad request
-            else:
-                raise
-    return None
+            status = e.resp.status
+            body = str(e).lower()
+            is_quota = status == 403 and (
+                "quotaexceeded" in body or "dailylimitexceeded" in body
+                or "ratelimit" in body
+            )
+            if is_quota:
+                print(f"\n  ⏳ Quota hit on key ...{QUOTA._short(QUOTA.current_key)} — rotating")
+                QUOTA.mark_exhausted()
+                try:
+                    _handle_quota_hit()
+                except AllKeysExhausted:
+                    print("  ❌ All API keys exhausted.")
+                    return None
+                continue
+            if status == 429:
+                print("\n  ⏳ Rate limit — sleeping 10s...")
+                time.sleep(10)
+                continue
+            if status in (400, 404):
+                return None  # channel not found / bad request — skip
+            raise
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -431,30 +607,33 @@ def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
     """
     handle_clean = handle.lstrip("@")
     resp = _api_call(
-        yt.channels().list(
+        lambda: _yt_client[0].channels().list(
             part="id,contentDetails",
             forHandle=handle_clean,
             maxResults=1,
-        )
+        ),
+        units=1,
     )
     if not resp or not resp.get("items"):
-        # Fallback: try search
+        # Fallback: try search (costs 100 units)
         resp2 = _api_call(
-            yt.search().list(
+            lambda: _yt_client[0].search().list(
                 part="snippet",
                 q=handle_clean,
                 type="channel",
                 maxResults=1,
-            )
+            ),
+            units=100,
         )
         if not resp2 or not resp2.get("items"):
             return None
         channel_id = resp2["items"][0]["snippet"]["channelId"]
         resp = _api_call(
-            yt.channels().list(
+            lambda: _yt_client[0].channels().list(
                 part="id,contentDetails",
                 id=channel_id,
-            )
+            ),
+            units=1,
         )
         if not resp or not resp.get("items"):
             return None
@@ -483,7 +662,7 @@ def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int) -> list[s
         if page_token:
             params["pageToken"] = page_token
 
-        resp = _api_call(yt.playlistItems().list(**params))
+        resp = _api_call(lambda: _yt_client[0].playlistItems().list(**params), units=1)
         if not resp:
             break
 
@@ -508,11 +687,12 @@ def get_video_metadata_batch(yt, video_ids: list[str]) -> dict[str, dict]:
         return {}
 
     resp = _api_call(
-        yt.videos().list(
+        lambda: _yt_client[0].videos().list(
             part="snippet,statistics,contentDetails",
             id=",".join(video_ids),
             maxResults=50,
-        )
+        ),
+        units=1,
     )
     if not resp:
         return {}
@@ -580,7 +760,7 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
             params["pageToken"] = page_token
 
         try:
-            resp = _api_call(yt.commentThreads().list(**params))
+            resp = _api_call(lambda: _yt_client[0].commentThreads().list(**params), units=1)
         except Exception:
             break
 
