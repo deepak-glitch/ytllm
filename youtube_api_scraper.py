@@ -90,7 +90,33 @@ except ImportError:
 from dotenv import load_dotenv as _load_dotenv
 _load_dotenv(Path(__file__).parent / ".env")
 
-YOUTUBE_API_KEY     = os.getenv("YOUTUBE_API_KEY", "")
+def _load_api_keys() -> list:
+    """
+    Load API keys from .env. Supports:
+      YOUTUBE_API_KEYS=AIza1,AIza2,AIza3    (preferred — comma separated)
+      YOUTUBE_API_KEY=AIza1                  (single key, backward compat)
+      YOUTUBE_API_KEY_2=AIza2                (numbered fallback)
+      YOUTUBE_API_KEY_3=AIza3
+    Returns ordered list of unique keys.
+    """
+    keys = []
+
+    # 1. YOUTUBE_API_KEYS plural — comma separated
+    bulk = os.getenv("YOUTUBE_API_KEYS", "")
+    if bulk:
+        keys.extend(k.strip() for k in bulk.split(",") if k.strip())
+
+    # 2. YOUTUBE_API_KEY (singular) + numbered variants
+    for env_name in ["YOUTUBE_API_KEY"] + [f"YOUTUBE_API_KEY_{i}" for i in range(2, 11)]:
+        v = os.getenv(env_name, "").strip()
+        if v and v not in keys:
+            keys.append(v)
+
+    return keys
+
+
+API_KEYS            = _load_api_keys()
+YOUTUBE_API_KEY     = API_KEYS[0] if API_KEYS else ""
 
 MAX_VIDEOS_PER_CH   = 10_000    # effectively unlimited — grab every video
 MAX_COMMENTS        = 500       # up to 500 comments per video (5 API pages)
@@ -113,49 +139,106 @@ write_lock = Lock()
 class QuotaExhausted(Exception):
     pass
 
+class AllKeysExhausted(Exception):
+    pass
+
 class QuotaTracker:
     """
-    Tracks API units used for the current key.
-    When quota runs out, pauses and asks you to paste a new key — then continues.
+    Manages a pool of API keys. When one key's quota runs out, automatically
+    rotates to the next. When ALL keys are exhausted, asks for a new one inline.
+
+    Usage state persists in quota_state.json — survives restarts.
     """
-    def __init__(self):
-        self.key  = YOUTUBE_API_KEY[-8:] if YOUTUBE_API_KEY else "unknown"
-        self.used = 0
+    def __init__(self, keys: list):
+        self.keys     = list(keys)
+        self.idx      = 0                          # which key we're using now
+        self.used     = {k[-8:]: 0 for k in self.keys}   # units used per key (by suffix)
         self._load()
+
+    @property
+    def current_key(self) -> str:
+        return self.keys[self.idx] if self.keys else ""
+
+    @property
+    def current_suffix(self) -> str:
+        k = self.current_key
+        return k[-8:] if k else "none"
+
+    @property
+    def current_used(self) -> int:
+        return self.used.get(self.current_suffix, 0)
+
+    @property
+    def remaining(self) -> int:
+        return max(0, QUOTA_LIMIT - self.current_used)
 
     def _load(self):
         if QUOTA_STATE_FILE.exists():
             try:
                 state = json.loads(QUOTA_STATE_FILE.read_text())
-                if state.get("key") == self.key:
-                    self.used = state.get("used", 0)
-                    print(f"   📊 Quota restored: {self.used} units used on this key")
+                self.used.update(state.get("used", {}))
+                # Resume on the key that was active (if still in pool)
+                last_suffix = state.get("active", "")
+                for i, k in enumerate(self.keys):
+                    if k[-8:] == last_suffix:
+                        self.idx = i
+                        break
+                # If active key already used up, advance
+                while self.idx < len(self.keys) and self.current_used >= QUOTA_LIMIT:
+                    self.idx += 1
             except Exception:
                 pass
 
     def _save(self):
-        QUOTA_STATE_FILE.write_text(json.dumps({"key": self.key, "used": self.used}))
+        QUOTA_STATE_FILE.write_text(json.dumps({
+            "used":   self.used,
+            "active": self.current_suffix,
+        }, indent=2))
 
-    def switch_key(self, new_key: str):
-        """Switch to a new API key and reset the quota counter."""
-        global YOUTUBE_API_KEY
-        YOUTUBE_API_KEY = new_key.strip()
-        self.key  = YOUTUBE_API_KEY[-8:]
-        self.used = 0
+    def add_key(self, new_key: str):
+        """Add a brand new key to the pool (used when all are exhausted)."""
+        new_key = new_key.strip()
+        if new_key in self.keys:
+            print(f"   ⚠️  Key (...{new_key[-8:]}) is already in pool")
+            return False
+        self.keys.append(new_key)
+        self.used[new_key[-8:]] = 0
+        self.idx = len(self.keys) - 1
         self._save()
-        print(f"\n   🔑 New key accepted (...{self.key}) — quota reset to 0")
+        print(f"   🔑 Added new key (...{new_key[-8:]}) — pool size: {len(self.keys)}")
+        return True
+
+    def rotate(self) -> bool:
+        """Move to next key in pool. Returns False if no more keys left."""
+        # Find next un-exhausted key
+        for i in range(self.idx + 1, len(self.keys)):
+            if self.used.get(self.keys[i][-8:], 0) < QUOTA_LIMIT:
+                self.idx = i
+                self._save()
+                print(f"\n   🔄 Rotated to key #{self.idx + 1}/{len(self.keys)} (...{self.current_suffix})")
+                print(f"      {self.remaining} units available")
+                return True
+        return False
 
     def charge(self, units: int = 1):
-        self.used += units
+        suffix = self.current_suffix
+        self.used[suffix] = self.used.get(suffix, 0) + units
         self._save()
-        if self.used >= QUOTA_LIMIT:
+        if self.used[suffix] >= QUOTA_LIMIT:
             raise QuotaExhausted()
 
-    @property
-    def remaining(self):
-        return max(0, QUOTA_LIMIT - self.used)
+    def status_line(self) -> str:
+        parts = []
+        for i, k in enumerate(self.keys):
+            used = self.used.get(k[-8:], 0)
+            marker = "▶" if i == self.idx else " "
+            if used >= QUOTA_LIMIT:
+                parts.append(f"{marker} #{i+1} ...{k[-8:]} EXHAUSTED")
+            else:
+                parts.append(f"{marker} #{i+1} ...{k[-8:]} {used}/{QUOTA_LIMIT}")
+        return "\n      ".join(parts)
 
-QUOTA = QuotaTracker()
+QUOTA = QuotaTracker(API_KEYS)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CHANNEL LIST — 238 channels, 15 categories
@@ -444,65 +527,75 @@ def _build_yt(key: str):
     return build("youtube", "v3", developerKey=key, http=http)
 
 
-def _ask_for_new_key() -> str:
-    """Pause and ask the user to paste a new API key. Returns the new key."""
+def _ask_for_new_key() -> str | None:
+    """All keys in pool are exhausted — ask user to paste one more. None = give up."""
     print("\n" + "="*60)
-    print("⚠️  QUOTA EXHAUSTED")
-    print(f"   Used: {QUOTA.used} / {QUOTA_LIMIT} units")
+    print("⚠️  ALL API KEYS EXHAUSTED")
     print("="*60)
-    print("All progress is saved. Just paste your new API key below")
-    print("and the scraper will continue exactly where it stopped.\n")
+    print(QUOTA.status_line())
+    print("\nAll progress is saved. You can:")
+    print("  • Paste another API key to keep going")
+    print("  • Press Ctrl+C / Enter to stop (resume later with same .env)")
     while True:
         try:
-            new_key = input("   Paste new API key: ").strip()
-        except EOFError:
-            # Non-interactive (e.g. piped input) — exit cleanly
-            print("\nNo key provided — exiting. Run again when you have a new key.")
-            sys.exit(0)
+            new_key = input("\n   Paste new API key (or Enter to quit): ").strip()
+        except (EOFError, KeyboardInterrupt):
+            return None
+        if not new_key:
+            return None
         if new_key.startswith("AIza") and len(new_key) > 20:
             return new_key
-        print("   ❌ Doesn't look right — should start with 'AIza...'  Try again.")
+        print("   ❌ Doesn't look right — should start with 'AIza...'")
 
 
 _last_api_call = [0.0]
 _api_lock = Lock()
-API_DELAY = 0.1   # 100ms between calls — ~10 req/sec max
+API_DELAY = 0.1
 
-# Global yt client — rebuilt when key changes
 _yt_client = [None]
 
+
 def get_youtube():
-    global YOUTUBE_API_KEY
-    if not YOUTUBE_API_KEY:
-        if QUOTA_STATE_FILE.exists():
-            # Existing run — ask for key right away
-            YOUTUBE_API_KEY = _ask_for_new_key()
-            QUOTA.switch_key(YOUTUBE_API_KEY)
-        else:
-            print("\n❌ YOUTUBE_API_KEY not set in .env")
-            sys.exit(1)
-    client = _build_yt(YOUTUBE_API_KEY)
+    if not QUOTA.keys:
+        print("\n❌ No API keys found in .env")
+        print("   Add one of these:")
+        print("     YOUTUBE_API_KEYS=AIza1,AIza2,AIza3")
+        print("     OR")
+        print("     YOUTUBE_API_KEY=AIza1")
+        print("     YOUTUBE_API_KEY_2=AIza2")
+        print("     YOUTUBE_API_KEY_3=AIza3")
+        sys.exit(1)
+    client = _build_yt(QUOTA.current_key)
     _yt_client[0] = client
     return client
 
 
+def _handle_quota_hit():
+    """Quota ran out on current key. Try to rotate. If pool exhausted, ask user."""
+    if QUOTA.rotate():
+        # Rebuild client with next key
+        _yt_client[0] = _build_yt(QUOTA.current_key)
+        return
+    # All keys in pool exhausted
+    new_key = _ask_for_new_key()
+    if not new_key:
+        raise AllKeysExhausted()
+    QUOTA.add_key(new_key)
+    _yt_client[0] = _build_yt(QUOTA.current_key)
+
+
 def _api_call(request_fn, units: int = 1):
     """
-    Execute one API request.
-    - request_fn: a callable that returns a googleapiclient request object
-      (pass a lambda so we can rebuild it after a key swap)
-    - units: quota units this call costs
-    When quota is exhausted, pauses and asks for a new key, then retries.
+    Execute one API request. If quota runs out on the current key, automatically
+    rotate to the next key in the pool. If the entire pool is exhausted, prompt
+    for one more key. If the user declines, raise AllKeysExhausted.
     """
-    global YOUTUBE_API_KEY
-
     while True:
         try:
             QUOTA.charge(units)
         except QuotaExhausted:
-            new_key = _ask_for_new_key()
-            QUOTA.switch_key(new_key)
-            _yt_client[0] = _build_yt(YOUTUBE_API_KEY)
+            _handle_quota_hit()
+            continue   # retry charge with new key
 
         with _api_lock:
             since = time.time() - _last_api_call[0]
@@ -510,35 +603,33 @@ def _api_call(request_fn, units: int = 1):
                 time.sleep(API_DELAY - since)
             _last_api_call[0] = time.time()
 
-        for attempt in range(4):
-            try:
-                return request_fn().execute()
-            except HttpError as e:
-                if e.resp.status == 403:
-                    err_reason = ""
-                    try:
-                        err_reason = json.loads(e.content)["error"]["errors"][0]["reason"]
-                    except Exception:
-                        pass
-                    if "quotaExceeded" in err_reason or "dailyLimitExceeded" in err_reason:
-                        print(f"\n  ⚠️  YouTube server-side quota hit (tracked: {QUOTA.used})")
-                        new_key = _ask_for_new_key()
-                        QUOTA.switch_key(new_key)
-                        _yt_client[0] = _build_yt(YOUTUBE_API_KEY)
-                        break   # retry outer while loop with new key
-                    wait = 2 ** attempt * 5
-                    print(f"\n  ⏳ 403 rate limit — waiting {wait}s...")
-                    time.sleep(wait)
-                elif e.resp.status == 429:
-                    wait = 2 ** attempt * 10
-                    print(f"\n  ⏳ 429 rate limit — waiting {wait}s...")
-                    time.sleep(wait)
-                elif e.resp.status in (400, 404):
-                    return None
-                else:
-                    raise
+        try:
+            return request_fn().execute()
+        except HttpError as e:
+            if e.resp.status == 403:
+                err_reason = ""
+                try:
+                    err_reason = json.loads(e.content)["error"]["errors"][0]["reason"]
+                except Exception:
+                    pass
+                if "quotaExceeded" in err_reason or "dailyLimitExceeded" in err_reason:
+                    print(f"\n  ⚠️  YouTube server-side quota hit on ...{QUOTA.current_suffix}")
+                    # Mark this key as fully exhausted in our tracker too
+                    QUOTA.used[QUOTA.current_suffix] = QUOTA_LIMIT
+                    QUOTA._save()
+                    _handle_quota_hit()
+                    continue   # retry with next key
+                print(f"\n  ⏳ 403 rate limit — waiting 5s...")
+                time.sleep(5)
+                continue
+            elif e.resp.status == 429:
+                print(f"\n  ⏳ 429 rate limit — waiting 10s...")
+                time.sleep(10)
+                continue
+            elif e.resp.status in (400, 404):
+                return None
             else:
-                return None   # all retries exhausted without success
+                raise
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -958,9 +1049,9 @@ def _flush_outputs():
 def main():
     print("\n🚀 YouTube API Full Scraper")
     print("=" * 60)
-    print(f"   Key (last 8):  ...{YOUTUBE_API_KEY[-8:] if YOUTUBE_API_KEY else 'NONE'}")
-    print(f"   Quota used:    {QUOTA.used} / {QUOTA_LIMIT} units")
-    print(f"   Quota left:    {QUOTA.remaining} units")
+    print(f"   API key pool ({len(QUOTA.keys)} keys):")
+    print(f"      {QUOTA.status_line()}")
+    print(f"   Total quota:   {len(QUOTA.keys) * QUOTA_LIMIT:,} units")
     print(f"   Max comments:  {MAX_COMMENTS} per video")
     print(f"   Videos/ch:     ALL (no cap)")
     print()
@@ -1151,4 +1242,21 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except AllKeysExhausted:
+        print("\n" + "="*60)
+        print("⏸  STOPPED — all keys exhausted, no new key provided")
+        print("="*60)
+        n_rec, n_ex = _flush_outputs()
+        print(f"💾 Flushed {n_rec:,} video records → {n_ex:,} training examples")
+        print(f"   {OUT_RAW}")
+        print(f"   {OUT_TRAINING}")
+        print(f"\nRun again any time — checkpoint/ holds all completed videos.")
+        print(f"Add fresh keys to .env (YOUTUBE_API_KEYS=k1,k2,k3) when ready.")
+        sys.exit(0)
+    except KeyboardInterrupt:
+        print("\n\n⏸  Interrupted by user")
+        n_rec, n_ex = _flush_outputs()
+        print(f"💾 Flushed {n_rec:,} records → {n_ex:,} training examples")
+        sys.exit(0)
