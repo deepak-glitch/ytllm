@@ -33,6 +33,13 @@ try:
 except ImportError:
     print("Installing yt-dlp..."); _pip("yt-dlp"); import yt_dlp
 
+class _Silent:
+    """Logger that swallows all yt-dlp output including ERRORs."""
+    def debug(self, msg): pass
+    def info(self, msg): pass
+    def warning(self, msg): pass
+    def error(self, msg): pass
+
 try:
     from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled
 except ImportError:
@@ -270,7 +277,8 @@ def get_channel_videos(handle: str, max_videos: int = MAX_VIDEOS_PER_CH) -> list
     opts = {
         "quiet":        True,
         "no_warnings":  True,
-        "ignoreerrors": True,   # suppress all yt-dlp error output
+        "ignoreerrors": True,
+        "logger":       _Silent(),
         "extract_flat": "in_playlist",
         "playlistend":  max_videos,
     }
@@ -326,10 +334,12 @@ def get_transcript(video_id: str) -> str:
 
 def get_comments(video_id: str, max_comments: int = MAX_COMMENTS) -> list[dict]:
     opts = {
-        "quiet":       True,
-        "no_warnings": True,
+        "quiet":         True,
+        "no_warnings":   True,
+        "ignoreerrors":  True,
+        "logger":        _Silent(),
         "skip_download": True,
-        "getcomments": max_comments,
+        "getcomments":   max_comments,
         "extractor_args": {
             "youtube": {
                 "comment_sort": ["top"],
