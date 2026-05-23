@@ -113,6 +113,25 @@ OUT_RAW             = Path("everything_raw.jsonl")
 OUT_TRAINING        = Path("everything_training.jsonl")
 CHECKPOINT_DIR.mkdir(exist_ok=True)
 
+
+def _colab_download(paths: list):
+    """If running inside Google Colab, auto-download output files to browser."""
+    try:
+        from google.colab import files as colab_files
+        import zipfile
+        print("\n📥 Running in Colab — zipping outputs for download...")
+        zip_path = Path("ytllm_outputs.zip")
+        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+            for p in paths:
+                p = Path(p)
+                if p.exists():
+                    zf.write(p, p.name)
+                    print(f"   + {p.name}  ({p.stat().st_size / 1_048_576:.1f} MB)")
+        print(f"\n⬇️  Downloading {zip_path.name}...")
+        colab_files.download(str(zip_path))
+    except ImportError:
+        pass  # not in Colab — silently skip
+
 write_lock = Lock()
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1221,6 +1240,11 @@ def main():
     print(f"💾 training_data_v8.jsonl     ← merged, ready to fine-tune")
     print()
     print("▶️  Next: python prep_finetune.py")
+
+    # ─────────────────────────────────────────────────────────────────────
+    # AUTO-DOWNLOAD (Colab only)
+    # ─────────────────────────────────────────────────────────────────────
+    _colab_download([v8, OUT_TRAINING, OUT_RAW])
 
 
 if __name__ == "__main__":
