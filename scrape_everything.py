@@ -540,19 +540,25 @@ def make_examples(rec: dict) -> list[dict]:
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _colab_download(paths: list):
+    """In Colab: zip outputs and print download instructions.
+    files.download() only works in notebook cells, not subprocesses."""
     try:
-        from google.colab import files as colab_files
         import zipfile
-        print("\n📥 Zipping outputs for download...")
+        from google.colab import files as _  # just check we're in Colab
         zip_path = Path("ytllm_outputs.zip")
+        print("\n📦 Zipping outputs...")
         with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
             for p in paths:
                 p = Path(p)
                 if p.exists():
                     zf.write(p, p.name)
                     print(f"   + {p.name}  ({p.stat().st_size / 1_048_576:.1f} MB)")
-        print(f"\n⬇️  Downloading {zip_path.name} to your laptop...")
-        colab_files.download(str(zip_path))
+        print(f"\n✅ {zip_path} is ready on Drive.")
+        print("   To download to your laptop, run this in a NEW cell:")
+        print("   ─────────────────────────────────────────────────")
+        print("   from google.colab import files")
+        print(f"   files.download('/content/drive/MyDrive/ytllm/{zip_path}')")
+        print("   ─────────────────────────────────────────────────")
     except ImportError:
         pass  # not in Colab — skip silently
 
