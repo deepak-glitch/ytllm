@@ -100,10 +100,10 @@ def _load_api_keys() -> list:
 
 API_KEYS            = _load_api_keys()
 YOUTUBE_API_KEY     = API_KEYS[0] if API_KEYS else ""
-MAX_VIDEOS_PER_CH   = 50         # videos to pull per channel (50 = 1 quota unit)
-MAX_COMMENTS        = 100        # comments per video (1 quota unit per 100)
+MAX_VIDEOS_PER_CH   = 10_000     # effectively unlimited — pages until channel is empty
+MAX_COMMENTS        = 500        # comments per video (1 unit per 100)
 MAX_DURATION_SEC    = 180        # skip videos longer than 3 min
-MIN_VIEWS           = 1_000      # skip very low-view videos for comments
+MIN_VIEWS           = 500        # skip very low-view videos for comments
 MIN_TRANSCRIPT_WORDS= 10         # skip near-empty transcripts
 COMMENT_WORKERS     = 8          # parallel comment fetchers
 TRANSCRIPT_WORKERS  = 12         # parallel transcript fetchers (no quota)
@@ -663,25 +663,26 @@ def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
     return channel_id, uploads_id
 
 
-def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int) -> list[str]:
+def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int = MAX_VIDEOS_PER_CH) -> list[str]:
     """
-    Page through a channel's uploads playlist to collect video IDs.
-    Each request = 1 quota unit, returns up to 50 items.
+    Page through a channel's uploads playlist to collect ALL video IDs.
+    Each request = 1 quota unit, returns up to 50 items per page.
+    Pages until the channel is fully exhausted or max_videos is hit.
     """
     video_ids = []
     page_token = None
 
     while len(video_ids) < max_videos:
-        batch = min(50, max_videos - len(video_ids))
         params = dict(
             part="contentDetails",
             playlistId=playlist_id,
-            maxResults=batch,
+            maxResults=50,
         )
         if page_token:
             params["pageToken"] = page_token
 
-        resp = _api_call(lambda: _yt_client[0].playlistItems().list(**params), units=1)
+        # Capture params by value so lambda always uses this iteration's params
+        resp = _api_call(lambda p=params: _yt_client[0].playlistItems().list(**p), units=1)
         if not resp:
             break
 
@@ -692,7 +693,7 @@ def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int) -> list[s
 
         page_token = resp.get("nextPageToken")
         if not page_token:
-            break
+            break  # reached end of channel
 
     return video_ids
 
@@ -1034,7 +1035,7 @@ def main():
     already_done = {p.stem for p in CHECKPOINT_DIR.glob("*.json")}
     print(f"   Channels:      {len(CHANNELS)}")
     print(f"   Already done:  {len(already_done)} videos (checkpoint)")
-    print(f"   Max/channel:   {MAX_VIDEOS_PER_CH} videos")
+    print(f"   Videos/channel: ALL (no cap — pages until channel is empty)")
     print(f"   Max comments:  {MAX_COMMENTS} per video")
     print()
 
