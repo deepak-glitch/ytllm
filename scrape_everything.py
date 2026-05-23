@@ -253,6 +253,19 @@ def load_all_checkpoints() -> list[dict]:
             pass
     return records
 
+VIDEO_ID_CACHE = Path("video_ids_cache.json")
+
+def save_video_cache(videos: list):
+    VIDEO_ID_CACHE.write_text(json.dumps(videos, ensure_ascii=False))
+
+def load_video_cache() -> list | None:
+    if not VIDEO_ID_CACHE.exists():
+        return None
+    try:
+        return json.loads(VIDEO_ID_CACHE.read_text())
+    except Exception:
+        return None
+
 
 # ─────────────────────────────────────────────────────────────────────────────
 # VIDEO ID DISCOVERY  (yt-dlp, no API key)
@@ -557,40 +570,47 @@ def main():
     print(f"   Workers:        {WORKERS}")
     print()
 
-    # ── Step 1: Collect all video IDs ────────────────────────────────────
-    print("📋 Step 1/3 — Collecting video IDs from all channels...")
-    all_videos = []
+    # ── Step 1: Collect all video IDs (cached — instant on resume) ───────
+    cached = load_video_cache()
+    if cached:
+        unique = cached
+        print(f"📋 Step 1/3 — Loaded {len(unique):,} video IDs from cache (skipping channel scan)")
+    else:
+        print("📋 Step 1/3 — Collecting video IDs from all channels...")
+        all_videos = []
+        with ThreadPoolExecutor(max_workers=8) as pool:
+            futures = {
+                pool.submit(get_channel_videos, handle, MAX_VIDEOS_PER_CH): (handle, cat)
+                for handle, cat, _ in CHANNELS
+            }
+            with tqdm(total=len(futures), desc="Channels", unit="ch") as pbar:
+                for future in as_completed(futures):
+                    handle, cat = futures[future]
+                    channel_name = handle.lstrip("@")
+                    try:
+                        vids = future.result()
+                        for v in vids:
+                            v["channel"]  = channel_name
+                            v["category"] = cat
+                        all_videos.extend(vids)
+                    except Exception:
+                        pass
+                    pbar.update(1)
 
-    with ThreadPoolExecutor(max_workers=8) as pool:
-        futures = {
-            pool.submit(get_channel_videos, handle, MAX_VIDEOS_PER_CH): (handle, cat)
-            for handle, cat, _ in CHANNELS
-        }
-        with tqdm(total=len(futures), desc="Channels", unit="ch") as pbar:
-            for future in as_completed(futures):
-                handle, cat = futures[future]
-                channel_name = handle.lstrip("@")
-                try:
-                    vids = future.result()
-                    for v in vids:
-                        v["channel"]  = channel_name
-                        v["category"] = cat
-                    all_videos.extend(vids)
-                except Exception:
-                    pass
-                pbar.update(1)
+        # Deduplicate
+        seen, unique = set(), []
+        for v in all_videos:
+            if v["video_id"] not in seen:
+                seen.add(v["video_id"])
+                unique.append(v)
 
-    # Deduplicate
-    seen, unique = set(), []
-    for v in all_videos:
-        if v["video_id"] not in seen:
-            seen.add(v["video_id"])
-            unique.append(v)
+        save_video_cache(unique)
+        print(f"\n   Found:  {len(unique):,} unique videos across {len(CHANNELS)} channels")
+        print(f"   Saved to video_ids_cache.json — future runs skip this step")
 
     already_done = {p.stem for p in CHECKPOINT_DIR.glob("*.json")}
     todo = [v for v in unique if v["video_id"] not in already_done]
 
-    print(f"\n   Found:        {len(unique):,} unique videos across {len(CHANNELS)} channels")
     print(f"   Done:         {len(already_done):,} already checkpointed")
     print(f"   Remaining:    {len(todo):,} to scrape")
     print()
