@@ -43,15 +43,11 @@ Outputs:
   training_data_v8.jsonl   ← merged with v7_clean, ready to fine-tune
 """
 
-import os, json, re, sys, time, subprocess, ssl, urllib3
+import os, json, re, sys, time, subprocess
 from pathlib import Path
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from threading import Lock
 from collections import defaultdict, Counter
-
-# SSL bypass — needed in some cloud/proxy environments
-ssl._create_default_https_context = ssl._create_unverified_context
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 # ── Auto-install ──────────────────────────────────────────────────────────────
 def _pip(*pkgs):
@@ -87,158 +83,37 @@ except ImportError:
     load_dotenv()
 
 # ── Config ────────────────────────────────────────────────────────────────────
-from dotenv import load_dotenv as _load_dotenv
-_load_dotenv(Path(__file__).parent / ".env")
-
 def _load_api_keys() -> list:
-    """
-    Load API keys from .env. Supports:
-      YOUTUBE_API_KEYS=AIza1,AIza2,AIza3    (preferred — comma separated)
-      YOUTUBE_API_KEY=AIza1                  (single key, backward compat)
-      YOUTUBE_API_KEY_2=AIza2                (numbered fallback)
-      YOUTUBE_API_KEY_3=AIza3
-    Returns ordered list of unique keys.
+    """Load API keys from env. Supports:
+       YOUTUBE_API_KEYS=key1,key2,key3        (preferred)
+       YOUTUBE_API_KEY=key1, YOUTUBE_API_KEY_2=key2, ... (also works)
     """
     keys = []
-
-    # 1. YOUTUBE_API_KEYS plural — comma separated
     bulk = os.getenv("YOUTUBE_API_KEYS", "")
     if bulk:
         keys.extend(k.strip() for k in bulk.split(",") if k.strip())
-
-    # 2. YOUTUBE_API_KEY (singular) + numbered variants
     for env_name in ["YOUTUBE_API_KEY"] + [f"YOUTUBE_API_KEY_{i}" for i in range(2, 11)]:
         v = os.getenv(env_name, "").strip()
         if v and v not in keys:
             keys.append(v)
-
     return keys
-
 
 API_KEYS            = _load_api_keys()
 YOUTUBE_API_KEY     = API_KEYS[0] if API_KEYS else ""
+MAX_VIDEOS_PER_CH   = 50         # videos to pull per channel (50 = 1 quota unit)
+MAX_COMMENTS        = 100        # comments per video (1 quota unit per 100)
+MAX_DURATION_SEC    = 180        # skip videos longer than 3 min
+MIN_VIEWS           = 1_000      # skip very low-view videos for comments
+MIN_TRANSCRIPT_WORDS= 10         # skip near-empty transcripts
+COMMENT_WORKERS     = 8          # parallel comment fetchers
+TRANSCRIPT_WORKERS  = 12         # parallel transcript fetchers (no quota)
 
-MAX_VIDEOS_PER_CH   = 10_000    # effectively unlimited — grab every video
-MAX_COMMENTS        = 500       # up to 500 comments per video (5 API pages)
-MAX_DURATION_SEC    = 300       # skip videos longer than 5 min
-MIN_VIEWS           = 500       # skip near-zero-view videos for comments
-MIN_TRANSCRIPT_WORDS= 10        # skip near-empty transcripts
-TRANSCRIPT_WORKERS  = 12        # parallel — no quota cost
-
-QUOTA_LIMIT         = 9_800     # stop at 9,800 of 10,000 (200 unit safety buffer)
-QUOTA_STATE_FILE    = Path("quota_state.json")
 CHECKPOINT_DIR      = Path("checkpoint")
-CHANNEL_CACHE_FILE  = Path("channel_cache.json")
 OUT_RAW             = Path("everything_raw.jsonl")
 OUT_TRAINING        = Path("everything_training.jsonl")
-
 CHECKPOINT_DIR.mkdir(exist_ok=True)
+
 write_lock = Lock()
-
-# ── Quota tracker ─────────────────────────────────────────────────────────────
-class QuotaExhausted(Exception):
-    pass
-
-class AllKeysExhausted(Exception):
-    pass
-
-class QuotaTracker:
-    """
-    Manages a pool of API keys. When one key's quota runs out, automatically
-    rotates to the next. When ALL keys are exhausted, asks for a new one inline.
-
-    Usage state persists in quota_state.json — survives restarts.
-    """
-    def __init__(self, keys: list):
-        self.keys     = list(keys)
-        self.idx      = 0                          # which key we're using now
-        self.used     = {k[-8:]: 0 for k in self.keys}   # units used per key (by suffix)
-        self._load()
-
-    @property
-    def current_key(self) -> str:
-        return self.keys[self.idx] if self.keys else ""
-
-    @property
-    def current_suffix(self) -> str:
-        k = self.current_key
-        return k[-8:] if k else "none"
-
-    @property
-    def current_used(self) -> int:
-        return self.used.get(self.current_suffix, 0)
-
-    @property
-    def remaining(self) -> int:
-        return max(0, QUOTA_LIMIT - self.current_used)
-
-    def _load(self):
-        if QUOTA_STATE_FILE.exists():
-            try:
-                state = json.loads(QUOTA_STATE_FILE.read_text())
-                self.used.update(state.get("used", {}))
-                # Resume on the key that was active (if still in pool)
-                last_suffix = state.get("active", "")
-                for i, k in enumerate(self.keys):
-                    if k[-8:] == last_suffix:
-                        self.idx = i
-                        break
-                # If active key already used up, advance
-                while self.idx < len(self.keys) and self.current_used >= QUOTA_LIMIT:
-                    self.idx += 1
-            except Exception:
-                pass
-
-    def _save(self):
-        QUOTA_STATE_FILE.write_text(json.dumps({
-            "used":   self.used,
-            "active": self.current_suffix,
-        }, indent=2))
-
-    def add_key(self, new_key: str):
-        """Add a brand new key to the pool (used when all are exhausted)."""
-        new_key = new_key.strip()
-        if new_key in self.keys:
-            print(f"   ⚠️  Key (...{new_key[-8:]}) is already in pool")
-            return False
-        self.keys.append(new_key)
-        self.used[new_key[-8:]] = 0
-        self.idx = len(self.keys) - 1
-        self._save()
-        print(f"   🔑 Added new key (...{new_key[-8:]}) — pool size: {len(self.keys)}")
-        return True
-
-    def rotate(self) -> bool:
-        """Move to next key in pool. Returns False if no more keys left."""
-        # Find next un-exhausted key
-        for i in range(self.idx + 1, len(self.keys)):
-            if self.used.get(self.keys[i][-8:], 0) < QUOTA_LIMIT:
-                self.idx = i
-                self._save()
-                print(f"\n   🔄 Rotated to key #{self.idx + 1}/{len(self.keys)} (...{self.current_suffix})")
-                print(f"      {self.remaining} units available")
-                return True
-        return False
-
-    def charge(self, units: int = 1):
-        suffix = self.current_suffix
-        self.used[suffix] = self.used.get(suffix, 0) + units
-        self._save()
-        if self.used[suffix] >= QUOTA_LIMIT:
-            raise QuotaExhausted()
-
-    def status_line(self) -> str:
-        parts = []
-        for i, k in enumerate(self.keys):
-            used = self.used.get(k[-8:], 0)
-            marker = "▶" if i == self.idx else " "
-            if used >= QUOTA_LIMIT:
-                parts.append(f"{marker} #{i+1} ...{k[-8:]} EXHAUSTED")
-            else:
-                parts.append(f"{marker} #{i+1} ...{k[-8:]} {used}/{QUOTA_LIMIT}")
-        return "\n      ".join(parts)
-
-QUOTA = QuotaTracker(API_KEYS)
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CHANNEL LIST — 238 channels, 15 categories
@@ -521,62 +396,143 @@ CHANNELS = [
 # YOUTUBE API CLIENT
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _build_yt(key: str):
-    import httplib2
-    http = httplib2.Http(disable_ssl_certificate_validation=True)
-    return build("youtube", "v3", developerKey=key, http=http)
+class AllKeysExhausted(Exception):
+    pass
 
 
-def _ask_for_new_key() -> str | None:
-    """All keys in pool are exhausted — ask user to paste one more. None = give up."""
-    print("\n" + "="*60)
-    print("⚠️  ALL API KEYS EXHAUSTED")
-    print("="*60)
-    print(QUOTA.status_line())
-    print("\nAll progress is saved. You can:")
-    print("  • Paste another API key to keep going")
-    print("  • Press Ctrl+C / Enter to stop (resume later with same .env)")
-    while True:
+class QuotaTracker:
+    """Rotates through a pool of API keys when one hits its daily quota."""
+
+    SAFETY_LIMIT = 9_800  # leave ~200 unit buffer below 10k daily free tier
+    STATE_FILE   = Path("quota_state.json")
+
+    def __init__(self, keys: list):
+        self.keys = list(keys)
+        self.idx  = 0
+        # by-key (last 8 chars) → units used today (UTC)
+        self.usage = {}
+        self.day   = time.strftime("%Y-%m-%d", time.gmtime())
+        self._load()
+        # advance past any already-exhausted keys
+        for _ in range(len(self.keys)):
+            if self._units(self.keys[self.idx]) < self.SAFETY_LIMIT:
+                break
+            self.idx = (self.idx + 1) % len(self.keys)
+
+    def _short(self, k: str) -> str:
+        return k[-8:]
+
+    def _units(self, key: str) -> int:
+        return self.usage.get(self._short(key), 0)
+
+    def _load(self):
+        if not self.STATE_FILE.exists():
+            return
         try:
-            new_key = input("\n   Paste new API key (or Enter to quit): ").strip()
-        except (EOFError, KeyboardInterrupt):
-            return None
-        if not new_key:
-            return None
-        if new_key.startswith("AIza") and len(new_key) > 20:
-            return new_key
-        print("   ❌ Doesn't look right — should start with 'AIza...'")
+            data = json.loads(self.STATE_FILE.read_text())
+            if data.get("day") == self.day:
+                self.usage = data.get("usage", {})
+        except Exception:
+            pass
+
+    def _save(self):
+        try:
+            self.STATE_FILE.write_text(json.dumps({
+                "day": self.day, "usage": self.usage,
+            }))
+        except Exception:
+            pass
+
+    @property
+    def current_key(self) -> str:
+        return self.keys[self.idx]
+
+    def charge(self, units: int):
+        # New UTC day → reset
+        today = time.strftime("%Y-%m-%d", time.gmtime())
+        if today != self.day:
+            self.day = today
+            self.usage = {}
+        short = self._short(self.current_key)
+        if self.usage.get(short, 0) + units > self.SAFETY_LIMIT:
+            raise QuotaExhausted()
+        self.usage[short] = self.usage.get(short, 0) + units
+        self._save()
+
+    def mark_exhausted(self):
+        self.usage[self._short(self.current_key)] = self.SAFETY_LIMIT
+        self._save()
+
+    def rotate(self) -> bool:
+        """Move to next non-exhausted key. Returns False if all are spent."""
+        n = len(self.keys)
+        for i in range(1, n + 1):
+            cand = (self.idx + i) % n
+            if self._units(self.keys[cand]) < self.SAFETY_LIMIT:
+                self.idx = cand
+                print(f"\n  🔄 Rotated to API key #{self.idx + 1} of {n} "
+                      f"(...{self._short(self.current_key)})")
+                return True
+        return False
+
+    def add_key(self, key: str):
+        if key and key not in self.keys:
+            self.keys.append(key)
+            self.idx = len(self.keys) - 1
+            print(f"  ➕ Added new API key — now using #{self.idx + 1}")
 
 
-_last_api_call = [0.0]
-_api_lock = Lock()
-API_DELAY = 0.1
+class QuotaExhausted(Exception):
+    pass
 
+
+def _ask_for_new_key() -> str:
+    print("\n" + "=" * 60)
+    print("⚠️  ALL API KEYS HAVE HIT TODAY'S QUOTA (~10k units each)")
+    print("=" * 60)
+    print("Options:")
+    print("  1. Wait until midnight Pacific Time — quotas auto-reset")
+    print("  2. Create a new API key:")
+    print("     https://console.cloud.google.com/apis/credentials")
+    print("     (new project → enable YouTube Data API v3 → create key)")
+    print("  3. Paste the new key below and we'll continue immediately.")
+    try:
+        key = input("\nPaste new API key (or press Enter to abort): ").strip()
+    except EOFError:
+        key = ""
+    return key
+
+
+# Mutable single-element list so we can swap the client mid-run after rotation.
 _yt_client = [None]
+
+def _build_yt(api_key: str):
+    return build("youtube", "v3", developerKey=api_key, cache_discovery=False)
 
 
 def get_youtube():
-    if not QUOTA.keys:
-        print("\n❌ No API keys found in .env")
-        print("   Add one of these:")
-        print("     YOUTUBE_API_KEYS=AIza1,AIza2,AIza3")
-        print("     OR")
-        print("     YOUTUBE_API_KEY=AIza1")
-        print("     YOUTUBE_API_KEY_2=AIza2")
-        print("     YOUTUBE_API_KEY_3=AIza3")
+    if not API_KEYS:
+        print("\n❌ No YouTube API keys found!")
+        print("   1. Go to https://console.cloud.google.com/")
+        print("   2. Create project → Enable 'YouTube Data API v3'")
+        print("   3. Credentials → Create API Key")
+        print("   4. Add to .env:")
+        print("        YOUTUBE_API_KEYS=AIza_key1,AIza_key2,AIza_key3")
         sys.exit(1)
-    client = _build_yt(QUOTA.current_key)
-    _yt_client[0] = client
-    return client
+    if _yt_client[0] is None:
+        _yt_client[0] = _build_yt(QUOTA.current_key)
+    return _yt_client[0]
+
+
+# Global quota tracker (built once keys are loaded)
+QUOTA = QuotaTracker(API_KEYS) if API_KEYS else None
 
 
 def _handle_quota_hit():
-    """Quota ran out on current key. Try to rotate. If pool exhausted, ask user."""
+    """Try to rotate to the next un-exhausted key; if none left, ask user."""
     if QUOTA.rotate():
-        # Rebuild client with next key
         _yt_client[0] = _build_yt(QUOTA.current_key)
         return
-    # All keys in pool exhausted
     new_key = _ask_for_new_key()
     if not new_key:
         raise AllKeysExhausted()
@@ -584,21 +540,31 @@ def _handle_quota_hit():
     _yt_client[0] = _build_yt(QUOTA.current_key)
 
 
+# Rate limit: YouTube API allows ~10k units/day free per key. Add small delays.
+_last_api_call = [0.0]
+_api_lock = Lock()
+API_DELAY = 0.05  # 50ms between calls = max ~20 calls/sec
+
 def _api_call(request_fn, units: int = 1):
-    """
-    Execute one API request. If quota runs out on the current key, automatically
-    rotate to the next key in the pool. If the entire pool is exhausted, prompt
-    for one more key. If the user declines, raise AllKeysExhausted.
-    """
+    """Execute an API request with rate limiting + key rotation on quota errors.
+
+    request_fn must be a zero-arg callable (lambda) that returns a fresh
+    request object — this lets us rebuild it against the new client after a
+    key rotation."""
     while True:
         try:
             QUOTA.charge(units)
         except QuotaExhausted:
-            _handle_quota_hit()
-            continue   # retry charge with new key
+            try:
+                _handle_quota_hit()
+            except AllKeysExhausted:
+                print("\n  ❌ All API keys exhausted and no new key provided.")
+                return None
+            continue
 
         with _api_lock:
-            since = time.time() - _last_api_call[0]
+            now = time.time()
+            since = now - _last_api_call[0]
             if since < API_DELAY:
                 time.sleep(API_DELAY - since)
             _last_api_call[0] = time.time()
@@ -606,94 +572,97 @@ def _api_call(request_fn, units: int = 1):
         try:
             return request_fn().execute()
         except HttpError as e:
-            if e.resp.status == 403:
-                err_reason = ""
+            status = e.resp.status
+            body = str(e).lower()
+            is_quota = status == 403 and (
+                "quotaexceeded" in body or "dailylimitexceeded" in body
+                or "ratelimit" in body
+            )
+            if is_quota:
+                print(f"\n  ⏳ Quota hit on key ...{QUOTA._short(QUOTA.current_key)} — rotating")
+                QUOTA.mark_exhausted()
                 try:
-                    err_reason = json.loads(e.content)["error"]["errors"][0]["reason"]
-                except Exception:
-                    pass
-                if "quotaExceeded" in err_reason or "dailyLimitExceeded" in err_reason:
-                    print(f"\n  ⚠️  YouTube server-side quota hit on ...{QUOTA.current_suffix}")
-                    # Mark this key as fully exhausted in our tracker too
-                    QUOTA.used[QUOTA.current_suffix] = QUOTA_LIMIT
-                    QUOTA._save()
                     _handle_quota_hit()
-                    continue   # retry with next key
-                print(f"\n  ⏳ 403 rate limit — waiting 5s...")
-                time.sleep(5)
+                except AllKeysExhausted:
+                    print("  ❌ All API keys exhausted.")
+                    return None
                 continue
-            elif e.resp.status == 429:
-                print(f"\n  ⏳ 429 rate limit — waiting 10s...")
+            if status == 429:
+                print("\n  ⏳ Rate limit — sleeping 10s...")
                 time.sleep(10)
                 continue
-            elif e.resp.status in (400, 404):
-                return None
-            else:
-                raise
+            if status in (400, 404):
+                return None  # channel not found / bad request — skip
+            raise
 
 
 # ─────────────────────────────────────────────────────────────────────────────
 # CHANNEL → VIDEO IDs
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _load_channel_cache() -> dict:
-    if CHANNEL_CACHE_FILE.exists():
-        try:
-            return json.loads(CHANNEL_CACHE_FILE.read_text())
-        except Exception:
-            pass
-    return {}
-
-def _save_channel_cache(cache: dict):
-    CHANNEL_CACHE_FILE.write_text(json.dumps(cache, indent=2))
-
-
-def resolve_channel_id(yt, handle: str, cache: dict) -> tuple[str, str] | None:
+def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
     """
     Convert @handle to (channel_id, uploads_playlist_id).
-    Caches results so we never spend quota resolving the same handle twice.
+    Uses channels.list with forHandle parameter.
     """
-    if handle in cache:
-        return cache[handle]["channel_id"], cache[handle]["uploads_id"]
-
     handle_clean = handle.lstrip("@")
-    resp = _api_call(lambda: _yt_client[0].channels().list(
-        part="id,contentDetails,snippet", forHandle=handle_clean, maxResults=1))
+    resp = _api_call(
+        lambda: _yt_client[0].channels().list(
+            part="id,contentDetails",
+            forHandle=handle_clean,
+            maxResults=1,
+        ),
+        units=1,
+    )
     if not resp or not resp.get("items"):
-        resp2 = _api_call(lambda: _yt_client[0].search().list(
-            part="snippet", q=handle_clean, type="channel", maxResults=1), units=100)
+        # Fallback: try search (costs 100 units)
+        resp2 = _api_call(
+            lambda: _yt_client[0].search().list(
+                part="snippet",
+                q=handle_clean,
+                type="channel",
+                maxResults=1,
+            ),
+            units=100,
+        )
         if not resp2 or not resp2.get("items"):
             return None
         channel_id = resp2["items"][0]["snippet"]["channelId"]
-        resp = _api_call(lambda: _yt_client[0].channels().list(
-            part="id,contentDetails", id=channel_id))
+        resp = _api_call(
+            lambda: _yt_client[0].channels().list(
+                part="id,contentDetails",
+                id=channel_id,
+            ),
+            units=1,
+        )
         if not resp or not resp.get("items"):
             return None
 
-    item       = resp["items"][0]
-    channel_id = item["id"]
-    uploads_id = item["contentDetails"]["relatedPlaylists"]["uploads"]
-    ch_name    = item.get("snippet", {}).get("title", handle_clean)
-
-    cache[handle] = {"channel_id": channel_id, "uploads_id": uploads_id, "name": ch_name}
-    _save_channel_cache(cache)
+    item = resp["items"][0]
+    channel_id   = item["id"]
+    uploads_id   = item["contentDetails"]["relatedPlaylists"]["uploads"]
     return channel_id, uploads_id
 
 
-def get_video_ids_from_playlist(yt, playlist_id: str) -> list[str]:
+def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int) -> list[str]:
     """
-    Fetch ALL video IDs from a channel's uploads playlist.
-    1 quota unit per request, 50 IDs per request — pages until exhausted.
+    Page through a channel's uploads playlist to collect video IDs.
+    Each request = 1 quota unit, returns up to 50 items.
     """
-    video_ids  = []
+    video_ids = []
     page_token = None
 
-    while True:
-        params = dict(part="contentDetails", playlistId=playlist_id, maxResults=50)
+    while len(video_ids) < max_videos:
+        batch = min(50, max_videos - len(video_ids))
+        params = dict(
+            part="contentDetails",
+            playlistId=playlist_id,
+            maxResults=batch,
+        )
         if page_token:
             params["pageToken"] = page_token
 
-        resp = _api_call(lambda p=params: _yt_client[0].playlistItems().list(**p))
+        resp = _api_call(lambda: _yt_client[0].playlistItems().list(**params), units=1)
         if not resp:
             break
 
@@ -704,7 +673,7 @@ def get_video_ids_from_playlist(yt, playlist_id: str) -> list[str]:
 
         page_token = resp.get("nextPageToken")
         if not page_token:
-            break   # no more pages — got every video
+            break
 
     return video_ids
 
@@ -717,9 +686,14 @@ def get_video_metadata_batch(yt, video_ids: list[str]) -> dict[str, dict]:
     if not video_ids:
         return {}
 
-    ids_str = ",".join(video_ids)
-    resp = _api_call(lambda: _yt_client[0].videos().list(
-        part="snippet,statistics,contentDetails", id=ids_str, maxResults=50))
+    resp = _api_call(
+        lambda: _yt_client[0].videos().list(
+            part="snippet,statistics,contentDetails",
+            id=",".join(video_ids),
+            maxResults=50,
+        ),
+        units=1,
+    )
     if not resp:
         return {}
 
@@ -767,33 +741,34 @@ def _parse_duration(iso: str) -> int:
 
 def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[dict]:
     """
-    Fetch up to max_comments comments sorted by relevance.
-    1 quota unit per page of 100 — QuotaExhausted propagates up if limit hit.
+    Fetch top comments sorted by relevance.
+    1 quota unit per page (up to 100 comments per page).
     """
-    comments   = []
+    comments = []
     page_token = None
 
     while len(comments) < max_comments:
+        batch = min(100, max_comments - len(comments))
         params = dict(
             part="snippet",
             videoId=video_id,
             order="relevance",
-            maxResults=100,   # always request max per page
+            maxResults=batch,
             textFormat="plainText",
         )
         if page_token:
             params["pageToken"] = page_token
 
         try:
-            resp = _api_call(lambda p=params: _yt_client[0].commentThreads().list(**p))
+            resp = _api_call(lambda: _yt_client[0].commentThreads().list(**params), units=1)
         except Exception:
-            break   # comments disabled, deleted, etc.
+            break
 
         if not resp:
             break
 
         for item in resp.get("items", []):
-            top  = item["snippet"]["topLevelComment"]["snippet"]
+            top = item["snippet"]["topLevelComment"]["snippet"]
             text = top.get("textDisplay", "").strip()
             if text:
                 comments.append({
@@ -804,11 +779,12 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
                 })
 
         page_token = resp.get("nextPageToken")
-        if not page_token or len(comments) >= max_comments:
+        if not page_token:
             break
 
+    # Sort by likes descending
     comments.sort(key=lambda x: x["likes"], reverse=True)
-    return comments[:max_comments]
+    return comments
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -817,25 +793,24 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
 
 def get_transcript(video_id: str) -> str:
     """
-    Fetch transcript using youtube-transcript-api v1.x (no YouTube API quota).
+    Fetch transcript using youtube-transcript-api (no YouTube API quota).
     Tries English first, falls back to any available language.
     """
     try:
-        api = YouTubeTranscriptApi()
         try:
-            result = api.fetch(video_id, languages=["en", "en-US", "en-GB"])
-        except Exception:
-            # Fallback: list available transcripts and pick first
-            transcript_list = api.list(video_id)
-            transcript_obj  = next(iter(transcript_list), None)
-            if transcript_obj is None:
-                return ""
-            result = transcript_obj.fetch()
+            chunks = YouTubeTranscriptApi.get_transcript(video_id, languages=["en", "en-US", "en-GB"])
+        except NoTranscriptFound:
+            # Try any available transcript
+            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            transcript_obj  = transcript_list.find_transcript(["en"])
+            chunks = transcript_obj.fetch()
 
-        text = " ".join(s.text if hasattr(s, "text") else s["text"] for s in result)
+        text = " ".join(c.get("text", "") for c in chunks)
         text = re.sub(r"\s+", " ", text).strip()
         return text if len(text.split()) >= MIN_TRANSCRIPT_WORDS else ""
 
+    except (NoTranscriptFound, TranscriptsDisabled):
+        return ""
     except Exception:
         return ""
 
@@ -1031,78 +1006,63 @@ def make_examples(rec: dict) -> list[dict]:
 # MAIN PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
 
-def _flush_outputs():
-    """Write everything_raw.jsonl + everything_training.jsonl from checkpoint dir."""
-    all_records  = load_all_checkpoints()
-    all_examples = []
-    for rec in all_records:
-        all_examples.extend(make_examples(rec))
-    with open(OUT_RAW, "w") as f:
-        for rec in all_records:
-            f.write(json.dumps(rec) + "\n")
-    with open(OUT_TRAINING, "w") as f:
-        for ex in all_examples:
-            f.write(json.dumps(ex) + "\n")
-    return len(all_records), len(all_examples)
-
-
 def main():
     print("\n🚀 YouTube API Full Scraper")
     print("=" * 60)
-    print(f"   API key pool ({len(QUOTA.keys)} keys):")
-    print(f"      {QUOTA.status_line()}")
-    print(f"   Total quota:   {len(QUOTA.keys) * QUOTA_LIMIT:,} units")
+
+    yt = get_youtube()  # exits if no API key
+
+    already_done = {p.stem for p in CHECKPOINT_DIR.glob("*.json")}
+    print(f"   Channels:      {len(CHANNELS)}")
+    print(f"   Already done:  {len(already_done)} videos (checkpoint)")
+    print(f"   Max/channel:   {MAX_VIDEOS_PER_CH} videos")
     print(f"   Max comments:  {MAX_COMMENTS} per video")
-    print(f"   Videos/ch:     ALL (no cap)")
     print()
 
-    yt = get_youtube()
-
-    already_done  = {p.stem for p in CHECKPOINT_DIR.glob("*.json")}
-    channel_cache = _load_channel_cache()
-    print(f"   Checkpointed:  {len(already_done):,} videos already done")
-    print(f"   Ch. cache:     {len(channel_cache)} channels already resolved")
-    print()
-
-    # ── STEP 1: Resolve channels + collect ALL video IDs + metadata ───────
-    print("📋 Step 1/4 — Resolving channels + collecting ALL video IDs...")
-    all_videos     = []
+    # ─────────────────────────────────────────────────────────────────────
+    # STEP 1 — Resolve channel handles → collect all video IDs + metadata
+    # ─────────────────────────────────────────────────────────────────────
+    print("📋 Step 1/4 — Resolving channels + collecting video IDs...")
+    all_videos = []   # [{video_id, channel, category, title, views, duration, ...}]
     channel_errors = []
 
-    for handle, category, _ in tqdm(CHANNELS, desc="Channels", unit="ch"):
+    for i, (handle, category, priority) in enumerate(
+        tqdm(CHANNELS, desc="Channels", unit="ch")
+    ):
         channel_name = handle.lstrip("@")
         try:
-            result = resolve_channel_id(yt, handle, channel_cache)
+            result = resolve_channel_id(yt, handle)
             if not result:
-                channel_errors.append(handle); continue
+                channel_errors.append(handle)
+                continue
             _, uploads_id = result
 
-            video_ids = get_video_ids_from_playlist(yt, uploads_id)  # ALL videos
+            video_ids = get_video_ids_from_playlist(yt, uploads_id, MAX_VIDEOS_PER_CH)
             if not video_ids:
                 continue
 
-            # Batch-fetch metadata 50 at a time
+            # Batch-fetch metadata (50 at a time, 1 quota unit per batch)
             meta_map = {}
-            for i in range(0, len(video_ids), 50):
-                batch = video_ids[i:i+50]
+            for batch_start in range(0, len(video_ids), 50):
+                batch = video_ids[batch_start:batch_start + 50]
                 meta_map.update(get_video_metadata_batch(yt, batch))
 
             for vid_id in video_ids:
                 meta = meta_map.get(vid_id, {})
                 dur  = meta.get("duration", 0) or 0
                 if dur > MAX_DURATION_SEC and dur != 0:
-                    continue
+                    continue  # skip long videos
                 all_videos.append({
-                    "video_id":        vid_id,
-                    "channel":         meta.get("channel", channel_name),
-                    "category":        category,
-                    "title":           meta.get("title", ""),
-                    "views":           meta.get("views", 0),
-                    "likes":           meta.get("likes", 0),
-                    "duration":        dur,
-                    "tags":            meta.get("tags", []),
-                    "published":       meta.get("published_at", ""),
-                    "description":     meta.get("description", ""),
+                    "video_id":  vid_id,
+                    "channel":   meta.get("channel", channel_name),
+                    "category":  category,
+                    "title":     meta.get("title", ""),
+                    "views":     meta.get("views", 0),
+                    "likes":     meta.get("likes", 0),
+                    "duration":  dur,
+                    "tags":      meta.get("tags", []),
+                    "published": meta.get("published_at", ""),
+                    "description": meta.get("description", ""),
                     "comments_enabled": meta.get("comment_count", -1) != 0,
                 })
 
@@ -1110,23 +1070,26 @@ def main():
             channel_errors.append(f"{handle}: {e}")
 
     # Deduplicate
-    seen, unique = set(), []
+    seen = set()
+    unique = []
     for v in all_videos:
         if v["video_id"] not in seen:
-            seen.add(v["video_id"]); unique.append(v)
+            seen.add(v["video_id"])
+            unique.append(v)
 
     todo = [v for v in unique if v["video_id"] not in already_done]
 
-    print(f"\n   Found:     {len(unique):,} unique videos")
-    print(f"   Done:      {len(already_done):,} already checkpointed")
-    print(f"   Remaining: {len(todo):,} to scrape")
-    print(f"   Quota:     {QUOTA.used} used / {QUOTA.remaining} remaining")
+    print(f"\n   Found:    {len(unique):,} unique videos across {len(CHANNELS)} channels")
+    print(f"   Done:     {len(already_done):,} already in checkpoint")
+    print(f"   TODO:     {len(todo):,} to scrape")
     if channel_errors:
-        print(f"   Errors:    {len(channel_errors)} channels failed")
+        print(f"   Errors:   {len(channel_errors)} channels failed")
     print()
 
-    # ── STEP 2: Transcripts (no quota) ───────────────────────────────────
-    print("📝 Step 2/4 — Fetching transcripts (no quota cost)...")
+    # ─────────────────────────────────────────────────────────────────────
+    # STEP 2 — Fetch transcripts (parallel, no quota)
+    # ─────────────────────────────────────────────────────────────────────
+    print("📝 Step 2/4 — Fetching transcripts (youtube-transcript-api, no quota)...")
     transcript_map = {}
     with ThreadPoolExecutor(max_workers=TRANSCRIPT_WORKERS) as pool:
         futures = {pool.submit(get_transcript, v["video_id"]): v["video_id"] for v in todo}
@@ -1139,43 +1102,62 @@ def main():
                     transcript_map[vid_id] = ""
                 pbar.update(1)
 
-    found_t = sum(1 for t in transcript_map.values() if t)
-    print(f"   Got {found_t:,} / {len(todo):,} transcripts")
+    transcripts_found = sum(1 for t in transcript_map.values() if t)
+    print(f"   Got transcripts for {transcripts_found:,} / {len(todo):,} videos")
     print()
 
-    # ── STEP 3: Comments (quota-tracked, stops gracefully) ────────────────
-    print("💬 Step 3/4 — Fetching comments...")
-    print(f"   Quota before: {QUOTA.used} used / {QUOTA.remaining} remaining")
+    # ─────────────────────────────────────────────────────────────────────
+    # STEP 3 — Fetch comments (YouTube API, 1 unit per 100 comments)
+    # ─────────────────────────────────────────────────────────────────────
+    print("💬 Step 3/4 — Fetching comments (YouTube Data API v3)...")
     stats = defaultdict(int)
 
-    for v in tqdm(todo, desc="Comments", unit="v"):
+    # Only fetch comments for videos with decent views or with a transcript
+    comment_targets = [
+        v for v in todo
+        if v.get("views", 0) >= MIN_VIEWS or transcript_map.get(v["video_id"], "")
+    ]
+    print(f"   Fetching comments for {len(comment_targets):,} videos "
+          f"(skipping {len(todo)-len(comment_targets):,} low-view with no transcript)")
+
+    for v in tqdm(comment_targets, desc="Comments", unit="v"):
         vid_id = v["video_id"]
         try:
             comments = []
-            if v.get("comments_enabled", True) and v.get("views", 0) >= MIN_VIEWS:
+            if v.get("comments_enabled", True):
                 comments = get_comments(yt, vid_id, MAX_COMMENTS)
 
-            rec = {**v,
-                   "transcript":           transcript_map.get(vid_id, ""),
-                   "comments":             comments,
-                   "comment_count_fetched": len(comments),
-                   "scraped_at":           time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())}
+            # Build full record and checkpoint
+            rec = {**v}
+            rec["transcript"] = transcript_map.get(vid_id, "")
+            rec["comments"]   = comments
+            rec["comment_count_fetched"] = len(comments)
+            rec["scraped_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+
             save_checkpoint(rec)
             stats["ok"] += 1
             if rec["transcript"]: stats["with_transcript"] += 1
-            if comments:          stats["with_comments"]   += 1
+            if comments:          stats["with_comments"] += 1
 
         except Exception as e:
             stats["error"] += 1
-            save_checkpoint({"video_id": vid_id, "channel": v["channel"],
-                              "category": v["category"], "error": str(e)[:200],
-                              "transcript": "", "comments": []})
+            save_checkpoint({
+                "video_id": vid_id, "channel": v["channel"],
+                "category": v["category"], "error": str(e)[:200],
+                "transcript": "", "comments": [],
+            })
+
+    # Also checkpoint transcript-only videos (no comments attempted)
+    no_comment_targets = set(v["video_id"] for v in todo) - set(v["video_id"] for v in comment_targets)
+    for vid_id in no_comment_targets:
+        v = next(x for x in todo if x["video_id"] == vid_id)
+        rec = {**v, "transcript": transcript_map.get(vid_id,""), "comments": [], "comment_count_fetched": 0}
+        save_checkpoint(rec)
 
     print(f"\n   ✅ Scraped:          {stats['ok']:,}")
     print(f"   📝 With transcript:  {stats['with_transcript']:,}")
     print(f"   💬 With comments:    {stats['with_comments']:,}")
     print(f"   ❌ Errors:           {stats['error']:,}")
-    print(f"   📊 Quota used:       {QUOTA.used} / {QUOTA_LIMIT}")
     print()
 
     # ─────────────────────────────────────────────────────────────────────
@@ -1242,21 +1224,4 @@ def main():
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except AllKeysExhausted:
-        print("\n" + "="*60)
-        print("⏸  STOPPED — all keys exhausted, no new key provided")
-        print("="*60)
-        n_rec, n_ex = _flush_outputs()
-        print(f"💾 Flushed {n_rec:,} video records → {n_ex:,} training examples")
-        print(f"   {OUT_RAW}")
-        print(f"   {OUT_TRAINING}")
-        print(f"\nRun again any time — checkpoint/ holds all completed videos.")
-        print(f"Add fresh keys to .env (YOUTUBE_API_KEYS=k1,k2,k3) when ready.")
-        sys.exit(0)
-    except KeyboardInterrupt:
-        print("\n\n⏸  Interrupted by user")
-        n_rec, n_ex = _flush_outputs()
-        print(f"💾 Flushed {n_rec:,} records → {n_ex:,} training examples")
-        sys.exit(0)
+    main()
