@@ -254,19 +254,23 @@ def load_all_checkpoints() -> list[dict]:
 def get_channel_videos(handle: str, max_videos: int = MAX_VIDEOS_PER_CH) -> list[dict]:
     """
     Get all video IDs from a channel using yt-dlp flat extraction.
-    Tries /shorts first, then falls back to the full channel page.
+    Tries the base channel URL first (works for all channels), then
+    /shorts and /videos tabs as supplements to catch everything.
     """
     videos = []
     seen   = set()
+    handle_clean = handle.lstrip("@")
 
     urls_to_try = [
-        f"https://www.youtube.com/{handle}/shorts",
-        f"https://www.youtube.com/{handle}/videos",
+        f"https://www.youtube.com/@{handle_clean}",          # all content — works for every channel
+        f"https://www.youtube.com/@{handle_clean}/shorts",   # shorts tab if it exists
+        f"https://www.youtube.com/@{handle_clean}/videos",   # long-form tab
     ]
 
     opts = {
         "quiet":        True,
         "no_warnings":  True,
+        "ignoreerrors": True,   # suppress all yt-dlp error output
         "extract_flat": "in_playlist",
         "playlistend":  max_videos,
     }
