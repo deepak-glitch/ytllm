@@ -539,11 +539,28 @@ def _ask_for_new_key() -> str:
     return key
 
 
-# Mutable single-element list so we can swap the client mid-run after rotation.
-_yt_client = [None]
+# ── Thread-local YouTube clients ─────────────────────────────────────────────
+# httplib2 (used by google-api-python-client) is NOT thread-safe.
+# Sharing one client across 16 comment workers → "double free or corruption".
+# Fix: each thread gets its own client. When the key rotates, _key_version
+# increments and every thread rebuilds its client on the next API call.
+
+import threading as _threading
+_tls         = _threading.local()   # thread-local storage
+_key_version = [0]                  # bumped on every key rotation → forces client rebuild
+
 
 def _build_yt(api_key: str):
     return build("youtube", "v3", developerKey=api_key, cache_discovery=False)
+
+
+def _get_client():
+    """Return this thread's YouTube client. Rebuilds after any key rotation."""
+    v = _key_version[0]
+    if not hasattr(_tls, "client") or getattr(_tls, "version", -1) != v:
+        _tls.client  = _build_yt(QUOTA.current_key)
+        _tls.version = v
+    return _tls.client
 
 
 def get_youtube():
@@ -555,9 +572,7 @@ def get_youtube():
         print("   4. Add to .env:")
         print("        YOUTUBE_API_KEYS=AIza_key1,AIza_key2,AIza_key3")
         sys.exit(1)
-    if _yt_client[0] is None:
-        _yt_client[0] = _build_yt(QUOTA.current_key)
-    return _yt_client[0]
+    return _get_client()
 
 
 # Global quota tracker (built once keys are loaded)
@@ -567,13 +582,13 @@ QUOTA = QuotaTracker(API_KEYS) if API_KEYS else None
 def _handle_quota_hit():
     """Try to rotate to the next un-exhausted key; if none left, ask user."""
     if QUOTA.rotate():
-        _yt_client[0] = _build_yt(QUOTA.current_key)
+        _key_version[0] += 1   # signal all threads to rebuild their clients
         return
     new_key = _ask_for_new_key()
     if not new_key:
         raise AllKeysExhausted()
     QUOTA.add_key(new_key)
-    _yt_client[0] = _build_yt(QUOTA.current_key)
+    _key_version[0] += 1
 
 
 # Rate limit: YouTube API allows ~10k units/day free per key. Add small delays.
@@ -643,7 +658,7 @@ def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
     """
     handle_clean = handle.lstrip("@")
     resp = _api_call(
-        lambda: _yt_client[0].channels().list(
+        lambda: _get_client().channels().list(
             part="id,contentDetails",
             forHandle=handle_clean,
             maxResults=1,
@@ -653,7 +668,7 @@ def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
     if not resp or not resp.get("items"):
         # Fallback: try search (costs 100 units)
         resp2 = _api_call(
-            lambda: _yt_client[0].search().list(
+            lambda: _get_client().search().list(
                 part="snippet",
                 q=handle_clean,
                 type="channel",
@@ -665,7 +680,7 @@ def resolve_channel_id(yt, handle: str) -> tuple[str, str] | None:
             return None
         channel_id = resp2["items"][0]["snippet"]["channelId"]
         resp = _api_call(
-            lambda: _yt_client[0].channels().list(
+            lambda: _get_client().channels().list(
                 part="id,contentDetails",
                 id=channel_id,
             ),
@@ -699,7 +714,7 @@ def get_video_ids_from_playlist(yt, playlist_id: str, max_videos: int = MAX_VIDE
             params["pageToken"] = page_token
 
         # Capture params by value so lambda always uses this iteration's params
-        resp = _api_call(lambda p=params: _yt_client[0].playlistItems().list(**p), units=1)
+        resp = _api_call(lambda p=params: _get_client().playlistItems().list(**p), units=1)
         if not resp:
             break
 
@@ -724,7 +739,7 @@ def get_video_metadata_batch(yt, video_ids: list[str]) -> dict[str, dict]:
         return {}
 
     resp = _api_call(
-        lambda: _yt_client[0].videos().list(
+        lambda: _get_client().videos().list(
             part="snippet,statistics,contentDetails",
             id=",".join(video_ids),
             maxResults=50,
@@ -797,7 +812,7 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
             params["pageToken"] = page_token
 
         try:
-            resp = _api_call(lambda p=params: _yt_client[0].commentThreads().list(**p), units=1)
+            resp = _api_call(lambda p=params: _get_client().commentThreads().list(**p), units=1)
         except Exception:
             break
 
@@ -1165,22 +1180,35 @@ def main():
 
     # ─────────────────────────────────────────────────────────────────────
     # STEP 2 — Fetch transcripts (parallel, no quota)
+    #
+    # ⚠️  Colab / cloud datacenter IPs are blocked by YouTube's transcript
+    #     API — you will get 0 transcripts and waste ~12 min every run.
+    #     We auto-detect Colab and skip this step entirely.
     # ─────────────────────────────────────────────────────────────────────
-    print("📝 Step 2/4 — Fetching transcripts (youtube-transcript-api, no quota)...")
     transcript_map = {}
-    with ThreadPoolExecutor(max_workers=TRANSCRIPT_WORKERS) as pool:
-        futures = {pool.submit(get_transcript, v["video_id"]): v["video_id"] for v in todo}
-        with tqdm(total=len(futures), desc="Transcripts", unit="v") as pbar:
-            for future in as_completed(futures):
-                vid_id = futures[future]
-                try:
-                    transcript_map[vid_id] = future.result()
-                except Exception:
-                    transcript_map[vid_id] = ""
-                pbar.update(1)
+    _in_colab = False
+    try:
+        import google.colab  # noqa: F401
+        _in_colab = True
+    except ImportError:
+        pass
 
-    transcripts_found = sum(1 for t in transcript_map.values() if t)
-    print(f"   Got transcripts for {transcripts_found:,} / {len(todo):,} videos")
+    if _in_colab:
+        print("📝 Step 2/4 — Skipping transcripts (Colab IPs blocked by YouTube — always 0)")
+    else:
+        print("📝 Step 2/4 — Fetching transcripts (youtube-transcript-api, no quota)...")
+        with ThreadPoolExecutor(max_workers=TRANSCRIPT_WORKERS) as pool:
+            futures = {pool.submit(get_transcript, v["video_id"]): v["video_id"] for v in todo}
+            with tqdm(total=len(futures), desc="Transcripts", unit="v") as pbar:
+                for future in as_completed(futures):
+                    vid_id = futures[future]
+                    try:
+                        transcript_map[vid_id] = future.result()
+                    except Exception:
+                        transcript_map[vid_id] = ""
+                    pbar.update(1)
+        transcripts_found = sum(1 for t in transcript_map.values() if t)
+        print(f"   Got transcripts for {transcripts_found:,} / {len(todo):,} videos")
     print()
 
     # ─────────────────────────────────────────────────────────────────────
@@ -1203,7 +1231,7 @@ def main():
         comments = []
         if v.get("comments_enabled", True):
             try:
-                comments = get_comments(_yt_client[0], vid_id, MAX_COMMENTS)
+                comments = get_comments(_get_client(), vid_id, MAX_COMMENTS)
             except Exception:
                 comments = []
         rec = {**v}
