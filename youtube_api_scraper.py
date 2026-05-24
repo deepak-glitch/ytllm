@@ -105,8 +105,8 @@ MAX_COMMENTS        = 1_000      # comments per video (1 unit per 100)
 MAX_DURATION_SEC    = 180        # skip videos longer than 3 min
 MIN_VIEWS           = 500        # skip very low-view videos for comments
 MIN_TRANSCRIPT_WORDS= 10         # skip near-empty transcripts
-COMMENT_WORKERS     = 8          # parallel comment fetchers
-TRANSCRIPT_WORKERS  = 12         # parallel transcript fetchers (no quota)
+COMMENT_WORKERS     = 16         # parallel comment fetchers (more = faster, rate-limit-safe)
+TRANSCRIPT_WORKERS  = 24         # parallel transcript fetchers (no quota)
 
 CHECKPOINT_DIR      = Path("checkpoints_api")
 OUT_RAW             = Path("api_raw.jsonl")
@@ -1139,33 +1139,38 @@ def main():
     ]
     print(f"   Fetching comments for {len(comment_targets):,} videos "
           f"(skipping {len(todo)-len(comment_targets):,} low-view with no transcript)")
+    print(f"   Workers: {COMMENT_WORKERS} parallel")
 
-    for v in tqdm(comment_targets, desc="Comments", unit="v"):
+    def _fetch_comments_for_video(v):
         vid_id = v["video_id"]
-        try:
-            comments = []
-            if v.get("comments_enabled", True):
-                comments = get_comments(yt, vid_id, MAX_COMMENTS)
+        comments = []
+        if v.get("comments_enabled", True):
+            try:
+                comments = get_comments(_yt_client[0], vid_id, MAX_COMMENTS)
+            except Exception:
+                comments = []
+        rec = {**v}
+        rec["transcript"] = transcript_map.get(vid_id, "")
+        rec["comments"]   = comments
+        rec["comment_count_fetched"] = len(comments)
+        rec["scraped_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        save_checkpoint(rec)
+        return rec
 
-            # Build full record and checkpoint
-            rec = {**v}
-            rec["transcript"] = transcript_map.get(vid_id, "")
-            rec["comments"]   = comments
-            rec["comment_count_fetched"] = len(comments)
-            rec["scraped_at"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
-
-            save_checkpoint(rec)
-            stats["ok"] += 1
-            if rec["transcript"]: stats["with_transcript"] += 1
-            if comments:          stats["with_comments"] += 1
-
-        except Exception as e:
-            stats["error"] += 1
-            save_checkpoint({
-                "video_id": vid_id, "channel": v["channel"],
-                "category": v["category"], "error": str(e)[:200],
-                "transcript": "", "comments": [],
-            })
+    with ThreadPoolExecutor(max_workers=COMMENT_WORKERS) as pool:
+        futures = {pool.submit(_fetch_comments_for_video, v): v for v in comment_targets}
+        with tqdm(total=len(futures), desc="Comments", unit="v") as pbar:
+            for future in as_completed(futures):
+                try:
+                    rec = future.result()
+                    stats["ok"] += 1
+                    if rec.get("transcript"): stats["with_transcript"] += 1
+                    if rec.get("comments"):   stats["with_comments"] += 1
+                except Exception:
+                    stats["error"] += 1
+                finally:
+                    pbar.update(1)
+                    pbar.set_postfix(ok=stats["ok"], cmts=stats["with_comments"], err=stats["error"])
 
     # Also checkpoint transcript-only videos (no comments attempted)
     no_comment_targets = set(v["video_id"] for v in todo) - set(v["video_id"] for v in comment_targets)
