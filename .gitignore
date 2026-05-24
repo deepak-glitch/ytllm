@@ -27,6 +27,7 @@ everything_training.jsonl
 api_raw.jsonl
 api_training.jsonl
 video_ids_cache.json
+video_ids_cache_api.json
 yt_transcripts/
 
 # Runtime state (regenerated each run)

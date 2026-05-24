@@ -115,6 +115,7 @@ TRANSCRIPT_WORKERS  = 24         # parallel transcript fetchers (no quota)
 CHECKPOINT_DIR      = Path("checkpoints_api")
 OUT_RAW             = Path("api_raw.jsonl")
 OUT_TRAINING        = Path("api_training.jsonl")
+VIDEO_ID_CACHE      = Path("video_ids_cache_api.json")   # saves 27-min Step 1 on resume
 CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 
@@ -1067,61 +1068,72 @@ def main():
 
     # ─────────────────────────────────────────────────────────────────────
     # STEP 1 — Resolve channel handles → collect all video IDs + metadata
+    #          CACHED: if video_ids_cache_api.json exists, skip this entirely
     # ─────────────────────────────────────────────────────────────────────
-    print("📋 Step 1/4 — Resolving channels + collecting video IDs...")
-    all_videos = []   # [{video_id, channel, category, title, views, duration, ...}]
     channel_errors = []
 
-    for i, (handle, category, priority) in enumerate(
-        tqdm(CHANNELS, desc="Channels", unit="ch")
-    ):
-        channel_name = handle.lstrip("@")
-        try:
-            result = resolve_channel_id(yt, handle)
-            if not result:
-                channel_errors.append(handle)
-                continue
-            _, uploads_id = result
+    if VIDEO_ID_CACHE.exists():
+        print(f"📋 Step 1/4 — Loading video IDs from cache ({VIDEO_ID_CACHE}) ...")
+        unique = json.loads(VIDEO_ID_CACHE.read_text())
+        print(f"   ⚡ Skipped Step 1 — {len(unique):,} videos loaded from cache (saves ~27 min + quota)")
+    else:
+        print("📋 Step 1/4 — Resolving channels + collecting video IDs...")
+        all_videos = []
 
-            video_ids = get_video_ids_from_playlist(yt, uploads_id, MAX_VIDEOS_PER_CH)
-            if not video_ids:
-                continue
+        for i, (handle, category, priority) in enumerate(
+            tqdm(CHANNELS, desc="Channels", unit="ch")
+        ):
+            channel_name = handle.lstrip("@")
+            try:
+                result = resolve_channel_id(yt, handle)
+                if not result:
+                    channel_errors.append(handle)
+                    continue
+                _, uploads_id = result
 
-            # Batch-fetch metadata (50 at a time, 1 quota unit per batch)
-            meta_map = {}
-            for batch_start in range(0, len(video_ids), 50):
-                batch = video_ids[batch_start:batch_start + 50]
-                meta_map.update(get_video_metadata_batch(yt, batch))
+                video_ids = get_video_ids_from_playlist(yt, uploads_id, MAX_VIDEOS_PER_CH)
+                if not video_ids:
+                    continue
 
-            for vid_id in video_ids:
-                meta = meta_map.get(vid_id, {})
-                dur  = meta.get("duration", 0) or 0
-                if dur > MAX_DURATION_SEC and dur != 0:
-                    continue  # skip long videos
-                all_videos.append({
-                    "video_id":  vid_id,
-                    "channel":   meta.get("channel", channel_name),
-                    "category":  category,
-                    "title":     meta.get("title", ""),
-                    "views":     meta.get("views", 0),
-                    "likes":     meta.get("likes", 0),
-                    "duration":  dur,
-                    "tags":      meta.get("tags", []),
-                    "published": meta.get("published_at", ""),
-                    "description": meta.get("description", ""),
-                    "comments_enabled": meta.get("comment_count", -1) != 0,
-                })
+                # Batch-fetch metadata (50 at a time, 1 quota unit per batch)
+                meta_map = {}
+                for batch_start in range(0, len(video_ids), 50):
+                    batch = video_ids[batch_start:batch_start + 50]
+                    meta_map.update(get_video_metadata_batch(yt, batch))
 
-        except Exception as e:
-            channel_errors.append(f"{handle}: {e}")
+                for vid_id in video_ids:
+                    meta = meta_map.get(vid_id, {})
+                    dur  = meta.get("duration", 0) or 0
+                    if dur > MAX_DURATION_SEC and dur != 0:
+                        continue  # skip long videos
+                    all_videos.append({
+                        "video_id":  vid_id,
+                        "channel":   meta.get("channel", channel_name),
+                        "category":  category,
+                        "title":     meta.get("title", ""),
+                        "views":     meta.get("views", 0),
+                        "likes":     meta.get("likes", 0),
+                        "duration":  dur,
+                        "tags":      meta.get("tags", []),
+                        "published": meta.get("published_at", ""),
+                        "description": meta.get("description", ""),
+                        "comments_enabled": meta.get("comment_count", -1) != 0,
+                    })
 
-    # Deduplicate
-    seen = set()
-    unique = []
-    for v in all_videos:
-        if v["video_id"] not in seen:
-            seen.add(v["video_id"])
-            unique.append(v)
+            except Exception as e:
+                channel_errors.append(f"{handle}: {e}")
+
+        # Deduplicate
+        seen = set()
+        unique = []
+        for v in all_videos:
+            if v["video_id"] not in seen:
+                seen.add(v["video_id"])
+                unique.append(v)
+
+        # Save cache so next run skips this step
+        VIDEO_ID_CACHE.write_text(json.dumps(unique))
+        print(f"   💾 Saved video ID cache → {VIDEO_ID_CACHE}")
 
     todo = [v for v in unique if v["video_id"] not in already_done]
 
