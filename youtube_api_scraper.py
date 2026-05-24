@@ -69,6 +69,10 @@ except ImportError:
     _pip("youtube-transcript-api")
     from youtube_transcript_api import YouTubeTranscriptApi, NoTranscriptFound, TranscriptsDisabled
 
+# v1.x uses instance methods; v0.6.x uses class/static methods.
+# Build a module-level instance so both versions work via _yta.fetch().
+_yta = YouTubeTranscriptApi()
+
 try:
     from tqdm import tqdm
 except ImportError:
@@ -115,22 +119,27 @@ CHECKPOINT_DIR.mkdir(exist_ok=True)
 
 
 def _colab_download(paths: list):
-    """If running inside Google Colab, auto-download output files to browser."""
+    """If running inside Google Colab, zip outputs and show download cell."""
     try:
-        from google.colab import files as colab_files
-        import zipfile
-        print("\n📥 Running in Colab — zipping outputs for download...")
-        zip_path = Path("ytllm_outputs.zip")
-        with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-            for p in paths:
-                p = Path(p)
-                if p.exists():
-                    zf.write(p, p.name)
-                    print(f"   + {p.name}  ({p.stat().st_size / 1_048_576:.1f} MB)")
-        print(f"\n⬇️  Downloading {zip_path.name}...")
-        colab_files.download(str(zip_path))
+        import google.colab  # noqa: F401 — just detect Colab
     except ImportError:
-        pass  # not in Colab — silently skip
+        return  # not in Colab — silently skip
+
+    import zipfile
+    print("\n📥 Colab detected — zipping outputs...")
+    zip_path = Path("ytllm_outputs.zip")
+    with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
+        for p in paths:
+            p = Path(p)
+            if p.exists():
+                zf.write(p, p.name)
+                print(f"   + {p.name}  ({p.stat().st_size / 1_048_576:.1f} MB)")
+    print(f"\n✅ Zip ready: {zip_path} ({zip_path.stat().st_size / 1_048_576:.1f} MB)")
+    print("▶️  Run this in a NEW Colab cell to download:")
+    print("─" * 50)
+    print("from google.colab import files")
+    print(f'files.download("{zip_path}")')
+    print("─" * 50)
 
 write_lock = Lock()
 
@@ -420,14 +429,17 @@ class AllKeysExhausted(Exception):
 
 
 class QuotaTracker:
-    """Rotates through a pool of API keys when one hits its daily quota."""
+    """Rotates through a pool of API keys when one hits its daily quota.
+    Thread-safe: charge() / mark_exhausted() / rotate() all hold a lock.
+    """
 
     SAFETY_LIMIT = 9_800  # leave ~200 unit buffer below 10k daily free tier
     STATE_FILE   = Path("quota_state.json")
 
     def __init__(self, keys: list):
-        self.keys = list(keys)
-        self.idx  = 0
+        self.keys  = list(keys)
+        self.idx   = 0
+        self._lock = Lock()        # protects charge / rotate across threads
         # by-key (last 8 chars) → units used today (UTC)
         self.usage = {}
         self.day   = time.strftime("%Y-%m-%d", time.gmtime())
@@ -467,38 +479,42 @@ class QuotaTracker:
         return self.keys[self.idx]
 
     def charge(self, units: int):
-        # New UTC day → reset
-        today = time.strftime("%Y-%m-%d", time.gmtime())
-        if today != self.day:
-            self.day = today
-            self.usage = {}
-        short = self._short(self.current_key)
-        if self.usage.get(short, 0) + units > self.SAFETY_LIMIT:
-            raise QuotaExhausted()
-        self.usage[short] = self.usage.get(short, 0) + units
-        self._save()
+        with self._lock:
+            # New UTC day → reset
+            today = time.strftime("%Y-%m-%d", time.gmtime())
+            if today != self.day:
+                self.day = today
+                self.usage = {}
+            short = self._short(self.current_key)
+            if self.usage.get(short, 0) + units > self.SAFETY_LIMIT:
+                raise QuotaExhausted()
+            self.usage[short] = self.usage.get(short, 0) + units
+            self._save()
 
     def mark_exhausted(self):
-        self.usage[self._short(self.current_key)] = self.SAFETY_LIMIT
-        self._save()
+        with self._lock:
+            self.usage[self._short(self.current_key)] = self.SAFETY_LIMIT
+            self._save()
 
     def rotate(self) -> bool:
         """Move to next non-exhausted key. Returns False if all are spent."""
-        n = len(self.keys)
-        for i in range(1, n + 1):
-            cand = (self.idx + i) % n
-            if self._units(self.keys[cand]) < self.SAFETY_LIMIT:
-                self.idx = cand
-                print(f"\n  🔄 Rotated to API key #{self.idx + 1} of {n} "
-                      f"(...{self._short(self.current_key)})")
-                return True
-        return False
+        with self._lock:
+            n = len(self.keys)
+            for i in range(1, n + 1):
+                cand = (self.idx + i) % n
+                if self._units(self.keys[cand]) < self.SAFETY_LIMIT:
+                    self.idx = cand
+                    print(f"\n  🔄 Rotated to API key #{self.idx + 1} of {n} "
+                          f"(...{self._short(self.current_key)})")
+                    return True
+            return False
 
     def add_key(self, key: str):
-        if key and key not in self.keys:
-            self.keys.append(key)
-            self.idx = len(self.keys) - 1
-            print(f"  ➕ Added new API key — now using #{self.idx + 1}")
+        with self._lock:
+            if key and key not in self.keys:
+                self.keys.append(key)
+                self.idx = len(self.keys) - 1
+                print(f"  ➕ Added new API key — now using #{self.idx + 1}")
 
 
 class QuotaExhausted(Exception):
@@ -780,7 +796,7 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
             params["pageToken"] = page_token
 
         try:
-            resp = _api_call(lambda: _yt_client[0].commentThreads().list(**params), units=1)
+            resp = _api_call(lambda p=params: _yt_client[0].commentThreads().list(**p), units=1)
         except Exception:
             break
 
@@ -811,21 +827,31 @@ def get_comments(yt, video_id: str, max_comments: int = MAX_COMMENTS) -> list[di
 # TRANSCRIPTS (youtube-transcript-api — zero API quota)
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _chunk_text(c) -> str:
+    """Extract text from a transcript chunk.
+    Works with both v0.6.x (dict) and v1.x (FetchedTranscriptSnippet dataclass)."""
+    if isinstance(c, dict):
+        return c.get("text", "")
+    return getattr(c, "text", "")
+
+
 def get_transcript(video_id: str) -> str:
     """
     Fetch transcript using youtube-transcript-api (no YouTube API quota).
     Tries English first, falls back to any available language.
+    Compatible with youtube-transcript-api v0.6.x and v1.x.
     """
     try:
         try:
-            chunks = YouTubeTranscriptApi.get_transcript(video_id, languages=["en", "en-US", "en-GB"])
-        except NoTranscriptFound:
-            # Try any available transcript
-            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
-            transcript_obj  = transcript_list.find_transcript(["en"])
+            # v1.x: instance method; v0.6.x: class/static method — _yta handles both
+            chunks = _yta.fetch(video_id, languages=["en", "en-US", "en-GB"])
+        except (NoTranscriptFound, AttributeError):
+            # Fallback: list all transcripts and take first available
+            transcript_list = _yta.list(video_id)
+            transcript_obj  = transcript_list.find_transcript(["en", "en-US", "en-GB"])
             chunks = transcript_obj.fetch()
 
-        text = " ".join(c.get("text", "") for c in chunks)
+        text = " ".join(_chunk_text(c) for c in chunks)
         text = re.sub(r"\s+", " ", text).strip()
         return text if len(text.split()) >= MIN_TRANSCRIPT_WORDS else ""
 
