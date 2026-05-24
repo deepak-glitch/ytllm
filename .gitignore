@@ -28,3 +28,6 @@ api_raw.jsonl
 api_training.jsonl
 video_ids_cache.json
 yt_transcripts/
+
+# Runtime state (regenerated each run)
+quota_state.json
