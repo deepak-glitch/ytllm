@@ -105,7 +105,7 @@ def _load_api_keys() -> list:
 API_KEYS            = _load_api_keys()
 YOUTUBE_API_KEY     = API_KEYS[0] if API_KEYS else ""
 MAX_VIDEOS_PER_CH   = 10_000     # effectively unlimited — pages until channel is empty
-MAX_COMMENTS        = 1_000      # comments per video (1 unit per 100)
+MAX_COMMENTS        = 100        # comments per video (1 unit per 100); 100 = 1 unit, enough for training
 MAX_DURATION_SEC    = 180        # skip videos longer than 3 min
 MIN_VIEWS           = 500        # skip very low-view videos for comments
 MIN_TRANSCRIPT_WORDS= 10         # skip near-empty transcripts
