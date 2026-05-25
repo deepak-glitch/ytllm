@@ -1,34 +1,34 @@
 """
-train_story_director.py — Fine-tune Story Director LLM
-=======================================================
-Fine-tunes Qwen3 on your viral short-form video dataset using QLoRA.
-Run each cell in Colab Pro (A100 GPU required).
+train_story_director.py — Fine-tune Qwen3.6-27B Story Director
+===============================================================
+Model  : Qwen3.6-27B (QLoRA 4-bit)
+GPU    : H100 80GB  (~2 hours)
+Target : Viral pixel art YouTube Shorts story generation
 
 BEFORE RUNNING:
-  1. Runtime → Change runtime type → A100 GPU + High RAM
-  2. Fill in the ── FILL IN YOUR DETAILS ── section below
-  3. Run cells top to bottom
+  1. Runtime → Change runtime type → H100 GPU + High RAM
+  2. Fill in HF_TOKEN and DATASET_PATH below
+  3. Run All (Ctrl+F9)
 """
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
-MODEL_SIZE        = "7B"          # "7B" (1 hr) or "27B" (5 hrs) — start with 7B
-HF_USERNAME       = "Deepak0070"  # your HuggingFace username
-HF_TOKEN          = ""            # get from huggingface.co/settings/tokens → Write access
-MODEL_REPO_NAME   = "story-director-v1"  # what to call it on HuggingFace
+HF_TOKEN        = ""                    # huggingface.co/settings/tokens → New token → Write
+HF_USERNAME     = "Deepak0070"
+MODEL_REPO_NAME = "story-director-27b-v1"
 
-DATASET_PATH      = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
-CHECKPOINT_DIR    = "/content/drive/MyDrive/ytllm_v2/model_checkpoints"
-OUTPUT_DIR        = "/content/drive/MyDrive/ytllm_v2/story-director-final"
+DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
+CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
+OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
 
-NUM_EPOCHS        = 1             # 1 = good starting point; try 2 if output feels shallow
-MAX_SEQ_LENGTH    = 2048
-ENABLE_THINKING   = False         # False = faster, direct output (recommended for JSON)
+NUM_EPOCHS      = 1       # 1 epoch = solid first run; bump to 2 if output feels shallow
+MAX_SEQ_LENGTH  = 2048
+ENABLE_THINKING = False   # False = direct output, no chain-of-thought (recommended)
 
 # ── SYSTEM PROMPT ─────────────────────────────────────────────────────────────
-# Injected into every training example — teaches the model exactly who it is
+# Injected into every single training example automatically
 SYSTEM_PROMPT = (
     "You are the Story Director for a 3D pixel art YouTube Shorts channel. "
     "You write viral short-form video scripts using the Hook → Foreshadow → "
@@ -48,60 +48,43 @@ SYSTEM_PROMPT = (
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CELL 1: CHECK GPU ─────────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
-"""
-Run this first. Make sure you see A100 with 40GB.
-If you see T4 or L4, go Runtime → Change runtime type → A100.
-"""
 
-import subprocess, os, sys
-result = subprocess.run(["nvidia-smi", "--query-gpu=name,memory.total",
-                         "--format=csv,noheader"], capture_output=True, text=True)
+import subprocess, os, sys, time, math, random
+
+result = subprocess.run(
+    ["nvidia-smi", "--query-gpu=name,memory.total", "--format=csv,noheader"],
+    capture_output=True, text=True
+)
 gpu_info = result.stdout.strip()
-print(f"GPU: {gpu_info}")
+print(f"GPU : {gpu_info}")
 
 import psutil
-ram_gb = psutil.virtual_memory().total / 1e9
-print(f"RAM: {ram_gb:.0f} GB")
+print(f"RAM : {psutil.virtual_memory().total / 1e9:.0f} GB")
 
-vram = int(gpu_info.split(",")[1].strip().split()[0])
-vram_gb = vram / 1024
+vram_mib = int(gpu_info.split(",")[1].strip().split()[0])
+vram_gb  = vram_mib / 1024
 
 if "H100" in gpu_info:
-    print(f"\n🚀 H100 detected ({vram_gb:.0f} GB VRAM) — best possible GPU, you're set")
-    print(f"✅ {MODEL_SIZE} will train fast here")
-elif "A100" in gpu_info:
-    print(f"\n✅ A100 detected ({vram_gb:.0f} GB VRAM)")
-    if MODEL_SIZE == "27B" and vram < 35000:
-        print("⚠️  Less than 40GB VRAM — switch to 7B or you'll OOM")
-    else:
-        print(f"✅ {MODEL_SIZE} model will fit fine")
-elif "G4" in gpu_info or "L4" in gpu_info:
-    print(f"\n⚠️  {gpu_info.split(',')[0].strip()} detected ({vram_gb:.0f} GB VRAM)")
-    print("   Only 24GB VRAM — 7B will work, 27B will OOM")
-    if MODEL_SIZE == "27B":
-        print("   ❌ Switch MODEL_SIZE to '7B' before running")
-    else:
-        print("   ✅ 7B will fit — training will be slower than H100/A100")
-elif "T4" in gpu_info:
-    print(f"\n⚠️  T4 detected ({vram_gb:.0f} GB VRAM) — only 16GB, very slow")
-    print("   7B will technically work but training takes 4+ hours")
-    if MODEL_SIZE == "27B":
-        print("   ❌ Switch MODEL_SIZE to '7B' — 27B will crash")
-    print("   Recommend switching to H100 in Runtime → Change runtime type")
+    print(f"\n🚀 H100 detected ({vram_gb:.0f} GB) — perfect, you're good to go")
+elif "A100" in gpu_info and vram_gb >= 38:
+    print(f"\n✅ A100 detected ({vram_gb:.0f} GB) — will work, slightly slower than H100")
 else:
-    print(f"\n❌ Unrecognised GPU: {gpu_info}")
-    print("   Go to Runtime → Change runtime type → H100 or A100")
+    print(f"\n❌ WRONG GPU: {gpu_info.split(',')[0].strip()} ({vram_gb:.0f} GB)")
+    print("   27B needs at least 40GB VRAM.")
+    print("   Go to Runtime → Change runtime type → H100 GPU")
+    raise SystemExit("Switch to H100 before continuing.")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CELL 2: INSTALL ───────────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
+print("Installing packages...")
 subprocess.run([sys.executable, "-m", "pip", "install", "-q", "unsloth"], check=True)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q",
     "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git",
-    "trl", "peft", "accelerate", "bitsandbytes", "datasets",
-    "huggingface_hub", "transformers"], check=True)
+    "trl", "peft", "accelerate", "bitsandbytes",
+    "datasets", "huggingface_hub", "transformers"], check=True)
 print("✅ All packages installed")
 
 
@@ -112,57 +95,49 @@ print("✅ All packages installed")
 from unsloth import FastLanguageModel
 import torch
 
-MODEL_MAP = {
-    "7B":  "unsloth/Qwen3-7B-bnb-4bit",
-    "27B": "unsloth/Qwen3.6-27B",        # no bnb-4bit yet, quantizes on load (~10 min)
-}
-BATCH_MAP = {
-    "7B":  (2, 4),   # (per_device_batch, grad_accumulation) → effective batch 8
-    "27B": (1, 8),   # smaller batch for bigger model → effective batch 8
-}
+MODEL_NAME = "unsloth/Qwen3.6-27B"   # quantizes to 4-bit on load (~10 min first time)
+BATCH_SIZE = 2                         # H100 80GB can handle batch=2 for 27B
+GRAD_ACCUM = 4                         # effective batch = 2 × 4 = 8
 
-model_name = MODEL_MAP[MODEL_SIZE]
-batch_size, grad_accum = BATCH_MAP[MODEL_SIZE]
-
-print(f"Loading {MODEL_SIZE} model: {model_name}")
-print("This takes 2-10 minutes depending on model size...")
+print(f"Loading {MODEL_NAME} ...")
+print("First load quantizes the model — takes ~10 min. Subsequent runs are faster.")
 
 model, tokenizer = FastLanguageModel.from_pretrained(
-    model_name     = model_name,
+    model_name     = MODEL_NAME,
     max_seq_length = MAX_SEQ_LENGTH,
-    dtype          = None,
-    load_in_4bit   = True,
+    dtype          = None,       # auto-detect: bf16 on H100
+    load_in_4bit   = True,       # QLoRA — keeps base model frozen in 4-bit
 )
 
-import torch
-used_gb = torch.cuda.memory_allocated() / 1e9
+used_gb  = torch.cuda.memory_allocated() / 1e9
 total_gb = torch.cuda.get_device_properties(0).total_memory / 1e9
 print(f"\n✅ Model loaded")
-print(f"   VRAM used: {used_gb:.1f} GB / {total_gb:.0f} GB")
-print(f"   VRAM free: {total_gb - used_gb:.1f} GB (for training overhead)")
+print(f"   VRAM used : {used_gb:.1f} GB / {total_gb:.0f} GB")
+print(f"   VRAM free : {total_gb - used_gb:.1f} GB  (for training overhead)")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CELL 4: ATTACH LORA ADAPTERS ─────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
+# r=32 → richer adapters (H100 80GB has room for this vs r=16 on A100)
 model = FastLanguageModel.get_peft_model(
     model,
-    r                          = 16,   # adapter rank: 16 = good balance
+    r                          = 32,
     target_modules             = ["q_proj", "k_proj", "v_proj", "o_proj",
                                   "gate_proj", "up_proj", "down_proj"],
-    lora_alpha                 = 16,
+    lora_alpha                 = 32,
     lora_dropout               = 0,
     bias                       = "none",
-    use_gradient_checkpointing = "unsloth",  # saves ~30% VRAM
+    use_gradient_checkpointing = "unsloth",   # cuts VRAM ~30%
     random_state               = 42,
 )
 
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 total     = sum(p.numel() for p in model.parameters())
 print(f"✅ LoRA adapters attached")
-print(f"   Trainable params: {trainable/1e6:.1f}M / {total/1e6:.0f}M "
-      f"({100*trainable/total:.2f}%) — only these get updated")
+print(f"   Trainable : {trainable/1e6:.1f}M params / {total/1e6:.0f}M total "
+      f"({100*trainable/total:.2f}%) — only these get updated during training")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -174,17 +149,20 @@ from unsloth.chat_templates import get_chat_template
 
 tokenizer = get_chat_template(tokenizer, chat_template="qwen-3")
 
-print(f"Loading dataset from: {DATASET_PATH}")
+print(f"Loading dataset: {DATASET_PATH}")
 dataset = load_dataset("json", data_files=DATASET_PATH, split="train")
 print(f"Raw examples: {len(dataset):,}")
 
 def format_example(example):
-    """Convert messages array → single training string in Qwen3 chat format.
-    Replaces the generic system prompt with the pixel-art Story Director prompt."""
+    """Format one training example.
+    - Applies Qwen3 chat template
+    - Injects the Story Director system prompt into every example
+      (replaces any existing generic system message)
+    """
     try:
         msgs = example["messages"]
 
-        # Replace system message with the specific Story Director prompt
+        # Build upgraded message list with Story Director system prompt
         upgraded = []
         has_system = any(m["role"] == "system" for m in msgs)
         if not has_system:
@@ -205,26 +183,26 @@ def format_example(example):
     except Exception:
         return {"text": "", "valid": False}
 
+print("Formatting examples and injecting system prompt...")
 dataset = dataset.map(format_example, num_proc=4)
 dataset = dataset.filter(lambda x: x["valid"] and len(x["text"]) > 50)
 dataset = dataset.remove_columns([c for c in dataset.column_names if c != "text"])
-
 print(f"Formatted examples: {len(dataset):,}")
-print(f"\n--- SAMPLE (first 600 chars) ---")
-print(dataset[0]["text"][:600])
+
+# Show one formatted example so you can confirm it looks right
+print(f"\n{'─'*60}")
+print("SAMPLE TRAINING EXAMPLE (first 800 chars):")
+print(f"{'─'*60}")
+print(dataset[0]["text"][:800])
 print("...")
 
-# Token length distribution
-import random
-sample = random.sample(range(len(dataset)), min(500, len(dataset)))
-lengths = [len(tokenizer(dataset[i]["text"])["input_ids"]) for i in sample]
-avg_len = sum(lengths) / len(lengths)
-max_len = max(lengths)
-print(f"\n📊 Token lengths (sample of {len(sample)}):")
-print(f"   Average: {avg_len:.0f} tokens")
-print(f"   Max:     {max_len} tokens")
-if max_len > MAX_SEQ_LENGTH:
-    print(f"   ⚠️  Some examples exceed {MAX_SEQ_LENGTH} tokens — they'll be truncated")
+# Token length stats
+sample_idx = random.sample(range(len(dataset)), min(500, len(dataset)))
+lengths    = [len(tokenizer(dataset[i]["text"])["input_ids"]) for i in sample_idx]
+print(f"\n📊 Token length stats (sample of {len(sample_idx)}):")
+print(f"   Average : {sum(lengths)/len(lengths):.0f} tokens")
+print(f"   Max     : {max(lengths)} tokens")
+print(f"   Seq len : {MAX_SEQ_LENGTH} tokens (examples longer than this get truncated)")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -233,22 +211,23 @@ if max_len > MAX_SEQ_LENGTH:
 
 from trl import SFTTrainer
 from transformers import TrainingArguments
-import math, time
 
 os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 
-steps_per_epoch = math.ceil(len(dataset) / (batch_size * grad_accum))
+steps_per_epoch = math.ceil(len(dataset) / (BATCH_SIZE * GRAD_ACCUM))
 total_steps     = steps_per_epoch * NUM_EPOCHS
-est_minutes     = total_steps * (0.5 if MODEL_SIZE == "7B" else 1.5) / 60
+est_minutes     = total_steps * 0.8 / 60   # ~0.8s/step on H100 for 27B
 
-print(f"🚀 Training config:")
-print(f"   Model:             {MODEL_SIZE}")
-print(f"   Examples:          {len(dataset):,}")
-print(f"   Epochs:            {NUM_EPOCHS}")
-print(f"   Steps per epoch:   {steps_per_epoch:,}")
-print(f"   Total steps:       {total_steps:,}")
-print(f"   Effective batch:   {batch_size * grad_accum}")
-print(f"   Estimated time:    ~{est_minutes:.0f} minutes")
+print(f"🚀 Training — Qwen3.6-27B on H100")
+print(f"{'─'*40}")
+print(f"   Examples        : {len(dataset):,}")
+print(f"   Epochs          : {NUM_EPOCHS}")
+print(f"   Batch size      : {BATCH_SIZE} × {GRAD_ACCUM} grad accum = {BATCH_SIZE*GRAD_ACCUM} effective")
+print(f"   Steps per epoch : {steps_per_epoch:,}")
+print(f"   Total steps     : {total_steps:,}")
+print(f"   LoRA rank       : 32")
+print(f"   Estimated time  : ~{est_minutes:.0f} minutes (~{est_minutes/60:.1f} hrs)")
+print(f"{'─'*40}")
 print()
 
 trainer = SFTTrainer(
@@ -259,33 +238,34 @@ trainer = SFTTrainer(
     max_seq_length     = MAX_SEQ_LENGTH,
     dataset_num_proc   = 4,
     args = TrainingArguments(
-        per_device_train_batch_size  = batch_size,
-        gradient_accumulation_steps  = grad_accum,
-        num_train_epochs             = NUM_EPOCHS,
-        warmup_ratio                 = 0.05,
-        learning_rate                = 2e-4,
-        fp16                         = not torch.cuda.is_bf16_supported(),
-        bf16                         = torch.cuda.is_bf16_supported(),
-        logging_steps                = 25,
-        optim                        = "adamw_8bit",
-        weight_decay                 = 0.01,
-        lr_scheduler_type            = "cosine",
-        seed                         = 42,
-        output_dir                   = CHECKPOINT_DIR,
-        save_strategy                = "steps",
-        save_steps                   = 500,
-        save_total_limit             = 2,        # keep only last 2 checkpoints on Drive
-        report_to                    = "none",
+        per_device_train_batch_size = BATCH_SIZE,
+        gradient_accumulation_steps = GRAD_ACCUM,
+        num_train_epochs            = NUM_EPOCHS,
+        warmup_ratio                = 0.05,
+        learning_rate               = 2e-4,
+        bf16                        = True,     # H100 supports bf16 natively
+        fp16                        = False,
+        logging_steps               = 25,
+        optim                       = "adamw_8bit",
+        weight_decay                = 0.01,
+        lr_scheduler_type           = "cosine",
+        seed                        = 42,
+        output_dir                  = CHECKPOINT_DIR,
+        save_strategy               = "steps",
+        save_steps                  = 200,       # checkpoint every 200 steps
+        save_total_limit            = 3,         # keep last 3 on Drive
+        report_to                   = "none",
     ),
 )
 
-start = time.time()
+t_start      = time.time()
 trainer_stats = trainer.train()
-elapsed = (time.time() - start) / 60
+elapsed_min  = (time.time() - t_start) / 60
+final_loss   = trainer_stats.metrics.get("train_loss", 0)
 
-print(f"\n✅ Training complete in {elapsed:.1f} minutes")
-print(f"   Final loss: {trainer_stats.metrics.get('train_loss', 'N/A'):.4f}")
-print(f"   Loss < 1.2 = good    |    Loss < 1.0 = great    |    Loss < 0.8 = excellent")
+print(f"\n✅ Training complete — {elapsed_min:.1f} minutes")
+print(f"   Final loss : {final_loss:.4f}")
+print(f"   < 1.2 = good  |  < 1.0 = great  |  < 0.8 = excellent")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -297,11 +277,11 @@ FastLanguageModel.for_inference(model)
 TEST_PROMPTS = [
     "Write a viral 30-second pixel art story about a knight who discovers his sword is cursed.",
     "Give me the hook for a short about a chef who realizes mid-service that the secret ingredient is missing.",
-    "What makes a YouTube Short go viral in the first 3 seconds?",
+    "What's the most common reason a YouTube Short dies in the first 3 seconds?",
 ]
 
 print("=" * 60)
-print("🧪 MODEL TEST")
+print("🧪 MODEL OUTPUT TEST")
 print("=" * 60)
 
 for i, prompt in enumerate(TEST_PROMPTS, 1):
@@ -320,7 +300,7 @@ for i, prompt in enumerate(TEST_PROMPTS, 1):
     with torch.no_grad():
         outputs = model.generate(
             **inputs,
-            max_new_tokens = 400,
+            max_new_tokens = 500,
             temperature    = 0.8,
             top_p          = 0.9,
             do_sample      = True,
@@ -333,8 +313,8 @@ for i, prompt in enumerate(TEST_PROMPTS, 1):
     ).strip()
 
     print(f"\n[Test {i}] {prompt}")
-    print("-" * 40)
-    print(response[:500])
+    print("─" * 50)
+    print(response[:600])
     print()
 
 
@@ -344,31 +324,36 @@ for i, prompt in enumerate(TEST_PROMPTS, 1):
 
 from huggingface_hub import login
 
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 if not HF_TOKEN:
-    print("⚠️  No HF_TOKEN set — skipping HuggingFace push")
-    print("   Set HF_TOKEN at the top of this script and re-run this cell.")
-    print(f"   Saving locally to {OUTPUT_DIR} instead...")
+    print("⚠️  HF_TOKEN not set — saving to Drive only (no HuggingFace push)")
+    print(f"   Set HF_TOKEN at the top and re-run this cell to push later.")
+    print(f"\nSaving merged model to Drive...")
     model.save_pretrained_merged(OUTPUT_DIR, tokenizer, save_method="merged_16bit")
-    print(f"✅ Saved to Drive: {OUTPUT_DIR}")
+    print(f"✅ Saved: {OUTPUT_DIR}")
 else:
     login(token=HF_TOKEN)
     repo_id = f"{HF_USERNAME}/{MODEL_REPO_NAME}"
-    print(f"Pushing to huggingface.co/{repo_id} ...")
-    print("(This takes 10-20 min for 27B — don't close Colab)")
+
+    print(f"Pushing to huggingface.co/{repo_id}")
+    print("27B merged model = ~54 GB upload — takes 15-30 min, don't close Colab")
 
     model.push_to_hub_merged(
         repo_id,
         tokenizer,
-        save_method  = "merged_16bit",
-        token        = HF_TOKEN,
+        save_method = "merged_16bit",
+        token       = HF_TOKEN,
     )
 
-    # Also save locally to Drive as backup
+    # Drive backup
+    print(f"\nSaving backup to Drive: {OUTPUT_DIR}")
     model.save_pretrained_merged(OUTPUT_DIR, tokenizer, save_method="merged_16bit")
 
-    print(f"\n✅ Model live at: huggingface.co/{repo_id}")
-    print(f"✅ Backup saved:  {OUTPUT_DIR}")
+    print(f"\n✅ Model live  : huggingface.co/{repo_id}")
+    print(f"✅ Drive backup: {OUTPUT_DIR}")
     print()
-    print("Test it instantly:")
+    print("Load it anywhere with:")
     print(f"  from transformers import pipeline")
     print(f"  pipe = pipeline('text-generation', model='{repo_id}')")
+    print(f"  pipe([{{'role':'user','content':'Write me a 30s pixel art hook'}}])")
