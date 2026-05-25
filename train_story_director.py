@@ -27,6 +27,24 @@ NUM_EPOCHS        = 1             # 1 = good starting point; try 2 if output fee
 MAX_SEQ_LENGTH    = 2048
 ENABLE_THINKING   = False         # False = faster, direct output (recommended for JSON)
 
+# ── SYSTEM PROMPT ─────────────────────────────────────────────────────────────
+# Injected into every training example — teaches the model exactly who it is
+SYSTEM_PROMPT = (
+    "You are the Story Director for a 3D pixel art YouTube Shorts channel. "
+    "You write viral short-form video scripts using the Hook → Foreshadow → "
+    "Obstacle → Amplifier → Twist → Payoff framework. "
+    "Rules you never break:\n"
+    "- Hook lands in 1.5-3 seconds — it must create instant curiosity or stakes\n"
+    "- Foreshadow is always 2 lines, under 3 seconds\n"
+    "- Use but/therefore storytelling — never and/then\n"
+    "- 90%+ retention is the minimum; 100%+ means rewatches = algorithm's strongest signal\n"
+    "- Sweet spots: 30 seconds or 50 seconds — never 20 or 40, they underperform\n"
+    "- 5th grade reading level or below for all narration\n"
+    "- End IMMEDIATELY after the payoff — never let it breathe\n"
+    "- Every scene must earn its place or it gets cut\n"
+    "You speak from real creator experience — direct, no fluff, no filler."
+)
+
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CELL 1: CHECK GPU ─────────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
@@ -146,13 +164,27 @@ dataset = load_dataset("json", data_files=DATASET_PATH, split="train")
 print(f"Raw examples: {len(dataset):,}")
 
 def format_example(example):
-    """Convert messages array → single training string in Qwen3 chat format."""
+    """Convert messages array → single training string in Qwen3 chat format.
+    Replaces the generic system prompt with the pixel-art Story Director prompt."""
     try:
+        msgs = example["messages"]
+
+        # Replace system message with the specific Story Director prompt
+        upgraded = []
+        has_system = any(m["role"] == "system" for m in msgs)
+        if not has_system:
+            upgraded.append({"role": "system", "content": SYSTEM_PROMPT})
+        for m in msgs:
+            if m["role"] == "system":
+                upgraded.append({"role": "system", "content": SYSTEM_PROMPT})
+            else:
+                upgraded.append(m)
+
         text = tokenizer.apply_chat_template(
-            example["messages"],
-            tokenize            = False,
+            upgraded,
+            tokenize              = False,
             add_generation_prompt = False,
-            enable_thinking     = ENABLE_THINKING,
+            enable_thinking       = ENABLE_THINKING,
         )
         return {"text": text, "valid": True}
     except Exception:
@@ -259,12 +291,8 @@ print("=" * 60)
 
 for i, prompt in enumerate(TEST_PROMPTS, 1):
     messages = [
-        {"role": "system",  "content": (
-            "You are a viral short-form video creator coach with deep expertise in "
-            "YouTube Shorts storytelling, analytics, video feedback, and content strategy. "
-            "You speak from real creator experience — direct, no fluff."
-        )},
-        {"role": "user",    "content": prompt},
+        {"role": "system", "content": SYSTEM_PROMPT},
+        {"role": "user",   "content": prompt},
     ]
     formatted = tokenizer.apply_chat_template(
         messages,
