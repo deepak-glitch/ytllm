@@ -63,19 +63,34 @@ import psutil
 ram_gb = psutil.virtual_memory().total / 1e9
 print(f"RAM: {ram_gb:.0f} GB")
 
-if "A100" not in gpu_info:
-    print("\n⚠️  WARNING: You don't have an A100!")
-    print("   Go to Runtime → Change runtime type → A100")
-    print("   27B model WILL crash on anything smaller.")
-    if MODEL_SIZE == "27B":
-        print("   Switch MODEL_SIZE to '7B' or upgrade to A100 first.")
-else:
-    vram = int(gpu_info.split(",")[1].strip().split()[0])
-    print(f"\n✅ A100 detected ({vram} MiB VRAM)")
+vram = int(gpu_info.split(",")[1].strip().split()[0])
+vram_gb = vram / 1024
+
+if "H100" in gpu_info:
+    print(f"\n🚀 H100 detected ({vram_gb:.0f} GB VRAM) — best possible GPU, you're set")
+    print(f"✅ {MODEL_SIZE} will train fast here")
+elif "A100" in gpu_info:
+    print(f"\n✅ A100 detected ({vram_gb:.0f} GB VRAM)")
     if MODEL_SIZE == "27B" and vram < 35000:
         print("⚠️  Less than 40GB VRAM — switch to 7B or you'll OOM")
     else:
         print(f"✅ {MODEL_SIZE} model will fit fine")
+elif "G4" in gpu_info or "L4" in gpu_info:
+    print(f"\n⚠️  {gpu_info.split(',')[0].strip()} detected ({vram_gb:.0f} GB VRAM)")
+    print("   Only 24GB VRAM — 7B will work, 27B will OOM")
+    if MODEL_SIZE == "27B":
+        print("   ❌ Switch MODEL_SIZE to '7B' before running")
+    else:
+        print("   ✅ 7B will fit — training will be slower than H100/A100")
+elif "T4" in gpu_info:
+    print(f"\n⚠️  T4 detected ({vram_gb:.0f} GB VRAM) — only 16GB, very slow")
+    print("   7B will technically work but training takes 4+ hours")
+    if MODEL_SIZE == "27B":
+        print("   ❌ Switch MODEL_SIZE to '7B' — 27B will crash")
+    print("   Recommend switching to H100 in Runtime → Change runtime type")
+else:
+    print(f"\n❌ Unrecognised GPU: {gpu_info}")
+    print("   Go to Runtime → Change runtime type → H100 or A100")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
