@@ -13,9 +13,8 @@ creator-rant/
 __pycache__/
 *.pyc
 
-# Claude Code local settings (machine-specific, never commit)
-.claude/settings.local.json
-# Environment variables
+# Environment variables — never commit real keys
+.env
 .env.local
 
 # Scrape outputs (large, regenerable)
