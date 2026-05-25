@@ -1,25 +1,27 @@
 """
-train_story_director.py — Fine-tune Qwen3.6-27B Story Director
-===============================================================
-Model  : Qwen3.6-27B (QLoRA 4-bit)
-GPU    : H100 80GB  (~2 hours)
+train_story_director.py — Fine-tune Qwen3-27B Story Director
+=============================================================
+Model  : Qwen3-27B (QLoRA 4-bit)
+GPU    : RTX PRO 6000 Blackwell 96GB / H100 80GB (~1 hour on Blackwell)
 Target : Viral pixel art YouTube Shorts story generation
 
 BEFORE RUNNING:
-  1. Runtime → Change runtime type → H100 GPU + High RAM
-  2. Fill in HF_TOKEN and DATASET_PATH below
-  3. Run All (Ctrl+F9)
+  1. Runtime → Change runtime type → best available GPU (Blackwell > H100 > A100)
+  2. Add HF_TOKEN to Colab Secrets (🔑 icon) — never paste tokens in code
+  3. Upload training_data_v3.jsonl to Drive at the DATASET_PATH below
+  4. Run All (Ctrl+F9)
 """
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ── FILL IN YOUR DETAILS ──────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
-HF_TOKEN        = ""                    # huggingface.co/settings/tokens → New token → Write
+from google.colab import userdata
+HF_TOKEN        = userdata.get('HF_TOKEN')  # add via Colab Secrets 🔑 — never paste here
 HF_USERNAME     = "Deepak0070"
 MODEL_REPO_NAME = "story-director-27b-v1"
 
-DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
+DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v3.jsonl"
 CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
 OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
 
@@ -50,6 +52,7 @@ SYSTEM_PROMPT = (
 # ══════════════════════════════════════════════════════════════════════════════
 
 import subprocess, os, sys, time, math, random
+import psutil
 
 result = subprocess.run(
     ["nvidia-smi", "--query-gpu=name,memory.total", "--format=csv,noheader"],
@@ -57,35 +60,60 @@ result = subprocess.run(
 )
 gpu_info = result.stdout.strip()
 print(f"GPU : {gpu_info}")
-
-import psutil
 print(f"RAM : {psutil.virtual_memory().total / 1e9:.0f} GB")
 
 vram_mib = int(gpu_info.split(",")[1].strip().split()[0])
 vram_gb  = vram_mib / 1024
 
-if "H100" in gpu_info:
+if "Blackwell" in gpu_info or "RTX PRO 6000" in gpu_info or "6000" in gpu_info:
+    print(f"\n🏆 RTX PRO 6000 Blackwell detected ({vram_gb:.0f} GB) — best GPU available, you're golden")
+    BATCH_SIZE = 4   # 96 GB VRAM → double batch → faster training
+    GRAD_ACCUM = 2
+elif "H100" in gpu_info:
     print(f"\n🚀 H100 detected ({vram_gb:.0f} GB) — perfect, you're good to go")
+    BATCH_SIZE = 2
+    GRAD_ACCUM = 4
 elif "A100" in gpu_info and vram_gb >= 38:
-    print(f"\n✅ A100 detected ({vram_gb:.0f} GB) — will work, slightly slower than H100")
+    print(f"\n✅ A100 detected ({vram_gb:.0f} GB) — will work, slightly slower")
+    BATCH_SIZE = 2
+    GRAD_ACCUM = 4
+elif vram_gb >= 80:
+    print(f"\n✅ High-VRAM GPU detected ({vram_gb:.0f} GB) — will work fine")
+    BATCH_SIZE = 4
+    GRAD_ACCUM = 2
 else:
-    print(f"\n❌ WRONG GPU: {gpu_info.split(',')[0].strip()} ({vram_gb:.0f} GB)")
-    print("   27B needs at least 40GB VRAM.")
-    print("   Go to Runtime → Change runtime type → H100 GPU")
-    raise SystemExit("Switch to H100 before continuing.")
+    print(f"\n⚠️  GPU: {gpu_info.split(',')[0].strip()} ({vram_gb:.0f} GB)")
+    print("   27B needs at least 40 GB VRAM — consider switching GPU")
+    BATCH_SIZE = 1
+    GRAD_ACCUM = 8
+
+print(f"\n   Batch size : {BATCH_SIZE} × {GRAD_ACCUM} grad accum = {BATCH_SIZE*GRAD_ACCUM} effective")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
 # ── CELL 2: INSTALL ───────────────────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
-print("Installing packages...")
-subprocess.run([sys.executable, "-m", "pip", "install", "-q", "unsloth"], check=True)
+print("Installing packages (Blackwell needs CUDA 12.8 + latest unsloth)...")
+
+# Step 1: upgrade torch for Blackwell / CUDA 12.8 support
+subprocess.run([sys.executable, "-m", "pip", "install", "-q",
+    "torch", "torchvision", "torchaudio",
+    "--index-url", "https://download.pytorch.org/whl/cu128"], check=True)
+
+# Step 2: latest unsloth from source (Blackwell support)
 subprocess.run([sys.executable, "-m", "pip", "install", "-q",
     "unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git",
-    "trl", "peft", "accelerate", "bitsandbytes",
-    "datasets", "huggingface_hub", "transformers"], check=True)
+    "trl>=0.12.0", "peft>=0.13.0", "accelerate>=1.2.0",
+    "bitsandbytes>=0.45.0", "datasets", "huggingface_hub", "transformers"], check=True)
+
 print("✅ All packages installed")
+
+# Verify torch sees the GPU correctly
+import torch
+print(f"   PyTorch : {torch.__version__}")
+print(f"   CUDA    : {torch.version.cuda}")
+print(f"   GPU     : {torch.cuda.get_device_name(0)}")
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -95,9 +123,8 @@ print("✅ All packages installed")
 from unsloth import FastLanguageModel
 import torch
 
-MODEL_NAME = "unsloth/Qwen3.6-27B"   # quantizes to 4-bit on load (~10 min first time)
-BATCH_SIZE = 2                         # H100 80GB can handle batch=2 for 27B
-GRAD_ACCUM = 4                         # effective batch = 2 × 4 = 8
+MODEL_NAME = "unsloth/Qwen3-27B"   # quantizes to 4-bit on load (~10 min first time)
+# BATCH_SIZE and GRAD_ACCUM are set automatically in Cell 1 based on your GPU
 
 print(f"Loading {MODEL_NAME} ...")
 print("First load quantizes the model — takes ~10 min. Subsequent runs are faster.")
@@ -105,8 +132,8 @@ print("First load quantizes the model — takes ~10 min. Subsequent runs are fas
 model, tokenizer = FastLanguageModel.from_pretrained(
     model_name     = MODEL_NAME,
     max_seq_length = MAX_SEQ_LENGTH,
-    dtype          = None,       # auto-detect: bf16 on H100
-    load_in_4bit   = True,       # QLoRA — keeps base model frozen in 4-bit
+    dtype          = torch.bfloat16,  # bf16: best for Blackwell + H100; faster than fp16
+    load_in_4bit   = True,            # QLoRA — keeps base model frozen in 4-bit
 )
 
 used_gb  = torch.cuda.memory_allocated() / 1e9
@@ -120,22 +147,23 @@ print(f"   VRAM free : {total_gb - used_gb:.1f} GB  (for training overhead)")
 # ── CELL 4: ATTACH LORA ADAPTERS ─────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
-# r=32 → richer adapters (H100 80GB has room for this vs r=16 on A100)
+# r=64 → richer adapters — Blackwell 96 GB has plenty of VRAM headroom
+# (was r=32 for H100 80GB; r=64 gives better fine-tune quality at same GPU cost)
 model = FastLanguageModel.get_peft_model(
     model,
-    r                          = 32,
+    r                          = 64,
     target_modules             = ["q_proj", "k_proj", "v_proj", "o_proj",
                                   "gate_proj", "up_proj", "down_proj"],
-    lora_alpha                 = 32,
+    lora_alpha                 = 64,   # keep alpha == r for stable training
     lora_dropout               = 0,
     bias                       = "none",
-    use_gradient_checkpointing = "unsloth",   # cuts VRAM ~30%
+    use_gradient_checkpointing = "unsloth",   # cuts VRAM ~30% — keep even on 96 GB
     random_state               = 42,
 )
 
 trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
 total     = sum(p.numel() for p in model.parameters())
-print(f"✅ LoRA adapters attached")
+print(f"✅ LoRA adapters attached (r=64)")
 print(f"   Trainable : {trainable/1e6:.1f}M params / {total/1e6:.0f}M total "
       f"({100*trainable/total:.2f}%) — only these get updated during training")
 
@@ -184,7 +212,7 @@ def format_example(example):
         return {"text": "", "valid": False}
 
 print("Formatting examples and injecting system prompt...")
-dataset = dataset.map(format_example, num_proc=4)
+dataset = dataset.map(format_example, num_proc=8)  # 190 GB RAM → use 8 workers
 dataset = dataset.filter(lambda x: x["valid"] and len(x["text"]) > 50)
 dataset = dataset.remove_columns([c for c in dataset.column_names if c != "text"])
 print(f"Formatted examples: {len(dataset):,}")
@@ -216,16 +244,18 @@ os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 
 steps_per_epoch = math.ceil(len(dataset) / (BATCH_SIZE * GRAD_ACCUM))
 total_steps     = steps_per_epoch * NUM_EPOCHS
-est_minutes     = total_steps * 0.8 / 60   # ~0.8s/step on H100 for 27B
+# Blackwell ~0.45s/step, H100 ~0.80s/step, A100 ~1.2s/step
+sec_per_step    = 0.45 if vram_gb >= 90 else (0.80 if vram_gb >= 75 else 1.2)
+est_minutes     = total_steps * sec_per_step / 60
 
-print(f"🚀 Training — Qwen3.6-27B on H100")
+print(f"🚀 Training — Qwen3-27B on {gpu_info.split(',')[0].strip()}")
 print(f"{'─'*40}")
 print(f"   Examples        : {len(dataset):,}")
 print(f"   Epochs          : {NUM_EPOCHS}")
 print(f"   Batch size      : {BATCH_SIZE} × {GRAD_ACCUM} grad accum = {BATCH_SIZE*GRAD_ACCUM} effective")
 print(f"   Steps per epoch : {steps_per_epoch:,}")
 print(f"   Total steps     : {total_steps:,}")
-print(f"   LoRA rank       : 32")
+print(f"   LoRA rank       : 64")
 print(f"   Estimated time  : ~{est_minutes:.0f} minutes (~{est_minutes/60:.1f} hrs)")
 print(f"{'─'*40}")
 print()
@@ -236,14 +266,14 @@ trainer = SFTTrainer(
     train_dataset      = dataset,
     dataset_text_field = "text",
     max_seq_length     = MAX_SEQ_LENGTH,
-    dataset_num_proc   = 4,
+    dataset_num_proc   = 8,   # 190 GB RAM → 8 workers
     args = TrainingArguments(
         per_device_train_batch_size = BATCH_SIZE,
         gradient_accumulation_steps = GRAD_ACCUM,
         num_train_epochs            = NUM_EPOCHS,
         warmup_ratio                = 0.05,
         learning_rate               = 2e-4,
-        bf16                        = True,     # H100 supports bf16 natively
+        bf16                        = True,     # native bf16 on Blackwell + H100
         fp16                        = False,
         logging_steps               = 25,
         optim                       = "adamw_8bit",
@@ -254,6 +284,7 @@ trainer = SFTTrainer(
         save_strategy               = "steps",
         save_steps                  = 200,       # checkpoint every 200 steps
         save_total_limit            = 3,         # keep last 3 on Drive
+        dataloader_num_workers      = 4,         # 190 GB RAM — parallel data loading
         report_to                   = "none",
     ),
 )
