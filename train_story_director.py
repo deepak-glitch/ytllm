@@ -21,7 +21,7 @@ HF_TOKEN        = userdata.get('HF_TOKEN')  # add via Colab Secrets 🔑 — nev
 HF_USERNAME     = "Deepak0070"
 MODEL_REPO_NAME = "story-director-27b-v1"
 
-DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v3.jsonl"
+DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
 CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
 OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
 
@@ -244,7 +244,7 @@ os.makedirs(CHECKPOINT_DIR, exist_ok=True)
 
 steps_per_epoch = math.ceil(len(dataset) / (BATCH_SIZE * GRAD_ACCUM))
 total_steps     = steps_per_epoch * NUM_EPOCHS
-# Blackwell ~0.45s/step, H100 ~0.80s/step, A100 ~1.2s/step
+# Blackwell ~0.45s/step (~46 min for 49k), H100 ~0.80s/step (~82 min), A100 ~1.2s/step (~2hr)
 sec_per_step    = 0.45 if vram_gb >= 90 else (0.80 if vram_gb >= 75 else 1.2)
 est_minutes     = total_steps * sec_per_step / 60
 
