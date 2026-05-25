@@ -123,7 +123,7 @@ print(f"   GPU     : {torch.cuda.get_device_name(0)}")
 from unsloth import FastLanguageModel
 import torch
 
-MODEL_NAME = "unsloth/Qwen3-27B"   # quantizes to 4-bit on load (~10 min first time)
+MODEL_NAME = "unsloth/Qwen3-32B"   # quantizes to 4-bit on load (~10 min first time)
 # BATCH_SIZE and GRAD_ACCUM are set automatically in Cell 1 based on your GPU
 
 print(f"Loading {MODEL_NAME} ...")
