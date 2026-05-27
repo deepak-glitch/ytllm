@@ -19,11 +19,20 @@ HF_TOKEN        = ""                    # huggingface.co/settings/tokens → New
 HF_USERNAME     = "Deepak0070"
 MODEL_REPO_NAME = "story-director-27b-v1"
 
+# Primary dataset (required)
 DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
+# Second dataset — set to "" to skip, or point to api_training.jsonl to merge
+DATASET_PATH_2  = "/content/drive/MyDrive/ytllm_v2/api_training.jsonl"
+
 CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
 OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
 
-NUM_EPOCHS      = 1       # 1 epoch = solid first run; bump to 2 if output feels shallow
+# ── EPOCH GUIDE ───────────────────────────────────────────────────────────────
+# After epoch 1 check the final loss printed at the end of training:
+#   loss > 1.2  → needs more training → set 2
+#   loss 0.9-1.2 → solid → 1 is fine, 2 is safe
+#   loss < 0.9  → already great → stay at 1 (risk of overfitting at 2)
+NUM_EPOCHS      = 2       # 2 = deeper learning on H100 (~4 hrs, worth it)
 MAX_SEQ_LENGTH  = 2048
 ENABLE_THINKING = False   # False = direct output, no chain-of-thought (recommended)
 
@@ -120,13 +129,13 @@ print(f"   VRAM free : {total_gb - used_gb:.1f} GB  (for training overhead)")
 # ── CELL 4: ATTACH LORA ADAPTERS ─────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
 
-# r=32 → richer adapters (H100 80GB has room for this vs r=16 on A100)
+# r=64 → richest adapters, H100 80GB handles this comfortably
 model = FastLanguageModel.get_peft_model(
     model,
-    r                          = 32,
+    r                          = 64,
     target_modules             = ["q_proj", "k_proj", "v_proj", "o_proj",
                                   "gate_proj", "up_proj", "down_proj"],
-    lora_alpha                 = 32,
+    lora_alpha                 = 64,
     lora_dropout               = 0,
     bias                       = "none",
     use_gradient_checkpointing = "unsloth",   # cuts VRAM ~30%
@@ -149,9 +158,41 @@ from unsloth.chat_templates import get_chat_template
 
 tokenizer = get_chat_template(tokenizer, chat_template="qwen-3")
 
-print(f"Loading dataset: {DATASET_PATH}")
+# ── Load + auto-merge datasets ────────────────────────────────────────────────
+import os
+from datasets import concatenate_datasets
+
+print(f"Loading dataset 1: {DATASET_PATH}")
 dataset = load_dataset("json", data_files=DATASET_PATH, split="train")
-print(f"Raw examples: {len(dataset):,}")
+print(f"  → {len(dataset):,} examples")
+
+if DATASET_PATH_2 and os.path.exists(DATASET_PATH_2):
+    print(f"Loading dataset 2: {DATASET_PATH_2}")
+    dataset2 = load_dataset("json", data_files=DATASET_PATH_2, split="train")
+    print(f"  → {len(dataset2):,} examples")
+    # Deduplicate by merging and removing identical rows
+    combined = concatenate_datasets([dataset, dataset2])
+    # Simple dedup: drop exact duplicate messages arrays by hashing content
+    seen = set()
+    def mark_unique(example):
+        key = str(example.get("messages", ""))[:200]  # first 200 chars as fingerprint
+        if key in seen:
+            return {"__dup__": True}
+        seen.add(key)
+        return {"__dup__": False}
+    combined = combined.map(mark_unique)
+    before = len(combined)
+    combined = combined.filter(lambda x: not x["__dup__"])
+    combined = combined.remove_columns(["__dup__"])
+    dataset = combined
+    print(f"Merged: {before:,} total → {len(dataset):,} after dedup "
+          f"({before - len(dataset):,} duplicates removed)")
+else:
+    if DATASET_PATH_2:
+        print(f"⚠️  Dataset 2 not found at {DATASET_PATH_2} — training on dataset 1 only")
+    print(f"Total examples: {len(dataset):,}")
+
+print(f"\nFinal dataset size: {len(dataset):,} examples")
 
 def format_example(example):
     """Format one training example.
@@ -242,7 +283,7 @@ trainer = SFTTrainer(
         gradient_accumulation_steps = GRAD_ACCUM,
         num_train_epochs            = NUM_EPOCHS,
         warmup_ratio                = 0.05,
-        learning_rate               = 2e-4,
+        learning_rate               = 1e-4,   # lower than default for 2 epochs (avoids overshoot)
         bf16                        = True,     # H100 supports bf16 natively
         fp16                        = False,
         logging_steps               = 25,
