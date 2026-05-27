@@ -381,19 +381,16 @@ for i, prompt in enumerate(TEST_PROMPTS, 1):
 
 
 # ══════════════════════════════════════════════════════════════════════════════
-# ── CELL 8: SAVE + PUSH TO HUGGINGFACE ───────────────────────────────────────
+# ── CELL 8: PUSH TO HUGGINGFACE ──────────────────────────────────────────────
 # ══════════════════════════════════════════════════════════════════════════════
+# NOTE: No local Drive save — 27B merged = ~54GB, Colab disk fills up fast.
+# HuggingFace push is the only save. Your model is safe there.
 
 from huggingface_hub import login
 
-os.makedirs(OUTPUT_DIR, exist_ok=True)
-
 if not HF_TOKEN:
-    print("⚠️  HF_TOKEN not set — saving to Drive only (no HuggingFace push)")
-    print(f"   Set HF_TOKEN at the top and re-run this cell to push later.")
-    print(f"\nSaving merged model to Drive...")
-    model.save_pretrained_merged(OUTPUT_DIR, tokenizer, save_method="merged_16bit")
-    print(f"✅ Saved: {OUTPUT_DIR}")
+    print("⚠️  HF_TOKEN not set — can't push to HuggingFace")
+    print("   Set HF_TOKEN at the top of the script and re-run this cell.")
 else:
     login(token=HF_TOKEN)
     repo_id = f"{HF_USERNAME}/{MODEL_REPO_NAME}"
@@ -408,14 +405,9 @@ else:
         token       = HF_TOKEN,
     )
 
-    # Drive backup
-    print(f"\nSaving backup to Drive: {OUTPUT_DIR}")
-    model.save_pretrained_merged(OUTPUT_DIR, tokenizer, save_method="merged_16bit")
-
-    print(f"\n✅ Model live  : huggingface.co/{repo_id}")
-    print(f"✅ Drive backup: {OUTPUT_DIR}")
+    print(f"\n✅ Model live: huggingface.co/{repo_id}")
     print()
-    print("Load it anywhere with:")
+    print("Load it anywhere:")
     print(f"  from transformers import pipeline")
     print(f"  pipe = pipeline('text-generation', model='{repo_id}')")
     print(f"  pipe([{{'role':'user','content':'Write me a 30s pixel art hook'}}])")
