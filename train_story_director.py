@@ -21,8 +21,8 @@ MODEL_REPO_NAME = "story-director-27b-v1"
 
 # Primary dataset (required)
 DATASET_PATH    = "/content/drive/MyDrive/ytllm_v2/training_data_v9.jsonl"
-# Second dataset — set to "" to skip, or point to api_training.jsonl to merge
-DATASET_PATH_2  = "/content/drive/MyDrive/ytllm_v2/api_training.jsonl"
+# Second dataset — training_data_v9.jsonl is already the full combined dataset, so skip
+DATASET_PATH_2  = ""
 
 CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
 OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
