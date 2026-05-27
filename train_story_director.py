@@ -27,12 +27,17 @@ DATASET_PATH_2  = ""
 CHECKPOINT_DIR  = "/content/drive/MyDrive/ytllm_v2/checkpoints_27b"
 OUTPUT_DIR      = "/content/drive/MyDrive/ytllm_v2/story-director-27b-final"
 
+# ── RESUME FROM CHECKPOINT ────────────────────────────────────────────────────
+# You already completed epoch 1 — set True to continue from your last checkpoint
+# instead of starting over. Saves ~2 hours. Automatically finds latest checkpoint.
+RESUME          = True    # True = continue epoch 2 from where epoch 1 stopped
+
 # ── EPOCH GUIDE ───────────────────────────────────────────────────────────────
 # After epoch 1 check the final loss printed at the end of training:
 #   loss > 1.2  → needs more training → set 2
 #   loss 0.9-1.2 → solid → 1 is fine, 2 is safe
 #   loss < 0.9  → already great → stay at 1 (risk of overfitting at 2)
-NUM_EPOCHS      = 2       # 2 = deeper learning on H100 (~4 hrs, worth it)
+NUM_EPOCHS      = 2       # 2 total epochs — resumes at epoch 2 since epoch 1 is done
 MAX_SEQ_LENGTH  = 2048
 ENABLE_THINKING = False   # False = direct output, no chain-of-thought (recommended)
 
@@ -299,10 +304,26 @@ trainer = SFTTrainer(
     ),
 )
 
-t_start      = time.time()
-trainer_stats = trainer.train()
-elapsed_min  = (time.time() - t_start) / 60
-final_loss   = trainer_stats.metrics.get("train_loss", 0)
+if RESUME:
+    import glob
+    # Find the latest checkpoint automatically
+    checkpoints = sorted(glob.glob(f"{CHECKPOINT_DIR}/checkpoint-*"),
+                         key=lambda x: int(x.split("-")[-1]))
+    if checkpoints:
+        latest = checkpoints[-1]
+        print(f"🔁 Resuming from checkpoint: {latest}")
+        print(f"   (skipping epoch 1 — continuing from where it stopped)")
+    else:
+        latest = True   # fallback: let Trainer search automatically
+        print("⚠️  No checkpoint found in CHECKPOINT_DIR — starting fresh")
+else:
+    latest = False
+    print("🆕 Starting training from scratch")
+
+t_start       = time.time()
+trainer_stats = trainer.train(resume_from_checkpoint=latest)
+elapsed_min   = (time.time() - t_start) / 60
+final_loss    = trainer_stats.metrics.get("train_loss", 0)
 
 print(f"\n✅ Training complete — {elapsed_min:.1f} minutes")
 print(f"   Final loss : {final_loss:.4f}")
